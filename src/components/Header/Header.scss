@@ -1,0 +1,8 @@
+@import '../../css-variables/main-css-variables';
+
+header {
+  width: 100%;
+  height: $header-default-height + px;
+  @include flex-all-center;
+  border: 1px solid #000;
+}

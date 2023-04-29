@@ -1,0 +1,10 @@
+@import '../../css-variables/main-css-variables';
+
+footer {
+  width: 100%;
+  height: $footer-default-height + px;
+  @include flex-all-center;
+  position: fixed;
+  bottom: 0;
+  border: 1px solid #000;
+}
