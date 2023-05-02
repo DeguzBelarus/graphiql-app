@@ -27,6 +27,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             autoCorrect="off"
             spellCheck="false"
             autoFocus={true}
+            minLength={8}
             maxLength={75}
             required
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
@@ -45,6 +46,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             title=""
             autoCapitalize="off"
             autoCorrect="off"
+            minLength={8}
             required
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
           />
