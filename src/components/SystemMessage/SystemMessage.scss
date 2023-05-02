@@ -39,6 +39,7 @@
     padding: 5px 12px;
     transition: opacity 0.2s linear;
     color: $accents-theme-color;
+    font-weight: bold;
 
     &:not(.shown) {
       opacity: 0;
