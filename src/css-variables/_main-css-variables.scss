@@ -1,11 +1,18 @@
 // sizes
-$header-default-height: 30;
-$footer-default-height: 30;
+$header-default-height: 80px;
+$footer-default-height: 30px;
+$s-padding: 4px;
+$m-padding: 8px;
+$l-padding: 12px;
+$xl-padding: 16px;
+$xxl-padding: 24px;
 
 // colors
-$main-theme-color: #6F4E37;
-$secondary-theme-color: #b39f7a;
-$accents-theme-color: #4b3621;
+$main-theme-color: #662abe;
+$secondary-theme-color: #c78bf1;
+$accents-theme-color: #240f5b;
+$danger-color: #f36f25;
+$white-color: #ffffff;
 
 // mixins
 // flex row mixins

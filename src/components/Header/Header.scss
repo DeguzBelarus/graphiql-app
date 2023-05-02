@@ -2,7 +2,19 @@
 
 header {
   width: 100%;
-  height: $header-default-height + px;
-  @include flex-all-center;
-  border: 1px solid #000;
+  height: $header-default-height;
+  @include flex-line-spacebetween-vertical-center;
+  background: $accents-theme-color;
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      height: $header-default-height;
+    }
+  }
+
+
 }

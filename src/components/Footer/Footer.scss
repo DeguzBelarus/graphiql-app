@@ -2,7 +2,7 @@
 
 footer {
   width: 100%;
-  height: $footer-default-height + px;
+  height: $footer-default-height;
   @include flex-all-center;
   position: fixed;
   bottom: 0;

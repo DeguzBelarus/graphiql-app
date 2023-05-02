@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './redux/store';
 
-import { App } from './components/App';
+import { App } from './App';
 import './index.scss';
 
 const container = document.getElementById('root')!;

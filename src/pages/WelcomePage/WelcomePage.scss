@@ -2,6 +2,7 @@
 
 .welcome-page-wrapper {
   width: 100%;
-  height: calc(100vh - #{($header-default-height + px)});
+  //height: calc(100vh - #{($header-default-height)});
+  height: 100vh;
   @include flex-all-center;
 }
