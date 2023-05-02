@@ -56,6 +56,7 @@
 }
 
 .button__link {
+  @include font(1.6rem, 2.6rem);
   display: inline-block;
   text-transform: uppercase;
   text-align: center;
