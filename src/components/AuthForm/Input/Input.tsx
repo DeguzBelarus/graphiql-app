@@ -22,8 +22,10 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             placeholder="Email"
             pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,4}"
             name="email"
+            title="Enter email, please"
             autoCapitalize="off"
             autoCorrect="off"
+            spellCheck="false"
             autoFocus={true}
             maxLength={75}
             required
@@ -40,6 +42,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             value={value}
             placeholder="Password"
             name="password"
+            title="Enter the password, please"
             autoCapitalize="off"
             autoCorrect="off"
             required

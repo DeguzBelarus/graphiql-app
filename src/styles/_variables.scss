@@ -145,9 +145,9 @@ $white-color: #ffffff;
   @include flex-all-center;
   text-transform: uppercase;
   font-weight: bold;
-  background-color: #fff;
+  background-color: transparent;
   border: none;
-  color: $main-theme-color;
+  color: #fff;
 }
 
 // other mixins

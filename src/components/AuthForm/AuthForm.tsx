@@ -1,6 +1,7 @@
 import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';
 import { IAuthFormData } from '../../types/types';
 import { FORM_DATA_DEFAULTS } from './constants';
@@ -29,7 +30,7 @@ export const AuthForm: FC<Props> = ({ type }) => {
       {type === 'login-form' ? (
         <>
           <div className="upper-container">
-            <span>logo</span>
+            <img className="main-logo-in-form" src={logo} alt="logo" />
             <h1>Log in</h1>
           </div>
           <Input type="email" value={loginFormData.email} setValue={loginFormDataUpdate} />
@@ -50,7 +51,7 @@ export const AuthForm: FC<Props> = ({ type }) => {
       ) : (
         <>
           <div className="upper-container">
-            <span>logo</span>
+            <img className="main-logo-in-form" src={logo} alt="logo" />
             <h1>Registration</h1>
           </div>
           <Input

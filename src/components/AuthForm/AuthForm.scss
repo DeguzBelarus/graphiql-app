@@ -8,14 +8,21 @@
   position: relative;
   padding: 20px 10px;
   border: 1px solid $secondary-theme-color;
+  background-color: $accents-theme-color;
 
   .upper-container {
     width: 100%;
     height: auto;
     @include flex-line-spacebetween-vertical-center;
 
+    .main-logo-in-form {
+      width: auto;
+      max-width: 25%;
+      height: 100%;
+    }
+
     h1 {
-      color: $main-theme-color;
+      color: #fff;
     }
   }
 
