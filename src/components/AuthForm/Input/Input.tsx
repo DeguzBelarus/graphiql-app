@@ -25,7 +25,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             title=""
             autoCapitalize="off"
             autoCorrect="off"
-            spellCheck="false"
+            spellCheck={false}
             autoFocus={true}
             minLength={8}
             maxLength={75}
