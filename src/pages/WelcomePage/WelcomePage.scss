@@ -1,7 +1,23 @@
 @import '../../styles/variables';
 
 .welcome-page-wrapper {
-  width: 100%;
-  height: calc(100vh - $header-height);
-  @include flex-all-center;
+  max-width: $width-container;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include media-laptop {
+    padding: 0 45px;
+  }
+
+  @include media-tablet {
+    padding: 0 20px;
+  }
+
+  @include media-mobile-big {
+    padding: 0 10px;
+  }
+
+  @include media-mobile-small {
+    padding: 0 5px;
+  }
 }
