@@ -1,6 +1,7 @@
 // sizes
-$header-default-height: 70px;
-$footer-default-height: 50px;
+$header-height: 70px;
+$footer-height: 50px;
+
 $s-padding: 4px;
 $m-padding: 8px;
 $l-padding: 12px;
@@ -134,5 +135,5 @@ $white-color: #ffffff;
 }
 
 :export {
-  header-height: $header-default-height;
+  headerHeight: $header-height;
 }

@@ -1,8 +1,8 @@
-@import '../../scss/variables';
+@import '../../styles/variables';
 
 header {
   width: 100%;
-  height: $header-default-height;
+  height: $header-height;
   @include flex-line-spacebetween-vertical-center;
   background: $accents-theme-color;
   position: sticky;
@@ -14,11 +14,11 @@ header {
     align-items: center;
 
     img {
-      height: $header-default-height;
+      height: $header-height;
     }
   }
 }
 
 .active {
-  background: $secondary-theme-color;
+  background: $main-theme-color;
 }

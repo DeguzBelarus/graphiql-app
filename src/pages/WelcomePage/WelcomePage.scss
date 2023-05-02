@@ -1,7 +1,7 @@
-@import '../../scss/variables';
+@import '../../styles/variables';
 
 .welcome-page-wrapper {
   width: 100%;
-  height: calc(100vh - $header-default-height);
+  height: calc(100vh - $header-height);
   @include flex-all-center;
 }
