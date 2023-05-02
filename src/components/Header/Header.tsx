@@ -5,7 +5,7 @@ import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
 
 export const Header: FC = () => {
   return (
-    <header>
+    <header className="app-container">
       <div className="logo-wrapper">
         <img src={Logo} alt="logo" />
 
