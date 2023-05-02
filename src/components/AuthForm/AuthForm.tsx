@@ -22,8 +22,13 @@ export const AuthForm: FC<Props> = ({ type }) => {
   const loginFormDataUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLoginFormData({ ...loginFormData, [event.target.name]: event.target.value });
   };
+
   const registrationFormDataUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRegistrationFormData({ ...registrationFormData, [event.target.name]: event.target.value });
+  };
+
+  const submit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
   };
   return (
     <form className="auth-form">
