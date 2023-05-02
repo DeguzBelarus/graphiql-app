@@ -25,7 +25,9 @@ export const Header: FC = () => {
         <LanguagePicker />
       </div>
 
-      <button className="primary-button">{isAuth ? 'Sign In' : 'Sign Up'}</button>
+      <a href={isAuth ? 'login' : 'registration'}>
+        <button className="primary-button">{isAuth ? 'Sign In' : 'Sign Up'}</button>
+      </a>
     </header>
   );
 };
