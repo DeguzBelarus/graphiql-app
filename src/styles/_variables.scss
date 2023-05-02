@@ -1,6 +1,7 @@
 // sizes
 $header-height: 70px;
 $footer-height: 50px;
+$system-message-height: 20px;
 
 $s-padding: 4px;
 $m-padding: 8px;
@@ -8,11 +9,14 @@ $l-padding: 12px;
 $xl-padding: 16px;
 $xxl-padding: 24px;
 
+$system-message-bottom-position: 60px;
+
 // colors
 $main-theme-color: #662abe;
 $secondary-theme-color: #9f70c0;
 $accents-theme-color: #240f5b;
 $danger-color: #f36f25;
+$success-color: #00aa00;
 $white-color: #ffffff;
 
 // mixins

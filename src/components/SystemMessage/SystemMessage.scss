@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.system-message-wrapper {
+  @include flex-all-center;
+  @include user-select-none;
+  position: absolute;
+  bottom: $system-message-bottom-position;
+  left: 10px;
+  overflow: hidden;
+  transition-property: opacity, height;
+  transition-duration: 0.8s, 0.4s;
+  transition-timing-function: linear;
+  border: 1px solid $secondary-theme-color;
+  z-index: 1;
+
+  &:not(.shown) {
+    height: 2px;
+    opacity: 0;
+    transition-delay: 0.8s, 0s;
+  }
+  
+  &.shown {
+    height: $system-message-height;
+    opacity: 1;
+    transition-delay: 0s, 0.8s;
+  }
+
+  &.success {
+    border: 1px solid $success-color;
+  }
+
+  &.error {
+    border: 1px solid $danger-color;
+  }
+
+  .message-paragraph {
+    width: 100%;
+    text-align: center;
+    padding: 5px 12px;
+    transition: opacity 0.2s linear;
+    color: $accents-theme-color;
+
+    &:not(.shown) {
+      opacity: 0;
+    }
+
+    &.shown {
+      opacity: 1;
+    }
+
+    &.success {
+      color: $success-color;
+    }
+
+    &.error {
+      color: $danger-color;
+    }
+  }
+}
