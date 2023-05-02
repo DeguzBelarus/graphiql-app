@@ -5,6 +5,7 @@ header {
   height: $header-height;
   @include flex-line-spacebetween-vertical-center;
   background: $accents-theme-color;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 
