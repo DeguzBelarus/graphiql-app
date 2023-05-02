@@ -29,21 +29,25 @@
     .login-button {
       @include confirm-button;
       border-radius: 0;
+      padding: 5px $l-padding;
     }
 
     .to-registration-button {
       @include transition-button;
       border-radius: 0;
+      padding: 5px $l-padding;
     }
 
     .to-login-button {
       @include transition-button;
       border-radius: 0;
+      padding: 5px $l-padding;
     }
 
     .registration-button {
       @include confirm-button;
       border-radius: 0;
+      padding: 5px $l-padding;
     }
   }
 }
