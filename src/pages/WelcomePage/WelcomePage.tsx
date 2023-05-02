@@ -1,12 +1,14 @@
 import { FC } from 'react';
 import AboutProject from '../../components/AboutProject/AboutProject';
+import AboutTeam from '../../components/AboutTeam/AboutTeam';
 
 import './WelcomePage.scss';
 
 export const WelcomePage: FC = () => {
   return (
-    <div className="welcome-page-wrapper">
+    <main className="welcome-page-wrapper">
       <AboutProject />
-    </div>
+      <AboutTeam />
+    </main>
   );
 };
