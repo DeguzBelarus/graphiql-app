@@ -1,0 +1,17 @@
+@import 'variables';
+
+button {
+  padding: $l-padding $xxl-padding;
+  border-radius: $m-padding;
+  border: none;
+}
+
+.primary-button {
+  background: $main-theme-color;
+  color: $white-color;
+
+  &:hover {
+    background: $white-color;
+    color: $main-theme-color;
+  }
+}

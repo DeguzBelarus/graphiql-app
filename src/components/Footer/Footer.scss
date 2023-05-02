@@ -1,10 +1,35 @@
-@import '../../css-variables/main-css-variables';
+@import '../../styles/variables';
 
 footer {
   width: 100%;
-  height: $footer-default-height + px;
-  @include flex-all-center;
+  height: $footer-height;
+  background: $main-theme-color;
+  color: $white-color;
+  @include flex-line-spacebetween-vertical-center;
   position: fixed;
   bottom: 0;
-  border: 1px solid #000;
+
+  img {
+    height: calc($footer-height - 10px);
+  }
+
+  .member-list {
+    @include flex-line-spacebetween-vertical-center;
+    gap: 15px;
+
+    p:before {
+      content: '';
+      background-image: url(../../assets/images/github-logo.svg);
+      background-size: 100% 100%;
+      display: inline-block;
+
+      /*size of your image*/
+      height: 25px;
+      width: 25px;
+
+      /*if you want to change the position you can use margins or:*/
+      position: relative;
+      top: 5px;
+    }
+  }
 }

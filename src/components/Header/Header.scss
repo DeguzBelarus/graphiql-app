@@ -1,8 +1,22 @@
-@import '../../css-variables/main-css-variables';
+@import '../../styles/variables';
 
 header {
   width: 100%;
-  height: $header-default-height + px;
-  @include flex-all-center;
-  border: 1px solid #000;
+  height: $header-height;
+  @include flex-line-spacebetween-vertical-center;
+  background: $accents-theme-color;
+  position: sticky;
+  top: 0;
+
+  .logo-wrapper {
+    @include flex-all-center;
+
+    img {
+      height: $header-height;
+    }
+  }
+}
+
+.active {
+  background: $main-theme-color;
 }
