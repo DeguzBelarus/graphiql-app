@@ -9,9 +9,7 @@ header {
   top: 0;
 
   .logo-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-all-center;
 
     img {
       height: $header-height;
