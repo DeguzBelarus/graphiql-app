@@ -127,6 +127,31 @@ $white-color: #ffffff;
   justify-content: space-between;
 }
 
+// buttons
+@mixin confirm-button {
+  width: auto;
+  height: auto;
+  @include flex-all-center;
+  padding: 5px 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: $main-theme-color;
+  border: 1px solid $secondary-theme-color;
+  color: #fff;
+}
+
+@mixin transition-button {
+  width: auto;
+  height: auto;
+  @include flex-all-center;
+  padding: 5px 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #fff;
+  border: none;
+  color: $main-theme-color;
+}
+
 // other mixins
 @mixin user-select-none {
   -ms-user-select: none;

@@ -1,0 +1,24 @@
+@import '../../../styles/variables';
+
+label {
+  width: 100%;
+
+  &:not(:hover) {
+    border: 1px solid #bbb;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    color: $accents-theme-color;
+    border: none;
+  }
+}
+
+@media (hover: hover) {
+  label {
+    &:hover {
+      border: 1px solid $accents-theme-color;
+    }
+  }
+}

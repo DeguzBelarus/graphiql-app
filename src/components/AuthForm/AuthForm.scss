@@ -1,0 +1,49 @@
+@import '../../styles/variables';
+
+.auth-form {
+  width: 300px;
+  height: auto;
+  @include flex-column-line-start-vertical-top;
+  gap: 4px;
+  position: relative;
+  padding: 20px 10px;
+  border: 1px solid $secondary-theme-color;
+
+  .upper-container {
+    width: 100%;
+    height: auto;
+    @include flex-line-spacebetween-vertical-center;
+
+    h1 {
+      color: $main-theme-color;
+    }
+  }
+
+  .lower-container {
+    width: 100%;
+    height: auto;
+    @include flex-all-center;
+    gap: 5px;
+    padding: 5px 0;
+
+    .login-button {
+      @include confirm-button;
+      border-radius: 0;
+    }
+
+    .to-registration-button {
+      @include transition-button;
+      border-radius: 0;
+    }
+
+    .to-login-button {
+      @include transition-button;
+      border-radius: 0;
+    }
+
+    .registration-button {
+      @include confirm-button;
+      border-radius: 0;
+    }
+  }
+}
