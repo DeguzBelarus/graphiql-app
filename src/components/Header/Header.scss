@@ -5,16 +5,20 @@ header {
   height: $header-default-height;
   @include flex-line-spacebetween-vertical-center;
   background: $accents-theme-color;
+  position: sticky;
+  top: 0;
 
   .logo-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     img {
       height: $header-default-height;
     }
   }
+}
 
-
+.active {
+  background: $secondary-theme-color;
 }
