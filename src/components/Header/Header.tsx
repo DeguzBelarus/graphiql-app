@@ -44,9 +44,9 @@ export const Header: FC = () => {
         </div>
       )}
 
-      {isAuth && (
+      {!isAuth && (
         <div className="auth-button-wrapper">
-          <Link to="/login">
+          <Link to="/graphql">
             <button type="button" className="secondary-button">
               Try GraphiQL now!
             </button>
