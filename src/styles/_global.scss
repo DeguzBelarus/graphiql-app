@@ -10,6 +10,10 @@ button {
   background: $main-theme-color;
   color: $white-color;
 
+  svg {
+    display: none;
+  }
+
   &:hover {
     background: $white-color;
     color: $main-theme-color;
@@ -20,6 +24,11 @@ button {
   background: $danger-color;
   color: $white-color;
 
+  svg {
+    display: none;
+  }
+
+
   &:hover {
     background: $white-color;
     color: $danger-color;
@@ -28,6 +37,7 @@ button {
 
 .icon-button {
   padding: $l-padding;
+
   svg {
     color: #662abe;
     height: 24px;
@@ -49,5 +59,30 @@ button {
   svg {
     color: $white-color;
     height: 24px;
+  }
+}
+
+.button-with-icon {
+  padding: $m-padding;
+
+  svg {
+    color: $white-color;
+    height: 24px;
+  }
+
+  @include media-tablet {
+    span {
+      display: none;
+    }
+
+    svg {
+      display: inline;
+      height: 24px;
+      color: $white-color;
+
+      &:hover {
+        color: $danger-color;
+      }
+    }
   }
 }

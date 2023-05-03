@@ -11,6 +11,10 @@ footer {
 
   img {
     height: calc($footer-height - 10px);
+
+    @include media-tablet {
+      height: calc($footer-height - 20px);
+    }
   }
 
   .member-list {
@@ -23,13 +27,27 @@ footer {
       background-size: 100% 100%;
       display: inline-block;
 
-      /*size of your image*/
       height: 25px;
       width: 25px;
 
-      /*if you want to change the position you can use margins or:*/
       position: relative;
-      top: 5px;
+      top: 8px;
+
+      @include media-tablet {
+        display: none;
+      }
+    }
+
+    @include media-tablet {
+      font-size: 0.85rem;
+      gap: 7px;
+    }
+
+    @include media-mobile-big {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      font-size: 0.85rem;
     }
   }
 }
