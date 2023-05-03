@@ -13,6 +13,32 @@
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
+  .password-requirements-container {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    @include flex-column-line-start-vertical-top;
+    gap: 4px;
+    position: absolute;
+    top: 103%;
+    left: 0;
+    border: 1px solid $secondary-theme-color;
+    background-color: $accents-theme-color;
+
+    span {
+      font-size: 14px;
+      font-weight: bold;
+
+      &:not(.confirmed) {
+        color: $danger-color;
+      }
+
+      &.confirmed {
+        color: $success-color;
+      }
+    }
+  }
+
   .upper-container {
     width: 100%;
     height: auto;

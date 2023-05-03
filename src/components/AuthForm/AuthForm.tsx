@@ -103,6 +103,36 @@ export const AuthForm: FC<Props> = ({ type }) => {
               register
             </button>
           </div>
+          {registrationFormData.password.length ? (
+            <div className="password-requirements-container">
+              <span className={registrationFormData.password.length >= 8 ? 'confirmed' : undefined}>
+                Minimum password length is 8 characters
+              </span>
+              <span
+                className={
+                  registrationFormData.password.search(/[a-zA-Z]/) !== -1 ? 'confirmed' : undefined
+                }
+              >
+                At least one letter in the password
+              </span>
+              <span
+                className={
+                  registrationFormData.password.search(/\d/) !== -1 ? 'confirmed' : undefined
+                }
+              >
+                At least one digit in the password
+              </span>
+              <span
+                className={
+                  registrationFormData.password.search(/[!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) !== -1
+                    ? 'confirmed'
+                    : undefined
+                }
+              >
+                At least one special character
+              </span>
+            </div>
+          ) : null}
         </>
       )}
     </form>
