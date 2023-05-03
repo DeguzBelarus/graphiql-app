@@ -36,4 +36,9 @@ button {
       color: $accents-theme-color
     }
   }
+
+
+  &:hover{
+    background: $light-color;
+  }
 }
