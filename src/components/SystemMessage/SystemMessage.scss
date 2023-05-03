@@ -3,7 +3,7 @@
 .system-message-wrapper {
   @include flex-all-center;
   @include user-select-none;
-  position: absolute;
+  position: fixed;
   top: $system-message-vertical-position;
   left: 10px;
   overflow: hidden;
@@ -11,6 +11,7 @@
   transition-duration: 0.8s, 0.4s;
   transition-timing-function: linear;
   border: 1px solid $secondary-theme-color;
+  background-color: rgba($color: #fff, $alpha: 0.8);
   z-index: 1;
 
   &:not(.shown) {

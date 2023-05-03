@@ -106,7 +106,7 @@ export const AuthForm: FC<Props> = ({ type }) => {
           />
           <div className="lower-container">
             <button type="button" className="to-login-button" onClick={() => navigate('/login')}>
-              back
+              to login
             </button>
             <button type="submit" className="registration-button">
               register

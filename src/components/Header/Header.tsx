@@ -1,7 +1,15 @@
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-import { useAppSelector } from '../../redux/hooks';
+import {
+  setIsAuth,
+  setUserId,
+  setUserEmail,
+  setToken,
+  setSystemMessage,
+} from '../../redux/slices/userSlice';
+import { logout } from '../../firebase';
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
 import { getIsAuth } from '../../redux/slices/userSlice';
 import Logo from '../../assets/images/logo.png';
@@ -14,6 +22,7 @@ import variables from '../../styles/_variables.scss';
 import './Header.scss';
 
 export const Header: FC = () => {
+  const dispatch = useAppDispatch();
   const isAuth = useAppSelector(getIsAuth);
 
   const [headerColor, setHeaderColor] = useState(false);
@@ -22,6 +31,17 @@ export const Header: FC = () => {
 
   const changeHeaderColor = () => {
     setHeaderColor(window.scrollY >= +header);
+  };
+
+  const logoutHandler = () => {
+    logout();
+    dispatch(setToken(null));
+    dispatch(setUserEmail(null));
+    dispatch(setUserId(null));
+    dispatch(setIsAuth(false));
+    dispatch(
+      setSystemMessage({ message: 'You have successfully logged out', severity: 'positive' })
+    );
   };
 
   window.addEventListener('scroll', changeHeaderColor);
@@ -60,7 +80,11 @@ export const Header: FC = () => {
             </button>
           </Link>
           <Link to="/">
-            <button type="button" className="primary-button button-with-icon">
+            <button
+              type="button"
+              className="primary-button button-with-icon"
+              onClick={logoutHandler}
+            >
               <span>Log Out</span>
               <LogOut />
             </button>

@@ -11,7 +11,7 @@ const initialState: UserState = {
   token: null,
   userId: null,
   userEmail: null,
-  systemMessage: { message: 'Hello', severity: 'neutral' },
+  systemMessage: { message: 'Welcome to GraphiQL!', severity: 'neutral' },
   authRequestStatus: 'idle',
 };
 
@@ -55,6 +55,10 @@ export const mainSlice = createSlice({
             state.userId = payload.userId;
           }
           state.isAuth = true;
+          state.systemMessage = {
+            message: 'You have successfully registered',
+            severity: 'positive',
+          };
         }
       })
       .addCase(registerUserAsync.rejected, (state, { error }) => {
@@ -84,6 +88,10 @@ export const mainSlice = createSlice({
             state.userId = payload.userId;
           }
           state.isAuth = true;
+          state.systemMessage = {
+            message: 'You have successfully logged in',
+            severity: 'positive',
+          };
         }
       })
       .addCase(loginUserAsync.rejected, (state, { error }) => {
