@@ -14,19 +14,21 @@ export const SideBar = ({ isSidebarShown, setIsSidebarShown }: SideBarProps) => 
     <aside>
       <div className="sidebar-buttons-wrapper">
         <button className="icon-button" onClick={() => setIsSidebarShown(!isSidebarShown)}>
-          <Documentation />
+          <Documentation
+            title={isSidebarShown ? 'Hide Documentation Explorer' : 'Show Documentation Explorer'}
+          />
         </button>
         <button className="icon-button">
-          <History />
+          <History title="Show History" />
         </button>
       </div>
 
       <div className="sidebar-buttons-wrapper">
         <button className="icon-button">
-          <Refetch />
+          <Refetch title="Re-fetch GraphQL schema" />
         </button>
         <button className="icon-button">
-          <Settings />
+          <Settings title="Show Setting" />
         </button>
       </div>
     </aside>
