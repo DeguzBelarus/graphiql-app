@@ -8,7 +8,7 @@ export const Footer: FC = () => {
 
   return (
     <footer className="app-container">
-      <a href="https://rs.school/react/" target="_blank" rel="noreferrer">
+      <a href="https://rs.school/react/" target="_blank" rel="noreferrer noopener">
         <img src={Logo} alt="github-logo" />
       </a>
       <div className="member-list">
