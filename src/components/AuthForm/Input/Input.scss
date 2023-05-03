@@ -1,0 +1,30 @@
+@import '../../../styles/variables';
+
+label {
+  width: 100%;
+  transition: border 0.25s linear;
+
+  &:not(:hover) {
+    border: 1px solid $main-theme-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    background-color: transparent;
+    color: #ddd;
+    border: none;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}
+
+@media (hover: hover) {
+  label {
+    &:hover {
+      border: 1px solid #fff;
+    }
+  }
+}

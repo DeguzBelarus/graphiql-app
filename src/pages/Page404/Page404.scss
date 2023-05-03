@@ -1,0 +1,7 @@
+@import '../../styles/variables';
+
+.page-404-wrapper {
+  width: 100%;
+  height: calc(100vh - $header-height);
+  @include flex-all-center;
+}

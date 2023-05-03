@@ -1,15 +1,17 @@
 import { FC, useState } from 'react';
-import './Header.scss';
-import Logo from '../../assets/images/logo.png';
-import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
+import { Link } from 'react-router-dom';
+
 import { useAppSelector } from '../../redux/hooks';
-import { RootState } from '../../redux/store';
+import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
+import { getIsAuth } from '../../redux/slices/userSlice';
+import Logo from '../../assets/images/logo.png';
 import variables from '../../styles/_variables.scss';
+import './Header.scss';
 
 export const Header: FC = () => {
-  const isAuth = useAppSelector((state: RootState) => state.user.isAuth);
+  const isAuth = useAppSelector(getIsAuth);
 
-  const [headerColor, setHeaderColor] = useState<boolean>(false);
+  const [headerColor, setHeaderColor] = useState(false);
 
   const header = variables.headerHeight.replace('px', '');
 
@@ -18,19 +20,20 @@ export const Header: FC = () => {
   };
 
   window.addEventListener('scroll', changeHeaderColor);
-
   return (
     <header className={headerColor ? 'app-container active' : 'app-container'}>
       <div className="logo-wrapper">
-        <a href="/">
+        <Link to="/">
           <img src={Logo} alt="logo" />
-        </a>
+        </Link>
         <LanguagePicker />
       </div>
 
-      <a href={isAuth ? 'login' : 'registration'}>
-        <button className="primary-button">{isAuth ? 'Sign In' : 'Sign Up'}</button>
-      </a>
+      <Link to={isAuth ? '/login' : '/registration'}>
+        <button type="button" className="primary-button">
+          {isAuth ? 'Sign In' : 'Sign Up'}
+        </button>
+      </Link>
     </header>
   );
 };

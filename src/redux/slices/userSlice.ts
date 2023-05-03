@@ -10,7 +10,7 @@ const initialState: UserState = {
   token: null,
   userId: null,
   userEmail: null,
-  authMessage: null,
+  authMessage: { message: 'Hello', severity: 'neutral' },
   authRequestStatus: 'idle',
 };
 

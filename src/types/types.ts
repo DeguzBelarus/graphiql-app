@@ -23,3 +23,8 @@ export interface ISystemMessageObject {
   message: string;
   severity: SeverityType;
 }
+
+export interface IAuthFormData {
+  email: string;
+  password: string;
+}
