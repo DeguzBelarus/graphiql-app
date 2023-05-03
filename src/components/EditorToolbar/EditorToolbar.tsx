@@ -7,10 +7,10 @@ export const EditorToolbar = () => {
   return (
     <div className="editor-toolbar-wrapper">
       <button className="icon-button-danger">
-        <Play />
+        <Play title="Exequte query" />
       </button>
       <button className="icon-button">
-        <Copy />
+        <Copy title="Copy query" />
       </button>
     </div>
   );
