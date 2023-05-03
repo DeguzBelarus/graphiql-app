@@ -110,7 +110,9 @@ export const AuthForm: FC<Props> = ({ type }) => {
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/[a-zA-Z]/) !== -1 ? 'confirmed' : undefined
+                  registrationFormData.password.search(/[A-Za-zА-Яа-яЁё]/) !== -1
+                    ? 'confirmed'
+                    : undefined
                 }
               >
                 At least one letter in the password

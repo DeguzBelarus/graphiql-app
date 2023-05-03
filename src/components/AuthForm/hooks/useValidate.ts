@@ -52,7 +52,7 @@ export const useValidate = () => {
         );
         return false;
       }
-      if (password.search(/[a-zA-Z]/) === -1) {
+      if (password.search(/[A-Za-zА-Яа-яЁё]/) === -1) {
         dispatch(
           setSystemMessage({
             message: 'At least one letter in the password',
