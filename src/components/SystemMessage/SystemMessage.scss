@@ -4,7 +4,7 @@
   @include flex-all-center;
   @include user-select-none;
   position: absolute;
-  bottom: $system-message-bottom-position;
+  top: $system-message-vertical-position;
   left: 10px;
   overflow: hidden;
   transition-property: opacity, height;

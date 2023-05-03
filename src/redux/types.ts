@@ -1,4 +1,4 @@
-import { CurrentLanguageType, ISystemMessageObject, Nullable } from '../types/types';
+import { CurrentLanguageType, ISystemMessageObject, Nullable, Undefinable } from '../types/types';
 
 // redux types
 export type RequestStatusType = 'idle' | 'loading' | 'failed';
@@ -12,8 +12,19 @@ export interface MainState {
 export interface UserState {
   isAuth: boolean;
   token: Nullable<string>;
-  userId: Nullable<number>;
+  userId: Nullable<string>;
   userEmail: Nullable<string>;
   systemMessage: Nullable<ISystemMessageObject>;
   authRequestStatus: RequestStatusType;
+}
+
+export interface IAuthFirebaseError {
+  code: number;
+  message: string;
+}
+
+export interface IUserAuthResponse {
+  token?: Undefinable<string>;
+  userId?: string;
+  userEmail?: string;
 }

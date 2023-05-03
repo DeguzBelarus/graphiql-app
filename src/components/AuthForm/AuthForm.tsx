@@ -2,12 +2,12 @@ import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/hooks';
 
-import { setSystemMessage } from '../../redux/slices/userSlice';
 import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';
 import { IAuthFormData } from '../../types/types';
 import { FORM_DATA_DEFAULTS } from './constants';
 import { useValidate } from './hooks/useValidate';
+import { loginUserAsync, registerUserAsync } from '../../redux/thunks';
 import './AuthForm.scss';
 
 type AuthFormType = 'login-form' | 'registration-form';
@@ -19,7 +19,6 @@ interface Props {
 export const AuthForm: FC<Props> = ({ type }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
   const { validateEmail, validatePassword } = useValidate();
 
   const [loginFormData, setLoginFormData] = useState<IAuthFormData>(FORM_DATA_DEFAULTS);
@@ -41,7 +40,12 @@ export const AuthForm: FC<Props> = ({ type }) => {
         validateEmail(loginFormData.email, 'login') &&
         validatePassword(loginFormData.password, 'login')
       ) {
-        dispatch(setSystemMessage(null));
+        dispatch(
+          loginUserAsync({
+            email: loginFormData.email,
+            password: loginFormData.password,
+          })
+        );
       }
     }
     if (type === 'registration-form') {
@@ -49,7 +53,12 @@ export const AuthForm: FC<Props> = ({ type }) => {
         validateEmail(registrationFormData.email, 'registration') &&
         validatePassword(registrationFormData.password, 'registration')
       ) {
-        dispatch(setSystemMessage(null));
+        dispatch(
+          registerUserAsync({
+            email: registrationFormData.email,
+            password: registrationFormData.password,
+          })
+        );
       }
     }
   };

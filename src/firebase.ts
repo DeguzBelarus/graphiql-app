@@ -45,37 +45,25 @@ export const signInWithGoogle = async () => {
   }
 };
 
-export const logInWithEmailAndPassword = async (email: string, password: string) => {
+export const registerWithEmailAndPassword = async (email: string, password: string) => {
   try {
-    await signInWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 
-export const registerWithEmailAndPassword = async (
-  name: string,
-  email: string,
-  password: string
-) => {
+export const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
-    const res = await createUserWithEmailAndPassword(auth, email, password);
-    const user = res.user;
-    await addDoc(collection(db, 'users'), {
-      uid: user.uid,
-      name,
-      authProvider: 'local',
-      email,
-    });
+    return signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
 
 export const sendPasswordReset = async (email: string) => {
   try {
     await sendPasswordResetEmail(auth, email);
-    alert('Password reset link sent!');
   } catch (error) {
     console.error(error);
   }

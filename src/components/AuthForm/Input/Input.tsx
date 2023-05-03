@@ -14,7 +14,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
   switch (true) {
     case type === 'email':
       return (
-        <label htmlFor="login-email-input">
+        <label htmlFor="email-input">
           <input
             id="email-input"
             type="email"
@@ -24,6 +24,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             title=""
             autoCapitalize="off"
             autoCorrect="off"
+            autoComplete="off"
             spellCheck={false}
             autoFocus={true}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
@@ -32,7 +33,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
       );
     case type === 'password':
       return (
-        <label htmlFor="login-password-input">
+        <label htmlFor="password-input">
           <input
             id="password-input"
             type="password"
@@ -42,6 +43,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             title=""
             autoCapitalize="off"
             autoCorrect="off"
+            autoComplete="off"
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
           />
         </label>
