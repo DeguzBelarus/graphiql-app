@@ -3,8 +3,7 @@ import { FC, useState } from 'react';
 import './GraphQlPage.scss';
 import { SideBar } from '../../components/SideBar/SideBar';
 import { Documentation } from '../../components/Documentation/Documentation';
-import { Editors } from '../../components/Editors/Editors';
-import { Response } from '../../components/Response/Response';
+import { Graphiql } from '../../components/Graphiql/Graphiql';
 
 export const GraphQlPage: FC = () => {
   const [isSidebarShown, setIsSidebarShown] = useState(true);
@@ -13,8 +12,7 @@ export const GraphQlPage: FC = () => {
     <div className="graphql-page-wrapper">
       <SideBar isSidebarShown={isSidebarShown} setIsSidebarShown={setIsSidebarShown} />
       {isSidebarShown && <Documentation />}
-      <Editors />
-      <Response />
+      <Graphiql />
     </div>
   );
 };

@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.graphiql-wrapper {
+  height: 100%;
+  padding: $m-padding;
+  width: calc(100% - $sidebar-width - $docs-width);
+  @include flex-all-center;
+  gap: 10px;
+  background: $light-color;
+  border-radius: $m-padding;
+}

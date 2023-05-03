@@ -1,0 +1,6 @@
+@import '../../styles/variables';
+
+.editor-toolbar-wrapper {
+  @include flex-column-line-center-vertical-top;
+  gap: 10px;
+}

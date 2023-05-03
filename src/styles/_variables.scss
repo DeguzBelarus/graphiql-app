@@ -4,6 +4,8 @@ $footer-height: 50px;
 $system-message-height: 20px;
 $sidebar-width: 70px;
 $docs-width: 300px;
+$variables-editor-height: 200px;
+$column-width: 50%;
 
 $s-padding: 4px;
 $m-padding: 8px;
@@ -24,6 +26,7 @@ $system-message-bottom-position: 60px;
 // colors
 $main-theme-color: #662abe;
 $secondary-theme-color: #9f70c0;
+$light-color: #c7bed9;
 $accents-theme-color: #240f5b;
 $danger-color: #f36f25;
 $success-color: #00aa00;
@@ -176,6 +179,13 @@ $white-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column-line-start-vertical-spacebetween {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   justify-content: space-between;
 }
 

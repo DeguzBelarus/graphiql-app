@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.response-wrapper {
+  height: 100%;
+  padding: $m-padding;
+  width: $column-width;
+  border-radius: $m-padding;
+}

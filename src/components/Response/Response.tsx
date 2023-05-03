@@ -1,5 +1,5 @@
 import React from 'react';
 import './Response.scss';
 export const Response = () => {
-  return <div>Response</div>;
+  return <div className="response-wrapper">Response</div>;
 };

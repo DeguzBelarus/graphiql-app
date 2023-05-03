@@ -1,8 +1,9 @@
 @import '../../styles/variables';
 
 .graphql-page-wrapper {
-  width: 100%;
-  height: calc(100vh - $header-height - $footer-height);
+  width: calc(100% - $m-padding * 2);
+  height: calc(100vh - $header-height - $footer-height - $m-padding * 2);
   @include flex-line-start-vertical-center;
   gap: 10px;
+  margin: $m-padding;
 }
