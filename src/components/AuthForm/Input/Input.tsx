@@ -20,16 +20,12 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             type="email"
             value={value}
             placeholder="Email"
-            pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,4}"
             name="email"
             title=""
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
             autoFocus={true}
-            minLength={8}
-            maxLength={75}
-            required
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
           />
         </label>
@@ -46,8 +42,6 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             title=""
             autoCapitalize="off"
             autoCorrect="off"
-            minLength={8}
-            required
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event)}
           />
         </label>

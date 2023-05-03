@@ -14,6 +14,6 @@ export interface UserState {
   token: Nullable<string>;
   userId: Nullable<number>;
   userEmail: Nullable<string>;
-  authMessage: Nullable<ISystemMessageObject>;
+  systemMessage: Nullable<ISystemMessageObject>;
   authRequestStatus: RequestStatusType;
 }

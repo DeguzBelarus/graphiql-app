@@ -10,7 +10,7 @@ const initialState: UserState = {
   token: null,
   userId: null,
   userEmail: null,
-  authMessage: { message: 'Hello', severity: 'neutral' },
+  systemMessage: { message: 'Hello', severity: 'neutral' },
   authRequestStatus: 'idle',
 };
 
@@ -30,24 +30,24 @@ export const mainSlice = createSlice({
     setUserEmail(state: WritableDraft<UserState>, { payload }: PayloadAction<Nullable<string>>) {
       state.userEmail = payload;
     },
-    setAuthMessage(
+    setSystemMessage(
       state: WritableDraft<UserState>,
       { payload }: PayloadAction<Nullable<ISystemMessageObject>>
     ) {
-      state.authMessage = payload;
+      state.systemMessage = payload;
     },
   },
 });
 
 export const {
-  actions: { setAuthMessage, setIsAuth, setToken, setUserEmail, setUserId },
+  actions: { setSystemMessage, setIsAuth, setToken, setUserEmail, setUserId },
 } = mainSlice;
 
 export const getIsAuth = ({ user: { isAuth } }: RootState) => isAuth;
 export const getToken = ({ user: { token } }: RootState) => token;
 export const getUserId = ({ user: { userId } }: RootState) => userId;
 export const getUserEmail = ({ user: { userEmail } }: RootState) => userEmail;
-export const getAuthMessage = ({ user: { authMessage } }: RootState) => authMessage;
+export const getSystemMessage = ({ user: { systemMessage } }: RootState) => systemMessage;
 export const getAuthRequestStatus = ({ user: { authRequestStatus } }: RootState) =>
   authRequestStatus;
 
