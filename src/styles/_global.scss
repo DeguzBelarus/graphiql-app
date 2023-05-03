@@ -15,3 +15,13 @@ button {
     color: $main-theme-color;
   }
 }
+
+.secondary-button {
+  background: $danger-color;
+  color: $white-color;
+
+  &:hover {
+    background: $white-color;
+    color: $danger-color;
+  }
+}
