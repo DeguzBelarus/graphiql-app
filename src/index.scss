@@ -31,3 +31,43 @@ body {
     }
   }
 }
+
+h1 {
+  @include font(7.4rem, 9.4rem);
+
+  @include media-tablet {
+    @include font(5.4rem, 8.4rem);
+  }
+
+  @include media-mobile-big {
+    @include font(3.2rem, 4.2rem);
+  }
+}
+
+h2 {
+  @include font(5.7rem, 6.6rem);
+
+  @include media-tablet {
+    @include font(4.7rem, 5.6rem);
+  }
+
+  @include media-mobile-big {
+    @include font(2.4rem, 3.3rem);
+  }
+}
+
+h3 {
+  @include font(2.6rem, 4.2rem);
+
+  @include media-mobile-big {
+    @include font(2.1rem, 3.1rem);
+  }
+}
+
+h4 {
+  @include font(2rem, 3rem);
+
+  @include media-tablet {
+    @include font(1.5rem, 3rem);
+  }
+}
