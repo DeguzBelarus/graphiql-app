@@ -25,3 +25,15 @@ button {
     color: $danger-color;
   }
 }
+
+.icon-button {
+  padding: $l-padding;
+  svg {
+    color: #662abe;
+    height: 24px;
+
+    &:hover {
+      color: $accents-theme-color
+    }
+  }
+}

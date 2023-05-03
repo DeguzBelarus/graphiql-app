@@ -6,7 +6,7 @@ import { ISystemMessageObject, Nullable } from '../../types/types';
 import { UserState } from '../types';
 
 const initialState: UserState = {
-  isAuth: false,
+  isAuth: true,
   token: null,
   userId: null,
   userEmail: null,

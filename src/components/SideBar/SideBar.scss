@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+aside {
+  height: 100%;
+  padding: $m-padding;
+  border: 1px solid red;
+  width: $sidebar-width;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+
+  .sidebar-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

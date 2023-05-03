@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.docs-wrapper {
+  height: 100%;
+  padding: $m-padding;
+  border: 1px solid red;
+  width: $docs-width;
+}

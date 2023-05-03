@@ -2,6 +2,7 @@
 
 .graphql-page-wrapper {
   width: 100%;
-  height: calc(100vh - $header-height);
-  @include flex-all-center;
+  height: calc(100vh - $header-height - $footer-height);
+  @include flex-line-start-vertical-center;
+  gap: 10px;
 }
