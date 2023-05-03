@@ -1,6 +1,7 @@
 // sizes
 $header-height: 70px;
 $footer-height: 50px;
+$system-message-height: 20px;
 
 $s-padding: 4px;
 $m-padding: 8px;
@@ -8,17 +9,22 @@ $l-padding: 12px;
 $xl-padding: 16px;
 $xxl-padding: 24px;
 
+
 $width-container: 1280px;
 $large-laptop-width: 1000px;
 $tablet-width: 768px;
 $mobile-big-width: 420px;
 $mobile-small-width: 320px;
 
+$system-message-bottom-position: 60px;
+
+
 // colors
 $main-theme-color: #662abe;
 $secondary-theme-color: #9f70c0;
 $accents-theme-color: #240f5b;
 $danger-color: #f36f25;
+$success-color: #00aa00;
 $white-color: #ffffff;
 
 // mixins
@@ -169,6 +175,29 @@ $white-color: #ffffff;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+// buttons
+@mixin confirm-button {
+  width: auto;
+  height: auto;
+  @include flex-all-center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: $main-theme-color;
+  border: 1px solid $secondary-theme-color;
+  color: #fff;
+}
+
+@mixin transition-button {
+  width: auto;
+  height: auto;
+  @include flex-all-center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #fff;
 }
 
 // other mixins

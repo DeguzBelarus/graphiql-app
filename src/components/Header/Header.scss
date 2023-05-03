@@ -5,6 +5,7 @@ header {
   height: $header-height;
   @include flex-line-spacebetween-vertical-center;
   background: $accents-theme-color;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
 
@@ -14,6 +15,11 @@ header {
     img {
       height: $header-height;
     }
+  }
+
+  .auth-button-wrapper {
+    @include flex-line-spacebetween-vertical-center;
+    gap: 10px;
   }
 }
 
