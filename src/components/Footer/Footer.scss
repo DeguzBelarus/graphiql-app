@@ -40,13 +40,13 @@ footer {
 
     @include media-tablet {
       font-size: 0.85rem;
-      gap: 5px;
+      gap: 7px;
     }
 
     @include media-mobile-big {
       display: flex;
       flex-direction: column;
-      gap: 0px;
+      gap: 0;
       font-size: 0.85rem;
     }
   }
