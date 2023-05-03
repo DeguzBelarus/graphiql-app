@@ -33,12 +33,21 @@ button {
     height: 24px;
 
     &:hover {
-      color: $accents-theme-color
+      color: $accents-theme-color;
     }
   }
 
-
-  &:hover{
+  &:hover {
     background: $light-color;
+  }
+}
+
+.icon-button-danger {
+  padding: $l-padding;
+  background: $danger-color;
+
+  svg {
+    color: $white-color;
+    height: 24px;
   }
 }
