@@ -16,6 +16,11 @@ header {
       height: $header-height;
     }
   }
+
+  .auth-button-wrapper {
+    @include flex-line-spacebetween-vertical-center;
+    gap: 10px;
+  }
 }
 
 .active {

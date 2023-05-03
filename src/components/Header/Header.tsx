@@ -29,11 +29,35 @@ export const Header: FC = () => {
         <LanguagePicker />
       </div>
 
-      <Link to={isAuth ? '/login' : '/registration'}>
-        <button type="button" className="primary-button">
-          {isAuth ? 'Sign In' : 'Sign Up'}
-        </button>
-      </Link>
+      {!isAuth && (
+        <div className="auth-button-wrapper">
+          <Link to="/login">
+            <button type="button" className="primary-button">
+              Sign In
+            </button>
+          </Link>
+          <Link to="/registration">
+            <button type="button" className="primary-button">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      )}
+
+      {isAuth && (
+        <div className="auth-button-wrapper">
+          <Link to="/graphql">
+            <button type="button" className="danger-button">
+              Try GraphiQL now!
+            </button>
+          </Link>
+          <Link to="/">
+            <button type="button" className="primary-button">
+              Log Out
+            </button>
+          </Link>
+        </div>
+      )}
     </header>
   );
 };
