@@ -11,7 +11,7 @@ const initialState: UserState = {
   token: null,
   userId: null,
   userEmail: null,
-  systemMessage: { message: 'Welcome to GraphiQL!', severity: 'neutral' },
+  systemMessage: null,
   authRequestStatus: 'idle',
 };
 

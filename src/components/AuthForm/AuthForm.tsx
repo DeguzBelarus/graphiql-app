@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
+import { getAuthRequestStatus } from '../../redux/slices/userSlice';
 import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from './utils';
 import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';
@@ -21,6 +22,8 @@ export const AuthForm: FC<Props> = ({ type }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { validateEmail, validatePassword } = useValidate();
+
+  const requestStatus = useAppSelector(getAuthRequestStatus);
 
   const [loginFormData, setLoginFormData] = useState<IAuthFormData>(FORM_DATA_DEFAULTS);
   const [registrationFormData, setRegistrationFormData] =
@@ -77,7 +80,7 @@ export const AuthForm: FC<Props> = ({ type }) => {
           <Input type="email" value={loginFormData.email} setValue={loginFormDataUpdate} />
           <Input type="password" value={loginFormData.password} setValue={loginFormDataUpdate} />
           <div className="lower-container">
-            <button type="submit" className="login-button">
+            <button type="submit" className="login-button" disabled={requestStatus === 'loading'}>
               log in
             </button>
             <button
@@ -109,7 +112,11 @@ export const AuthForm: FC<Props> = ({ type }) => {
             <button type="button" className="to-login-button" onClick={() => navigate('/login')}>
               to login
             </button>
-            <button type="submit" className="registration-button">
+            <button
+              type="submit"
+              className="registration-button"
+              disabled={requestStatus === 'loading'}
+            >
               register
             </button>
           </div>
