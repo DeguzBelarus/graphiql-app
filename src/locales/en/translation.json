@@ -2,5 +2,6 @@
   "signIn": "Sign In",
   "signUp": "Sign Up",
   "graphiQLNow": "Try GraphiQL now!",
-  "logOut":"Log Out"
+  "logOut": "Log Out",
+  "projectDescription": "GraphQL is a query language designed to build client applications by providing an intuitive and flexible syntax and system for describing their data requirements and interactions."
 }
