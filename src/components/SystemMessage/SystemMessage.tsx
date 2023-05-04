@@ -1,14 +1,14 @@
 import { FC, useEffect, useState } from 'react';
 import { useAppSelector } from '../../redux/hooks';
 
-import { getAuthMessage, getAuthRequestStatus } from '../../redux/slices/userSlice';
+import { getSystemMessage, getAuthRequestStatus } from '../../redux/slices/userSlice';
 import { SYSTEM_MESSAGE_AUTO_HIDE_DURATION } from '../../constants/constants';
 import { messageClassNameGenerator } from './utils';
 import './SystemMessage.scss';
 
 export const SystemMessage: FC = () => {
   const authStatus = useAppSelector(getAuthRequestStatus);
-  const authMessage = useAppSelector(getAuthMessage);
+  const authMessage = useAppSelector(getSystemMessage);
   const [message, setMessage] = useState<string>();
   const [isShown, setIsShown] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout>();
