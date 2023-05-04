@@ -3,5 +3,12 @@
   "signUp": "Sign Up",
   "graphiQLNow": "Try GraphiQL now!",
   "logOut": "Log Out",
-  "projectDescription": "GraphQL is a query language designed to build client applications by providing an intuitive and flexible syntax and system for describing their data requirements and interactions."
+  "projectDescription": "GraphQL is a query language designed to build client applications by providing an intuitive and flexible syntax and system for describing their data requirements and interactions.",
+  "ourTeam": "Our Team",
+  "antonName": "Anton Dektyarev",
+  "ekaterinaName": "Ekaterina Kosinova",
+  "nataliyaName": "Nataliya Samkevich",
+  "antonDescription": "Frontend Developer, Team lead",
+  "ekaterinaDescription": "Frontend Developer",
+  "nataliyaDescription": "Frontend Developer"
 }
