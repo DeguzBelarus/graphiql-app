@@ -10,5 +10,10 @@
   "nataliyaName": "Наталия Самкевич",
   "antonDescription": "Frontend-разработчик, Тимлид",
   "ekaterinaDescription": "Frontend-разработчик",
-  "nataliyaDescription": "Frontend-разработчик"
+  "nataliyaDescription": "Frontend-разработчик",
+  "ourSchool": "Наша школа",
+  "aboutSchoolText1": "это бесплатная образовательная программа, организуемая сообществом The Rolling Scopes с 2013 года.",
+  "aboutSchoolText2": "Учиться в RS School может каждый, независимо от возраста, профессиональной занятости и места жительства.",
+  "aboutSchoolText3": "Наставники и тренеры этой школы — front-end и javascript разработчики из разных компаний и стран.",
+  "aboutSchoolText4": "Это приложение было создано как последнее задание курса React RS School."
 }
