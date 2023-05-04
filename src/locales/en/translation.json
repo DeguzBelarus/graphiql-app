@@ -1,4 +1,8 @@
 {
+  "logIn": "Log in",
+  "registration": "Registration",
+  "back": "Back",
+  "register": "Register",
   "signIn": "Sign In",
   "signUp": "Sign Up",
   "graphiQLNow": "Try GraphiQL now!",

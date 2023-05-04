@@ -1,4 +1,9 @@
 {
+  "logIn": "Вход",
+  "registration": "Регистрация",
+  "back": "Hазад",
+  "register": "Регистрация",
+
   "signIn": "Войти",
   "signUp": "Зарегистрироваться",
   "graphiQLNow": "Попробуйте GraphiQL сейчас!",
