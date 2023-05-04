@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../redux/hooks';
 
+import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from './utils';
 import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';
 import { IAuthFormData } from '../../types/types';
@@ -119,25 +120,21 @@ export const AuthForm: FC<Props> = ({ type }) => {
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/[A-Za-zА-Яа-яЁё]/) !== -1
-                    ? 'confirmed'
-                    : undefined
+                  hasLetterChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 At least one letter in the password
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/\d/) !== -1 ? 'confirmed' : undefined
+                  hasDigitChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 At least one digit in the password
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/[!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) !== -1
-                    ? 'confirmed'
-                    : undefined
+                  hasSpecCharChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 At least one special character
