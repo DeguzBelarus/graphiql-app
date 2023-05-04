@@ -1,4 +1,6 @@
 {
   "signIn": "Sign In",
-  "signUp": "Sign Up"
+  "signUp": "Sign Up",
+  "graphiQLNow": "Try GraphiQL now!",
+  "logOut":"Log Out"
 }

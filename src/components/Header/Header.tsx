@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 import {
@@ -22,6 +23,8 @@ import variables from '../../styles/_variables.scss';
 import './Header.scss';
 
 export const Header: FC = () => {
+  const { t } = useTranslation();
+
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(getIsAuth);
 
@@ -58,13 +61,13 @@ export const Header: FC = () => {
         <div className="auth-button-wrapper">
           <Link to="/login">
             <button type="button" className="primary-button button-with-icon">
-              <span>Sign In</span>
+              <span>{t('signIn')}</span>
               <SignIn />
             </button>
           </Link>
           <Link to="/registration">
             <button type="button" className="primary-button button-with-icon">
-              <span>Sign Up</span>
+              <span>{t('signUp')}</span>
               <SignUp />
             </button>
           </Link>
@@ -75,7 +78,7 @@ export const Header: FC = () => {
         <div className="auth-button-wrapper">
           <Link to="/graphql">
             <button type="button" className="danger-button button-with-icon">
-              <span>Try GraphiQL now!</span>
+              <span>{t('graphiQLNow')}</span>
               <Visit />
             </button>
           </Link>
@@ -85,7 +88,7 @@ export const Header: FC = () => {
               className="primary-button button-with-icon"
               onClick={logoutHandler}
             >
-              <span>Log Out</span>
+              <span>{t('logOut')}</span>
               <LogOut />
             </button>
           </Link>
