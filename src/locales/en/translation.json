@@ -19,5 +19,7 @@
   "aboutSchoolText1": "is free-of-charge and community-based education program conducted by The Rolling Scopes developer community since 2013.",
   "aboutSchoolText2": "Everyone can study at RS School, regardless of age, professional employment, or place of residence.",
   "aboutSchoolText3": "The mentors and trainers of this school are front-end and javascript developers from different companies and countries.",
-  "aboutSchoolText4": "This application was created as the final task of the React course of the RS School."
+  "aboutSchoolText4": "This application was created as the final task of the React course of the RS School.",
+  "docs": "Docs",
+  "docsContent": "Documentation content"
 }
