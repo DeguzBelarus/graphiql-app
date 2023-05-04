@@ -2,13 +2,7 @@ import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-import {
-  setIsAuth,
-  setUserId,
-  setUserEmail,
-  setToken,
-  setSystemMessage,
-} from '../../redux/slices/userSlice';
+import { setSystemMessage } from '../../redux/slices/userSlice';
 import { logout } from '../../firebase';
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
 import { getIsAuth } from '../../redux/slices/userSlice';
@@ -35,10 +29,6 @@ export const Header: FC = () => {
 
   const logoutHandler = () => {
     logout();
-    dispatch(setToken(null));
-    dispatch(setUserEmail(null));
-    dispatch(setUserId(null));
-    dispatch(setIsAuth(false));
     dispatch(
       setSystemMessage({ message: 'You have successfully logged out', severity: 'positive' })
     );
