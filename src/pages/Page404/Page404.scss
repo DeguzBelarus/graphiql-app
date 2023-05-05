@@ -2,6 +2,13 @@
 
 .page-404-wrapper {
   width: 100%;
-  height: calc(100vh - $header-height);
+  min-height: calc(100vh - $header-height - $footer-height);
+  @include flex-column-all-center;
+}
+
+.page-404__button {
   @include flex-all-center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
