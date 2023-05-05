@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { store } from './redux/store';
 import translationEn from './locales/en/translation.json';
 import translationRu from './locales/ru/translation.json';
+
 import { App } from './App';
 import './index.scss';
 

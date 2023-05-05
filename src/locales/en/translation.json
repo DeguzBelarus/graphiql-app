@@ -28,5 +28,17 @@
   "docsContent": "Documentation content",
   "notFoundPageText": "Something went wrong!",
   "notFoundPageTitle": "Page not found.",
-  "homePage": "Home page"
+  "homePage": "Home page",
+  "enterEmailForLogin": "Enter email for log in",
+  "enterEmailForRegistration": "Enter email for registration",
+  "enterCorrectEmailAddress": "Enter correct email address",
+  "enterPasswordForLogin": "Enter the password for log in",
+  "enterPasswordForRegistration": "Enter the password for registration",
+  "minPasswordLength8Chars": "The minimum password length is 8 characters",
+  "atLeastOneLetterInPassword": "At least one letter in the password",
+  "atLeastOneDigitInPassword": "At least one digit in the password",
+  "atLeastOneSpecCharInPassword": "At least one special character in the password",
+  "password": "Password",
+  "tokenExpired": "Token expired",
+  "youSuccessfullyLoggedOut": "You have successfully logged out"
 }

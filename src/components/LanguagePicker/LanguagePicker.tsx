@@ -1,11 +1,17 @@
-import React from 'react';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import i18n from 'i18next';
 
+import { setCurrentLanguage, getCurrentLanguage } from '../../redux/slices/mainSlice';
 import './LanguagePicker.scss';
 
 export const LanguagePicker = () => {
+  const dispatch = useAppDispatch();
+
+  const currentLanguage = useAppSelector(getCurrentLanguage);
+
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
+    dispatch(setCurrentLanguage(currentLanguage === 'en' ? 'ru' : 'en'));
   };
 
   return (
@@ -13,14 +19,14 @@ export const LanguagePicker = () => {
       <input
         id="language-toggle"
         className="check-toggle check-toggle-round-flat"
+        checked={currentLanguage === 'en'}
+        title=""
         type="checkbox"
-      />
-      <label
-        htmlFor="language-toggle"
-        onClick={() => {
+        onChange={() => {
           changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
         }}
-      ></label>
+      />
+      <label htmlFor="language-toggle"></label>
       <span className="on">RU</span>
       <span className="off">EN</span>
     </div>

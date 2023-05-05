@@ -40,3 +40,7 @@ export interface ITokenDecodedData {
   sub: string;
   user_id: string;
 }
+
+export interface Ii18nextLocalStorageSave {
+  i18nextLng: CurrentLanguageType;
+}

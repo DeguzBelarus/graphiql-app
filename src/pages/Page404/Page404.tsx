@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../redux/hooks';
-import { getIsAuth } from '../../redux/slices/userSlice';
+import { getIsAuth } from '../../redux/slices/mainSlice';
 
 import './Page404.scss';
 

@@ -1,18 +1,21 @@
 import { useAppDispatch } from '../../../redux/hooks';
-import { setSystemMessage } from '../../../redux/slices/userSlice';
+import { useTranslation } from 'react-i18next';
 
+import { setSystemMessage } from '../../../redux/slices/mainSlice';
 import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from '../utils';
 
 type ValidationType = 'login' | 'registration';
 
 export const useValidate = () => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const validateEmail = (email: string, type: ValidationType): boolean => {
     if (!email) {
       dispatch(
         setSystemMessage({
-          message: type === 'login' ? 'Enter email for log in' : 'Enter email for registration',
+          message:
+            type === 'login' ? `${t('enterEmailForLogin')}` : `${t('enterEmailForRegistration')}`,
           severity: 'negative',
         })
       );
@@ -22,7 +25,7 @@ export const useValidate = () => {
     if (!email.match(pattern) || email.length < 8) {
       dispatch(
         setSystemMessage({
-          message: 'Enter correct email address',
+          message: `${t('enterCorrectEmailAddress')}`,
           severity: 'negative',
         })
       );
@@ -37,8 +40,8 @@ export const useValidate = () => {
         setSystemMessage({
           message:
             type === 'login'
-              ? 'Enter the password for log in'
-              : 'Enter the password for registration',
+              ? `${t('enterPasswordForLogin')}`
+              : `${t('enterPasswordForRegistration')}`,
           severity: 'negative',
         })
       );
@@ -48,7 +51,7 @@ export const useValidate = () => {
       if (password.length < 8) {
         dispatch(
           setSystemMessage({
-            message: 'The minimum password length is 8 characters',
+            message: `${t('minPasswordLength8Chars')}`,
             severity: 'negative',
           })
         );
@@ -57,7 +60,7 @@ export const useValidate = () => {
       if (!hasLetterChecking(password)) {
         dispatch(
           setSystemMessage({
-            message: 'At least one letter in the password',
+            message: `${t('atLeastOneLetterInPassword')}`,
             severity: 'negative',
           })
         );
@@ -66,7 +69,7 @@ export const useValidate = () => {
       if (!hasDigitChecking(password)) {
         dispatch(
           setSystemMessage({
-            message: 'At least one digit in the password',
+            message: `${t('atLeastOneDigitInPassword')}`,
             severity: 'negative',
           })
         );
@@ -75,7 +78,7 @@ export const useValidate = () => {
       if (!hasSpecCharChecking(password)) {
         dispatch(
           setSystemMessage({
-            message: 'At least one special character in the password',
+            message: `${t('atLeastOneSpecCharInPassword')}`,
             severity: 'negative',
           })
         );

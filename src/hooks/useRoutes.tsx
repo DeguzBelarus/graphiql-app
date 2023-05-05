@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 
-import { getIsAuth } from '../redux/slices/userSlice';
+import { getIsAuth } from '../redux/slices/mainSlice';
 import { WelcomePage } from '../pages/WelcomePage/WelcomePage';
 import { GraphQlPage } from '../pages/GraphQlPage/GraphQlPage';
 import { LoginPage } from '../pages/LoginPage/LoginPage';

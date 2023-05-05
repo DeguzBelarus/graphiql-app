@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import './Input.scss';
 
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export const Input: FC<Props> = ({ type, value, setValue }) => {
+  const { t } = useTranslation();
   switch (true) {
     case type === 'email':
       return (
@@ -38,7 +40,7 @@ export const Input: FC<Props> = ({ type, value, setValue }) => {
             id="password-input"
             type="password"
             value={value}
-            placeholder="Password"
+            placeholder={`${t('password')}`}
             name="password"
             title=""
             autoCapitalize="off"
