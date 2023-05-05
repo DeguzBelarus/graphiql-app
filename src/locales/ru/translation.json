@@ -28,5 +28,14 @@
   "docsContent": "Содержимое документации",
   "notFoundPageText": "Что-то пошло не так!",
   "notFoundPageTitle": "Страница не найдена.",
-  "homePage": "Главная"
+  "homePage": "Главная",
+  "enterEmailForLogin": "Введите email для входа",
+  "enterEmailForRegistration": "Введите email для регистрации",
+  "enterCorrectEmailAddress": "Введите корректный email адрес",
+  "enterPasswordForLogin": "Введите пароль для входа",
+  "enterPasswordForRegistration": "Введите пароль для регистрации",
+  "minPasswordLength8Chars": "Минимальная длина пароля - 8 символов",
+  "atLeastOneLetterInPassword": "Хотя бы одна буква в пароле",
+  "atLeastOneDigitInPassword": "Хотя бы одна цифра в пароле",
+  "atLeastOneSpecCharInPassword": "Хотя бы один спецсимвол в пароле"
 }
