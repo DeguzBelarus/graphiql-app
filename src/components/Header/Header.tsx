@@ -33,7 +33,7 @@ export const Header: FC = () => {
   const logoutHandler = () => {
     logout();
     dispatch(
-      setSystemMessage({ message: 'You have successfully logged out', severity: 'positive' })
+      setSystemMessage({ message: `${t('youSuccessfullyLoggedOut')}`, severity: 'positive' })
     );
   };
 

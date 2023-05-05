@@ -38,5 +38,7 @@
   "atLeastOneLetterInPassword": "At least one letter in the password",
   "atLeastOneDigitInPassword": "At least one digit in the password",
   "atLeastOneSpecCharInPassword": "At least one special character in the password",
-  "password": "Password"
+  "password": "Password",
+  "tokenExpired": "Token expired",
+  "youSuccessfullyLoggedOut": "You have successfully logged out"
 }

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from './redux/hooks';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useTranslation } from 'react-i18next';
 import jwtDecode from 'jwt-decode';
 
 import {
@@ -26,6 +27,7 @@ export const App = () => {
   const dispatch = useAppDispatch();
   const routes = useRoutes();
   const authReset = useAuthReset();
+  const { t } = useTranslation();
   const [user] = useAuthState(auth);
 
   const isAuth = useAppSelector(getIsAuth);
@@ -40,7 +42,7 @@ export const App = () => {
           if (Date.now() >= tokenDecodeData.exp * 1000) {
             if (isAuth) {
               authReset();
-              dispatch(setSystemMessage({ message: 'Token expired', severity: 'negative' }));
+              dispatch(setSystemMessage({ message: `${t('tokenExpired')}`, severity: 'negative' }));
             }
           } else {
             dispatch(setIsAuth(true));
@@ -51,7 +53,7 @@ export const App = () => {
           dispatch(setIsFirstLoad(false));
         })();
     } else isAuth && authReset();
-  }, [authReset, dispatch, isAuth, isFirstLoad, user]);
+  }, [authReset, dispatch, isAuth, isFirstLoad, t, user]);
   return (
     <>
       <Header />
