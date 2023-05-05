@@ -13,6 +13,7 @@ import { ReactComponent as Visit } from '../../assets/icons/visit.svg';
 import { ReactComponent as LogOut } from '../../assets/icons/logout.svg';
 
 import variables from '../../styles/_variables.scss';
+import { useAuthReset } from '../../hooks/useAuthReset';
 import './Header.scss';
 
 export const Header: FC = () => {
@@ -20,6 +21,7 @@ export const Header: FC = () => {
 
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(getIsAuth);
+  const authReset = useAuthReset();
 
   const [headerColor, setHeaderColor] = useState(false);
 
@@ -31,6 +33,7 @@ export const Header: FC = () => {
 
   const logoutHandler = () => {
     logout();
+    authReset();
     dispatch(
       setSystemMessage({ message: `${t('youSuccessfullyLoggedOut')}`, severity: 'positive' })
     );

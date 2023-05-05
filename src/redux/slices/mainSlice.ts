@@ -73,7 +73,10 @@ export const mainSlice = createSlice({
           }
           state.isAuth = true;
           state.systemMessage = {
-            message: 'You have successfully registered',
+            message:
+              state.currentLanguage !== 'ru'
+                ? 'You have successfully registered'
+                : 'Вы успешно зарегистрировались',
             severity: 'positive',
           };
         }
@@ -106,7 +109,10 @@ export const mainSlice = createSlice({
           }
           state.isAuth = true;
           state.systemMessage = {
-            message: 'You have successfully logged in',
+            message:
+              state.currentLanguage !== 'ru'
+                ? 'You have successfully logged in'
+                : 'Вы успешно вошли в систему',
             severity: 'positive',
           };
         }

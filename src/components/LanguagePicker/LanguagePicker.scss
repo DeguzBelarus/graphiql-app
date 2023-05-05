@@ -48,8 +48,7 @@ input.check-toggle-round-flat:checked ~ .on {
   position: relative;
   cursor: pointer;
   outline: none;
-
-  user-select: none;
+  @include user-select-none;
 }
 
 input.check-toggle-round-flat + label {
