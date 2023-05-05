@@ -13,6 +13,7 @@ import {
 } from './redux/slices/userSlice';
 import { getIsFirstLoad, setIsFirstLoad } from './redux/slices/mainSlice';
 import { useRoutes } from './hooks/useRoutes';
+import { useAuthReset } from './hooks/useAuthReset';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { SystemMessage } from './components/SystemMessage/SystemMessage';
@@ -24,6 +25,7 @@ import './App.scss';
 export const App = () => {
   const dispatch = useAppDispatch();
   const routes = useRoutes();
+  const authReset = useAuthReset();
   const [user] = useAuthState(auth);
 
   const isAuth = useAppSelector(getIsAuth);
@@ -37,10 +39,7 @@ export const App = () => {
           const tokenDecodeData: ITokenDecodedData = jwtDecode(token);
           if (Date.now() >= tokenDecodeData.exp * 1000) {
             if (isAuth) {
-              dispatch(setIsAuth(false));
-              dispatch(setToken(null));
-              dispatch(setUserEmail(null));
-              dispatch(setUserId(null));
+              authReset();
               dispatch(setSystemMessage({ message: 'Token expired', severity: 'negative' }));
             }
           } else {
@@ -51,15 +50,8 @@ export const App = () => {
           }
           dispatch(setIsFirstLoad(false));
         })();
-    } else {
-      if (isAuth) {
-        dispatch(setIsAuth(false));
-        dispatch(setToken(null));
-        dispatch(setUserEmail(null));
-        dispatch(setUserId(null));
-      }
-    }
-  }, [dispatch, isAuth, isFirstLoad, user]);
+    } else isAuth && authReset();
+  }, [authReset, dispatch, isAuth, isFirstLoad, user]);
   return (
     <>
       <Header />
