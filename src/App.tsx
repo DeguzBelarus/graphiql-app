@@ -31,7 +31,7 @@ export const App = () => {
 
   useEffect(() => {
     if (user) {
-      if (isFirstLoad) {
+      isFirstLoad &&
         (async function () {
           const token = await user.getIdToken();
           const tokenDecodeData: ITokenDecodedData = jwtDecode(token);
@@ -51,7 +51,6 @@ export const App = () => {
           }
           dispatch(setIsFirstLoad(false));
         })();
-      }
     } else {
       if (isAuth) {
         dispatch(setIsAuth(false));
