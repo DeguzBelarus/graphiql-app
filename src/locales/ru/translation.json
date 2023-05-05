@@ -37,5 +37,6 @@
   "minPasswordLength8Chars": "Минимальная длина пароля - 8 символов",
   "atLeastOneLetterInPassword": "Хотя бы одна буква в пароле",
   "atLeastOneDigitInPassword": "Хотя бы одна цифра в пароле",
-  "atLeastOneSpecCharInPassword": "Хотя бы один спецсимвол в пароле"
+  "atLeastOneSpecCharInPassword": "Хотя бы один спецсимвол в пароле",
+  "password": "Пароль"
 }

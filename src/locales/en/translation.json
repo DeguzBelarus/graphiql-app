@@ -37,5 +37,6 @@
   "minPasswordLength8Chars": "The minimum password length is 8 characters",
   "atLeastOneLetterInPassword": "At least one letter in the password",
   "atLeastOneDigitInPassword": "At least one digit in the password",
-  "atLeastOneSpecCharInPassword": "At least one special character in the password"
+  "atLeastOneSpecCharInPassword": "At least one special character in the password",
+  "password": "Password"
 }
