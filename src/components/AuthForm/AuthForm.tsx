@@ -2,6 +2,8 @@ import { FC, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '../../redux/hooks';
+
+import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from './utils';
 import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';
 import { IAuthFormData } from '../../types/types';
@@ -122,25 +124,21 @@ export const AuthForm: FC<Props> = ({ type }) => {
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/[A-Za-zА-Яа-яЁё]/) !== -1
-                    ? 'confirmed'
-                    : undefined
+                  hasLetterChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 {t('validationLetter')}
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/\d/) !== -1 ? 'confirmed' : undefined
+                  hasDigitChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 {t('validationDigit')}
               </span>
               <span
                 className={
-                  registrationFormData.password.search(/[!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) !== -1
-                    ? 'confirmed'
-                    : undefined
+                  hasSpecCharChecking(registrationFormData.password) ? 'confirmed' : undefined
                 }
               >
                 {t('validationSpecialCharacter')}
