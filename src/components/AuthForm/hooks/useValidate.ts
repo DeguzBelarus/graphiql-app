@@ -1,7 +1,7 @@
 import { useAppDispatch } from '../../../redux/hooks';
 import { useTranslation } from 'react-i18next';
 
-import { setSystemMessage } from '../../../redux/slices/userSlice';
+import { setSystemMessage } from '../../../redux/slices/mainSlice';
 import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from '../utils';
 
 type ValidationType = 'login' | 'registration';

@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { useAppSelector } from '../../redux/hooks';
 
-import { getSystemMessage, getAuthRequestStatus } from '../../redux/slices/userSlice';
+import { getSystemMessage, getAuthRequestStatus } from '../../redux/slices/mainSlice';
 import { SYSTEM_MESSAGE_AUTO_HIDE_DURATION } from '../../constants/constants';
 import { messageClassNameGenerator } from './utils';
 import './SystemMessage.scss';

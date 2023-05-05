@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
-import { getAuthRequestStatus } from '../../redux/slices/userSlice';
+import { getAuthRequestStatus } from '../../redux/slices/mainSlice';
 import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from './utils';
 import logo from '../../assets/images/logo.png';
 import { Input } from './Input/Input';

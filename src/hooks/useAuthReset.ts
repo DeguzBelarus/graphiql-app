@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../redux/hooks';
-import { setIsAuth, setToken, setUserEmail, setUserId } from '../redux/slices/userSlice';
+import { setIsAuth, setToken, setUserEmail, setUserId } from '../redux/slices/mainSlice';
 
 export const useAuthReset = () => {
   const dispatch = useAppDispatch();

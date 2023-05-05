@@ -5,14 +5,15 @@ import { useTranslation } from 'react-i18next';
 import jwtDecode from 'jwt-decode';
 
 import {
+  getIsFirstLoad,
+  setIsFirstLoad,
   getIsAuth,
   setIsAuth,
   setSystemMessage,
   setToken,
   setUserEmail,
   setUserId,
-} from './redux/slices/userSlice';
-import { getIsFirstLoad, setIsFirstLoad } from './redux/slices/mainSlice';
+} from './redux/slices/mainSlice';
 import { useRoutes } from './hooks/useRoutes';
 import { useAuthReset } from './hooks/useAuthReset';
 import { Footer } from './components/Footer/Footer';

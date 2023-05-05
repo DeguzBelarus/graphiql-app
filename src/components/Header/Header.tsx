@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-import { setSystemMessage } from '../../redux/slices/userSlice';
+import { setSystemMessage, getIsAuth } from '../../redux/slices/mainSlice';
 import { logout } from '../../firebase';
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker';
-import { getIsAuth } from '../../redux/slices/userSlice';
 import Logo from '../../assets/images/logo.png';
 import { ReactComponent as SignIn } from '../../assets/icons/signin.svg';
 import { ReactComponent as SignUp } from '../../assets/icons/signup.svg';

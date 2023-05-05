@@ -7,9 +7,6 @@ export type RequestStatusType = 'idle' | 'loading' | 'failed';
 export interface MainState {
   currentLanguage: CurrentLanguageType;
   isFirstLoad: boolean;
-}
-
-export interface UserState {
   isAuth: boolean;
   token: Nullable<string>;
   userId: Nullable<string>;
