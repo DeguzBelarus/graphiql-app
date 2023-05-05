@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../redux/hooks';
 
@@ -19,7 +18,7 @@ export const useRoutes = () => {
         path="/registration"
         element={!isAuth ? <RegistrationPage /> : <Navigate to={'/'} />}
       ></Route>
-      <Route path="/graphql" element={isAuth ? <GraphQlPage /> : <Navigate to={'/'} />}></Route>
+      <Route path="/graphql" element={isAuth ? <GraphQlPage /> : <Page404 />}></Route>
       <Route path="*" element={<Page404 />}></Route>
     </Routes>
   );
