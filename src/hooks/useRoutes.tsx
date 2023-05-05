@@ -13,7 +13,7 @@ export const useRoutes = () => {
   const [user, loading] = useAuthState(auth);
   return (
     <Routes>
-      <Route path="/" element={loading && !user ? <ProcessingPage /> : <WelcomePage />}></Route>
+      <Route path="/" element={<WelcomePage />}></Route>
       <Route path="/login" element={!user ? <LoginPage /> : <Navigate to={'/'} />}></Route>
       <Route
         path="/registration"
