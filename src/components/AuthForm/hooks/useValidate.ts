@@ -1,6 +1,8 @@
 import { useAppDispatch } from '../../../redux/hooks';
 import { setSystemMessage } from '../../../redux/slices/userSlice';
 
+import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from '../utils';
+
 type ValidationType = 'login' | 'registration';
 
 export const useValidate = () => {
@@ -52,7 +54,7 @@ export const useValidate = () => {
         );
         return false;
       }
-      if (password.search(/[A-Za-zА-Яа-яЁё]/) === -1) {
+      if (!hasLetterChecking(password)) {
         dispatch(
           setSystemMessage({
             message: 'At least one letter in the password',
@@ -61,7 +63,7 @@ export const useValidate = () => {
         );
         return false;
       }
-      if (password.search(/\d/) === -1) {
+      if (!hasDigitChecking(password)) {
         dispatch(
           setSystemMessage({
             message: 'At least one digit in the password',
@@ -70,7 +72,7 @@ export const useValidate = () => {
         );
         return false;
       }
-      if (password.search(/[!\@\#\$\%\^\&\*\(\)\_\+\.\,\;\:]/) === -1) {
+      if (!hasSpecCharChecking(password)) {
         dispatch(
           setSystemMessage({
             message: 'At least one special character in the password',

@@ -3,7 +3,7 @@ import { WritableDraft } from 'immer/dist/internal';
 import { RootState } from '../store';
 
 import { ISystemMessageObject, Nullable } from '../../types/types';
-import { UserState } from '../types';
+import { RequestStatusType, UserState } from '../types';
 import { loginUserAsync, registerUserAsync } from '../thunks';
 
 const initialState: UserState = {
@@ -11,7 +11,7 @@ const initialState: UserState = {
   token: null,
   userId: null,
   userEmail: null,
-  systemMessage: { message: 'Welcome to GraphiQL!', severity: 'neutral' },
+  systemMessage: null,
   authRequestStatus: 'idle',
 };
 
@@ -36,6 +36,12 @@ export const mainSlice = createSlice({
       { payload }: PayloadAction<Nullable<ISystemMessageObject>>
     ) {
       state.systemMessage = payload;
+    },
+    setAuthRequestStatus(
+      state: WritableDraft<UserState>,
+      { payload }: PayloadAction<RequestStatusType>
+    ) {
+      state.authRequestStatus = payload;
     },
   },
   extraReducers: (builder) => {
@@ -110,7 +116,7 @@ export const mainSlice = createSlice({
 });
 
 export const {
-  actions: { setSystemMessage, setIsAuth, setToken, setUserEmail, setUserId },
+  actions: { setSystemMessage, setIsAuth, setToken, setUserEmail, setUserId, setAuthRequestStatus },
 } = mainSlice;
 
 export const getIsAuth = ({ user: { isAuth } }: RootState) => isAuth;
