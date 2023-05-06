@@ -26,6 +26,7 @@
   "aboutSchoolText4": "This application was created as the final task of the React course of the RS School.",
   "docs": "Docs",
   "docsContent": "Documentation content",
+  "authorizationChecking": "Authorization checking...",
   "notFoundPageText": "Something went wrong!",
   "notFoundPageTitle": "Page not found.",
   "homePage": "Home page",
