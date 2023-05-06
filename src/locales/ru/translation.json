@@ -26,6 +26,7 @@
   "aboutSchoolText4": "Это приложение было создано как последнее задание курса React RS School.",
   "docs": "Документы",
   "docsContent": "Содержимое документации",
+  "authorizationChecking": "Проверка авторизации...",
   "notFoundPageText": "Что-то пошло не так!",
   "notFoundPageTitle": "Страница не найдена.",
   "homePage": "Главная",
