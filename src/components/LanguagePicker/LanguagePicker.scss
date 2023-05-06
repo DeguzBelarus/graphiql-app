@@ -6,7 +6,7 @@
   margin: 0 5px;
 }
 
-.switch > span {
+.switch>span {
   position: absolute;
   top: 14px;
   pointer-events: none;
@@ -18,21 +18,21 @@
   text-align: center;
 }
 
-input.check-toggle-round-flat:checked ~ .off {
+input.check-toggle-round-flat:checked~.off {
   color: $danger-color;
 }
 
-input.check-toggle-round-flat:checked ~ .on {
+input.check-toggle-round-flat:checked~.on {
   color: $white-color;
 }
 
-.switch > span.on {
+.switch>span.on {
   left: 0;
   padding-left: 2px;
   color: $danger-color;
 }
 
-.switch > span.off {
+.switch>span.off {
   right: 0;
   padding-right: 4px;
   color: $white-color;
@@ -43,7 +43,8 @@ input.check-toggle-round-flat:checked ~ .on {
   margin-left: -9999px;
   visibility: hidden;
 }
-.check-toggle + label {
+
+.check-toggle+label {
   display: block;
   position: relative;
   cursor: pointer;
@@ -51,21 +52,22 @@ input.check-toggle-round-flat:checked ~ .on {
   @include user-select-none;
 }
 
-input.check-toggle-round-flat + label {
+input.check-toggle-round-flat+label {
   padding: 2px;
   width: 100px;
   height: 40px;
   background-color: $danger-color;
   border-radius: 60px;
 }
-input.check-toggle-round-flat + label:before,
-input.check-toggle-round-flat + label:after {
+
+input.check-toggle-round-flat+label:before,
+input.check-toggle-round-flat+label:after {
   display: block;
   position: absolute;
   content: '';
 }
 
-input.check-toggle-round-flat + label:before {
+input.check-toggle-round-flat+label:before {
   top: 2px;
   left: 2px;
   bottom: 2px;
@@ -73,7 +75,8 @@ input.check-toggle-round-flat + label:before {
   background-color: $danger-color;
   border-radius: 60px;
 }
-input.check-toggle-round-flat + label:after {
+
+input.check-toggle-round-flat+label:after {
   top: 4px;
   left: 4px;
   bottom: 4px;
@@ -83,9 +86,8 @@ input.check-toggle-round-flat + label:after {
   transition: margin 0.2s;
 }
 
-input.check-toggle-round-flat:checked + label {
-}
+input.check-toggle-round-flat:checked+label {}
 
-input.check-toggle-round-flat:checked + label:after {
+input.check-toggle-round-flat:checked+label:after {
   margin-left: 44px;
 }
