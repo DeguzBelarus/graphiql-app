@@ -19,11 +19,27 @@ export const useRoutes = () => {
       <Route path="/" element={<WelcomePage />}></Route>
       <Route
         path="/login"
-        element={!user && !isAuth ? <LoginPage /> : <Navigate to={'/graphql'} />}
+        element={
+          !user && !isAuth && !loading ? (
+            <LoginPage />
+          ) : loading ? (
+            <ProcessingPage />
+          ) : (
+            <Navigate to={'/graphql'} />
+          )
+        }
       ></Route>
       <Route
         path="/registration"
-        element={!user && !isAuth ? <RegistrationPage /> : <Navigate to={'/graphql'} />}
+        element={
+          !user && !isAuth && !loading ? (
+            <RegistrationPage />
+          ) : loading ? (
+            <ProcessingPage />
+          ) : (
+            <Navigate to={'/graphql'} />
+          )
+        }
       ></Route>
       <Route
         path="/graphql"
