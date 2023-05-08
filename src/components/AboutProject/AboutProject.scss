@@ -46,13 +46,9 @@
 }
 
 .project__button {
-  display: flex;
+  @include flex-line-end-vertical-center;
   flex-wrap: wrap;
   gap: 20px;
-
-  @include media-laptop {
-    justify-content: center;
-  }
 }
 
 .button__link {
@@ -71,6 +67,9 @@
   &:hover {
     color: $white-color;
     background: $main-theme-color;
+  }
+  @include media-mobile-big {
+    @include font(1.4rem, 2.6rem);
   }
 }
 
