@@ -41,5 +41,8 @@
   "atLeastOneSpecCharInPassword": "At least one special character in the password",
   "password": "Password",
   "tokenExpired": "Token expired",
-  "youSuccessfullyLoggedOut": "You have successfully logged out"
+  "youSuccessfullyLoggedOut": "You have successfully logged out",
+  "enterRequestUrl": "Enter URL for request",
+  "enterRequestQuery": "Enter data to complete request",
+  "enterCorrectVariablesJSON": "Enter a correct JSON of variables"
 }

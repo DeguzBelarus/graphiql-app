@@ -41,5 +41,8 @@
   "atLeastOneSpecCharInPassword": "Хотя бы один спецсимвол в пароле",
   "password": "Пароль",
   "tokenExpired": "Срок действия токена истёк",
-  "youSuccessfullyLoggedOut": "Вы успешно вышли из системы"
+  "youSuccessfullyLoggedOut": "Вы успешно вышли из системы",
+  "enterRequestUrl": "Введите URL для запроса",
+  "enterRequestQuery": "Введите данные для выполнения запроса",
+  "enterCorrectVariablesJSON": "Введите корректный JSON переменных"
 }

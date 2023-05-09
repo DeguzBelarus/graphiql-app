@@ -3,8 +3,9 @@ import { WritableDraft } from 'immer/dist/internal';
 import { RootState } from '../store';
 
 import { CurrentLanguageType, ISystemMessageObject, Nullable } from '../../types/types';
-import { MainState, RequestStatusType } from '../types';
-import { loginUserAsync, registerUserAsync } from '../thunks';
+import { IGraphqlQuery, MainState, RequestStatusType } from '../types';
+import { loginUserAsync, registerUserAsync, sendGraphqlRequestAsync } from '../thunks';
+import { EMPTY_GRAPHQL_QUERY, EMPTY_STRING } from '../../constants/constants';
 
 const initialState: MainState = {
   currentLanguage: 'en',
@@ -15,6 +16,11 @@ const initialState: MainState = {
   userEmail: null,
   systemMessage: null,
   authRequestStatus: 'idle',
+  graphqlRequestStatus: 'idle',
+  graphQlUrl: EMPTY_STRING,
+  graphQlQuery: EMPTY_GRAPHQL_QUERY,
+  graphqlResponse: null,
+  variablesJSON: '',
 };
 
 export const mainSlice = createSlice({
@@ -53,6 +59,27 @@ export const mainSlice = createSlice({
       { payload }: PayloadAction<RequestStatusType>
     ) {
       state.authRequestStatus = payload;
+    },
+    setGraphqlRequestStatus(
+      state: WritableDraft<MainState>,
+      { payload }: PayloadAction<RequestStatusType>
+    ) {
+      state.graphqlRequestStatus = payload;
+    },
+    setGraphQlUrl(state: WritableDraft<MainState>, { payload }: PayloadAction<string>) {
+      state.graphQlUrl = payload;
+    },
+    setGraphQlQuery(state: WritableDraft<MainState>, { payload }: PayloadAction<IGraphqlQuery>) {
+      state.graphQlQuery = payload;
+    },
+    setGraphqlResponse(
+      state: WritableDraft<MainState>,
+      { payload }: PayloadAction<Nullable<object>>
+    ) {
+      state.graphqlResponse = payload;
+    },
+    setVariablesJSON(state: WritableDraft<MainState>, { payload }: PayloadAction<string>) {
+      state.variablesJSON = payload;
     },
   },
   extraReducers: (builder) => {
@@ -128,6 +155,42 @@ export const mainSlice = createSlice({
           state.systemMessage = { message: formattedError, severity: 'negative' };
         }
         console.error('\x1b[40m\x1b[31m\x1b[1m', error.message);
+      })
+
+      // get users by search key info
+      .addCase(sendGraphqlRequestAsync.pending, (state) => {
+        state.graphqlRequestStatus = 'loading';
+      })
+      .addCase(sendGraphqlRequestAsync.fulfilled, (state, { payload }) => {
+        state.graphqlRequestStatus = 'idle';
+
+        if (payload && payload.data && !payload.errors) {
+          state.graphqlResponse = payload.data;
+          state.systemMessage = {
+            message:
+              state.currentLanguage !== 'ru'
+                ? 'Request completed successfully'
+                : 'Запрос успешно выполнен',
+            severity: 'positive',
+          };
+        }
+        if (payload && payload.errors && !payload.data) {
+          state.systemMessage = {
+            message: payload.errors[0].message,
+            severity: 'negative',
+          };
+        }
+        if (payload && payload.errors && payload.data) {
+          state.graphqlResponse = { ...payload.errors, ...payload.data };
+          state.systemMessage = {
+            message: payload.errors[0].message,
+            severity: 'negative',
+          };
+        }
+      })
+      .addCase(sendGraphqlRequestAsync.rejected, (state, { error }) => {
+        state.graphqlRequestStatus = 'failed';
+        console.error('\x1b[40m\x1b[31m\x1b[1m', error.message);
       });
   },
 });
@@ -142,6 +205,11 @@ export const {
     setUserEmail,
     setUserId,
     setAuthRequestStatus,
+    setGraphQlUrl,
+    setGraphQlQuery,
+    setGraphqlRequestStatus,
+    setGraphqlResponse,
+    setVariablesJSON,
   },
 } = mainSlice;
 
@@ -154,5 +222,11 @@ export const getUserEmail = ({ main: { userEmail } }: RootState) => userEmail;
 export const getSystemMessage = ({ main: { systemMessage } }: RootState) => systemMessage;
 export const getAuthRequestStatus = ({ main: { authRequestStatus } }: RootState) =>
   authRequestStatus;
+export const getGraphQlUrl = ({ main: { graphQlUrl } }: RootState) => graphQlUrl;
+export const getGraphQlQuery = ({ main: { graphQlQuery } }: RootState) => graphQlQuery;
+export const getGraphqlRequestStatus = ({ main: { graphqlRequestStatus } }: RootState) =>
+  graphqlRequestStatus;
+export const getGraphqlResponse = ({ main: { graphqlResponse } }: RootState) => graphqlResponse;
+export const getVariablesJSON = ({ main: { variablesJSON } }: RootState) => variablesJSON;
 
 export const { reducer } = mainSlice;

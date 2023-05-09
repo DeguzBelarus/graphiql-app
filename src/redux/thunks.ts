@@ -1,8 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { logInWithEmailAndPassword, registerWithEmailAndPassword } from '../firebase';
-import { IAuthFormData, Undefinable } from '../types/types';
-import { IUserAuthResponse } from './types';
+import { IAuthFormData, Nullable, Undefinable } from '../types/types';
+import { IGraphqlRequest, IGraphqlResponse, IUserAuthResponse } from './types';
+import { requestData } from './dataAPI';
 
 // firebase auth thunks
 // register a new user
@@ -36,5 +37,18 @@ export const loginUserAsync = createAsyncThunk(
       }
       return payload;
     }
+  }
+);
+
+// send graphql request
+export const sendGraphqlRequestAsync = createAsyncThunk(
+  'editor/request-send',
+  async (data: IGraphqlRequest): Promise<Nullable<IGraphqlResponse>> => {
+    const graphqlResponse: Undefinable<Response> = await requestData(data.endpoint, data.queryData);
+    if (graphqlResponse) {
+      const graphqlResponseData: IGraphqlResponse = await graphqlResponse.json();
+      return graphqlResponseData;
+    }
+    return null;
   }
 );

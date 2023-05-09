@@ -13,6 +13,11 @@ export interface MainState {
   userEmail: Nullable<string>;
   systemMessage: Nullable<ISystemMessageObject>;
   authRequestStatus: RequestStatusType;
+  graphqlRequestStatus: RequestStatusType;
+  graphQlUrl: string;
+  graphQlQuery: IGraphqlQuery;
+  variablesJSON: string;
+  graphqlResponse: Nullable<object>;
 }
 
 export interface IAuthFirebaseError {
@@ -24,4 +29,30 @@ export interface IUserAuthResponse {
   token?: Undefinable<string>;
   userId?: string;
   userEmail?: string;
+}
+
+export interface IGraphqlQuery {
+  query: string;
+  variables: Nullable<object>;
+  operationName?: string;
+}
+
+export interface IGraphqlRequest {
+  endpoint: string;
+  queryData: IGraphqlQuery;
+}
+
+interface IGraphqlResponseErrorLocationObject {
+  line: number;
+  column: number;
+}
+
+interface IGraphqlResponseErrorObject {
+  locations: Array<IGraphqlResponseErrorLocationObject>;
+  message: string;
+}
+
+export interface IGraphqlResponse {
+  data?: object;
+  errors?: Array<IGraphqlResponseErrorObject>;
 }
