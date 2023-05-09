@@ -1,10 +1,10 @@
 @import '../../styles/variables';
 
 .graphiql-wrapper {
+  width: 100%;
   height: 100%;
   padding: $m-padding;
-  width: calc(100% - $sidebar-width - $docs-width);
-  @include flex-all-center;
+  @include flex-line-start-vertical-top;
   gap: 10px;
   background: $light-color;
   border-radius: $m-padding;

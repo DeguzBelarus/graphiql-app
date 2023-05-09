@@ -1,9 +1,10 @@
-import React from 'react';
-import './Graphiql.scss';
+import { FC } from 'react';
+
 import { Editors } from '../Editors/Editors';
 import { Response } from '../Response/Response';
+import './Graphiql.scss';
 
-export const Graphiql = () => {
+export const Graphiql: FC = () => {
   return (
     <div className="graphiql-wrapper">
       <Editors />

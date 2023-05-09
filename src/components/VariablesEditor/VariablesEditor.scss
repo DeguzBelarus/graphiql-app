@@ -3,4 +3,39 @@
 .variables-editor {
   height: $variables-editor-height;
   border-top: 1px solid $light-color;
+  padding-left: 15px;
+  padding-top: 5px;
+
+  .variables-editor-textarea {
+    width: 100%;
+    height: 95%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    font-weight: bold;
+    color: $accents-theme-color;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 5px;
+      height: 5px;
+      background-color: $accents-theme-color;
+      border-radius: 5px;
+    }
+  }
 }
