@@ -1,4 +1,4 @@
-import { IGraphqlQuery } from '../redux/dataAPI';
+import { IGraphqlQuery } from '../redux/types';
 
 export const SYSTEM_MESSAGE_AUTO_HIDE_DURATION = 6000;
 export const EMPTY_STRING = '';

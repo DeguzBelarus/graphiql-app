@@ -1,5 +1,5 @@
 import { CurrentLanguageType, ISystemMessageObject, Nullable, Undefinable } from '../types/types';
-import { IGraphqlQuery } from './dataAPI';
+
 // redux types
 export type RequestStatusType = 'idle' | 'loading' | 'failed';
 
@@ -29,6 +29,12 @@ export interface IUserAuthResponse {
   token?: Undefinable<string>;
   userId?: string;
   userEmail?: string;
+}
+
+export interface IGraphqlQuery {
+  query: string;
+  variables: Nullable<object>;
+  operationName?: string;
 }
 
 export interface IGraphqlRequest {

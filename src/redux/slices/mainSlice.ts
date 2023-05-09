@@ -3,10 +3,9 @@ import { WritableDraft } from 'immer/dist/internal';
 import { RootState } from '../store';
 
 import { CurrentLanguageType, ISystemMessageObject, Nullable } from '../../types/types';
-import { MainState, RequestStatusType } from '../types';
+import { IGraphqlQuery, MainState, RequestStatusType } from '../types';
 import { loginUserAsync, registerUserAsync, sendGraphqlRequestAsync } from '../thunks';
 import { EMPTY_GRAPHQL_QUERY, EMPTY_STRING } from '../../constants/constants';
-import { IGraphqlQuery } from '../dataAPI';
 
 const initialState: MainState = {
   currentLanguage: 'en',
