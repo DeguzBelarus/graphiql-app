@@ -2,8 +2,8 @@ import { Nullable } from '../types/types';
 
 export interface IGraphqlQuery {
   query: string;
-  operationName?: string;
   variables: Nullable<object>;
+  operationName?: string;
 }
 
 export const requestData = (endpoint: string, graphqlQuery: IGraphqlQuery) => {
