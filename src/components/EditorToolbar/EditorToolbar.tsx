@@ -13,27 +13,29 @@ import {
 import { ReactComponent as Play } from '../../assets/icons/play.svg';
 import { ReactComponent as Copy } from '../../assets/icons/copy.svg';
 import { sendGraphqlRequestAsync } from '../../redux/thunks';
-import './EditorToolbar.scss';
 import { validatorJSON } from '../VariablesEditor/utils';
+import './EditorToolbar.scss';
 
 export const EditorToolbar: FC = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
   const graphQlUrl = useAppSelector(getGraphQlUrl);
-  const graphQlQuery = useAppSelector(getGraphQlQuery);
+  let graphQlQuery = useAppSelector(getGraphQlQuery);
   const graphQlResponse = useAppSelector(getGraphQlQuery);
   const variablesJSON = useAppSelector(getVariablesJSON);
 
   const sendGraphqlRequest = () => {
     graphQlResponse && dispatch(setGraphqlResponse(null));
-    if (!graphQlUrl) {
-      dispatch(setSystemMessage({ message: `${t('enterRequestUrl')}`, severity: 'negative' }));
-      return;
-    }
-    if (!graphQlQuery.query) {
-      dispatch(setSystemMessage({ message: `${t('enterRequestQuery')}`, severity: 'negative' }));
-      return;
+    if (!graphQlUrl || !graphQlQuery.query) {
+      if (!graphQlUrl) {
+        dispatch(setSystemMessage({ message: `${t('enterRequestUrl')}`, severity: 'negative' }));
+        return;
+      }
+      if (!graphQlQuery.query) {
+        dispatch(setSystemMessage({ message: `${t('enterRequestQuery')}`, severity: 'negative' }));
+        return;
+      }
     }
     if (variablesJSON) {
       if (!validatorJSON(variablesJSON)) {
@@ -42,12 +44,11 @@ export const EditorToolbar: FC = () => {
         );
         return;
       } else {
-        dispatch(setGraphQlQuery({ ...graphQlQuery, variables: JSON.parse(variablesJSON) }));
+        graphQlQuery = { ...graphQlQuery, variables: JSON.parse(variablesJSON) };
+        dispatch(setGraphQlQuery(graphQlQuery));
       }
     }
-    if (graphQlQuery.query && graphQlUrl) {
-      dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery }));
-    }
+    dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery }));
   };
   return (
     <div className="editor-toolbar-wrapper">
