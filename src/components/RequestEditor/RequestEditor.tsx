@@ -27,15 +27,6 @@ export const RequestEditor: FC = () => {
       )
     );
   };
-
-  const keyboardEnter = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (requestEditorElement.current) {
-      if (event.key === '{') {
-        requestEditorElement.current.value += '}';
-        event.currentTarget.selectionEnd -= 1;
-      }
-    }
-  };
   return (
     <div className="request-editor-wrapper">
       <textarea
@@ -46,7 +37,6 @@ export const RequestEditor: FC = () => {
         spellCheck={false}
         placeholder="Enter a query"
         onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => graphqlQueryUpdate(event)}
-        onKeyDown={(event: React.KeyboardEvent<HTMLTextAreaElement>) => keyboardEnter(event)}
         ref={requestEditorElement}
       ></textarea>
     </div>

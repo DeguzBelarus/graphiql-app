@@ -12,16 +12,6 @@ export const VariablesEditor: FC = () => {
   const graphqlQueryUpdate = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(setVariablesJSON(event.target.value));
   };
-
-  const keyboardEnter = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    console.log(event.key);
-    if (variablesEditorElement.current) {
-      if (event.key === '{') {
-        variablesEditorElement.current.value += '}';
-        event.currentTarget.selectionEnd -= 1;
-      }
-    }
-  };
   return (
     <div className="variables-editor">
       <textarea
@@ -32,7 +22,6 @@ export const VariablesEditor: FC = () => {
         spellCheck={false}
         placeholder="Enter variables (JSON)"
         onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => graphqlQueryUpdate(event)}
-        onKeyDown={(event: React.KeyboardEvent<HTMLTextAreaElement>) => keyboardEnter(event)}
         ref={variablesEditorElement}
       ></textarea>
     </div>
