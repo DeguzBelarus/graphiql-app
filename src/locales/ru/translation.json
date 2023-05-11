@@ -43,6 +43,7 @@
   "tokenExpired": "Срок действия токена истёк",
   "youSuccessfullyLoggedOut": "Вы успешно вышли из системы",
   "enterRequestUrl": "Введите URL для запроса",
+  "enterRequestSchemaUrl": "Введите URL для получения схемы",
   "enterRequestQuery": "Введите данные для выполнения запроса",
   "enterCorrectVariablesJSON": "Введите корректный JSON переменных"
 }

@@ -27,15 +27,13 @@ export const EditorToolbar: FC = () => {
 
   const sendGraphqlRequest = () => {
     graphQlResponse && dispatch(setGraphqlResponse(null));
-    if (!graphQlUrl || !graphQlQuery.query) {
-      if (!graphQlUrl) {
-        dispatch(setSystemMessage({ message: `${t('enterRequestUrl')}`, severity: 'negative' }));
-        return;
-      }
-      if (!graphQlQuery.query) {
-        dispatch(setSystemMessage({ message: `${t('enterRequestQuery')}`, severity: 'negative' }));
-        return;
-      }
+    if (!graphQlUrl) {
+      dispatch(setSystemMessage({ message: `${t('enterRequestUrl')}`, severity: 'negative' }));
+      return;
+    }
+    if (!graphQlQuery.query) {
+      dispatch(setSystemMessage({ message: `${t('enterRequestQuery')}`, severity: 'negative' }));
+      return;
     }
     if (variablesJSON) {
       if (!validatorJSON(variablesJSON)) {
