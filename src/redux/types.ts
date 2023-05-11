@@ -14,10 +14,12 @@ export interface MainState {
   systemMessage: Nullable<ISystemMessageObject>;
   authRequestStatus: RequestStatusType;
   graphqlRequestStatus: RequestStatusType;
+  schemaRequestStatus: RequestStatusType;
   graphQlUrl: string;
   graphQlQuery: IGraphqlQuery;
   variablesJSON: string;
   graphqlResponse: Nullable<object>;
+  graphqlSchemaJSON: Nullable<string>;
 }
 
 export interface IAuthFirebaseError {

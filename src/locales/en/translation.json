@@ -43,6 +43,7 @@
   "tokenExpired": "Token expired",
   "youSuccessfullyLoggedOut": "You have successfully logged out",
   "enterRequestUrl": "Enter URL for request",
+  "enterRequestSchemaUrl": "Enter URL to get a schema",
   "enterRequestQuery": "Enter data to complete request",
   "enterCorrectVariablesJSON": "Enter a correct JSON of variables"
 }
