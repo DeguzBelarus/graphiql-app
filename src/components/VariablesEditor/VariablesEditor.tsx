@@ -13,13 +13,13 @@ export const VariablesEditor: FC = () => {
 
   const [value, setValue] = useState('');
 
-  const graphqlQueryUpdate = () => {
+  const graphqlQueryUpdate = (value: string) => {
     dispatch(setVariablesJSON(value));
   };
 
   const updateRequest = (value: string) => {
     setValue(value);
-    graphqlQueryUpdate();
+    graphqlQueryUpdate(value);
   };
 
   return (

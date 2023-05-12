@@ -15,7 +15,7 @@ export const RequestEditor: FC = () => {
 
   const graphQlQuery = useAppSelector(getGraphQlQuery);
 
-  const graphqlQueryUpdate = () => {
+  const graphqlQueryUpdate = (value: string) => {
     let operationName = '';
     const query = value;
 
@@ -35,7 +35,7 @@ export const RequestEditor: FC = () => {
 
   const updateRequest = (value: string) => {
     setValue(value);
-    graphqlQueryUpdate();
+    graphqlQueryUpdate(value);
   };
 
   return (
