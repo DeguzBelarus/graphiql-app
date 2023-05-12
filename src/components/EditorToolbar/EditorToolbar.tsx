@@ -51,7 +51,7 @@ export const EditorToolbar: FC = () => {
   };
 
   const copyQuery = () => {
-    navigator.clipboard.writeText(graphQlQuery.query + '}');
+    navigator.clipboard.writeText(graphQlQuery.query);
     dispatch(setSystemMessage({ message: `${t('main.copiedQuery')}`, severity: 'positive' }));
   };
 

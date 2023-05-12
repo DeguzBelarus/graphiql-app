@@ -18,9 +18,6 @@ import './SideBar.scss';
 interface Props {
   isSidebarShown: boolean;
 }
-export const SideBar = ({ isSidebarShown }: Props) => {
-  const { t } = useTranslation();
-
 
 export const SideBar: FC<Props> = ({ isSidebarShown }) => {
   const dispatch = useAppDispatch();
@@ -68,8 +65,8 @@ export const SideBar: FC<Props> = ({ isSidebarShown }) => {
       <div className="sidebar-buttons-wrapper">
         {graphqlSchemaJSON ? (
           <button type="button" className="icon-button" onClick={refreshGraphqlSchema}>
-          <Refetch title={t('main.reFetchSchema') || ''} />
-        </button>
+            <Refetch title={t('main.reFetchSchema') || ''} />
+          </button>
         ) : null}
         <button type="button" className="icon-button">
           <Settings title={t('main.showSetting') || ''} />
