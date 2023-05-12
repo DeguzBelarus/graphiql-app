@@ -47,7 +47,7 @@ button {
     }
   }
 
-  &:hover {
+  &:hover, &:disabled {
     background: $light-color;
   }
 }
