@@ -13,8 +13,6 @@
   border: 1px solid $secondary-theme-color;
   background-color: rgba($color: #fff, $alpha: 0.9);
   z-index: 1;
-  padding: 30px 20px;
-  border-radius: 8px;
 
   &:not(.shown) {
     height: 2px;
