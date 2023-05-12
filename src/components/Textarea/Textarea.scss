@@ -1,0 +1,45 @@
+@mixin base {
+  padding: 5px;
+  height: 98%;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.textarea-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  .numbers {
+    @include base;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    overflow-y: hidden;
+    text-align: right;
+    position: absolute;
+    color: grey;
+    width: 2rem;
+  }
+
+  .textarea {
+    @include base;
+
+    background: #d7a3b4;
+    resize: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    padding-left: 2.2rem;
+    width: 100%;
+    border: none;
+
+    &::placeholder {
+      color: grey;
+    }
+  }
+}
