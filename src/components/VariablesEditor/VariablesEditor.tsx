@@ -25,7 +25,6 @@ export const VariablesEditor: FC = () => {
   return (
     <div className="variables-editor">
       <Textarea
-        name="test-textarea"
         value={value}
         onValueChange={(value) => updateRequest(value)}
         numOfLines={1}

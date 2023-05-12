@@ -80,7 +80,7 @@ button {
       height: 24px;
       color: $white-color;
 
-      &:hover {
+      &:hover, &:disabled {
         color: $danger-color;
       }
     }

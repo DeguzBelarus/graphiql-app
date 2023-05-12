@@ -54,6 +54,7 @@
     "showHistory": "Показать историю",
     "executeQuery": "Выполнить запрос",
     "copyQuery": "Копировать запрос",
+    "copiedQuery": "Запрос был скопирован",
     "enterUrl": "Введите URL для запроса",
     "enterQuery": "Введите запрос или мутацию",
     "enterVariables": "Введите переменные"

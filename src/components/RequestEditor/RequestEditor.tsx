@@ -41,7 +41,6 @@ export const RequestEditor: FC = () => {
   return (
     <div className="request-editor-wrapper">
       <Textarea
-        name="test-textarea"
         value={value}
         onValueChange={(value) => updateRequest(value)}
         numOfLines={1}

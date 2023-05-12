@@ -6,15 +6,10 @@
   @include flex-column-line-start-vertical-top;
   position: relative;
   padding-top: 5px;
+  padding-right: 5px;
   cursor: text;
 
   &:focus {
     outline: none;
-  }
-
-  .editor-window {
-    width: max-content;
-    height: max-content;
-    position: absolute;
   }
 }

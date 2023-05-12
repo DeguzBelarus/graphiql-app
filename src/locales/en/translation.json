@@ -54,6 +54,7 @@
     "showHistory": "Show History",
     "executeQuery": "Execute query",
     "copyQuery": "Copy query",
+    "copiedQuery": "Query copied",
     "enterUrl": "Enter URL to make request",
     "enterQuery": "Enter Query or Mutation",
     "enterVariables": "Enter Variables"
