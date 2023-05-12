@@ -56,10 +56,10 @@ export const EditorToolbar: FC = () => {
         title="Send request"
         onClick={sendGraphqlRequest}
       >
-        <Play title="Execute query" />
+        <Play title={t('main.executeQuery') || ''} />
       </button>
       <button type="button" className="icon-button" title="Copy query">
-        <Copy title="Copy query" />
+        <Copy title={t('main.copyQuery') || ''} />
       </button>
     </div>
   );

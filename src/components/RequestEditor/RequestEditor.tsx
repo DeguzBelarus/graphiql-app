@@ -4,8 +4,11 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setGraphQlQuery, getGraphQlQuery } from '../../redux/slices/mainSlice';
 import './RequestEditor.scss';
 import { Textarea } from '../Textarea/Textarea';
+import { useTranslation } from 'react-i18next';
 
 export const RequestEditor: FC = () => {
+  const { t } = useTranslation();
+
   const [value, setValue] = useState('');
 
   const dispatch = useAppDispatch();
@@ -42,7 +45,7 @@ export const RequestEditor: FC = () => {
         value={value}
         onValueChange={(value) => updateRequest(value)}
         numOfLines={1}
-        placeholder="Enter a query"
+        placeholder={t('main.enterQuery')}
       />
     </div>
   );
