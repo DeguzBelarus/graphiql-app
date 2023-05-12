@@ -6,15 +6,19 @@
   width: $column-width;
   border-radius: $m-padding;
   background: $white-color;
+  overflow: auto;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   .request-wrapper {
-    height: calc(100% - $variables-editor-height);
+    height: calc(100% - $variables-editor-height - $graphQl-endpoint-height - 10px);
     display: flex;
     justify-content: space-between;
+  }
 
+  .variables-request-wrapper {
+    height: $variables-editor-height;
   }
 }

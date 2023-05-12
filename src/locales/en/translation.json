@@ -45,5 +45,18 @@
   "enterRequestUrl": "Enter URL for request",
   "enterRequestSchemaUrl": "Enter URL to get a schema",
   "enterRequestQuery": "Enter data to complete request",
-  "enterCorrectVariablesJSON": "Enter a correct JSON of variables"
+  "enterCorrectVariablesJSON": "Enter a correct JSON of variables",
+  "main": {
+    "showDoc": "Show Documentation Explorer",
+    "hideDoc": "Hide Documentation Explorer",
+    "Re-fetch GraphQL schema": "Re-fetch GraphQL schema",
+    "Show Setting": "Show Setting",
+    "showHistory": "Show History",
+    "executeQuery": "Execute query",
+    "copyQuery": "Copy query",
+    "copiedQuery": "Query copied",
+    "enterUrl": "Enter URL to make request",
+    "enterQuery": "Enter Query or Mutation",
+    "enterVariables": "Enter Variables"
+  }
 }

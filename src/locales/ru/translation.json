@@ -45,5 +45,18 @@
   "enterRequestUrl": "Введите URL для запроса",
   "enterRequestSchemaUrl": "Введите URL для получения схемы",
   "enterRequestQuery": "Введите данные для выполнения запроса",
-  "enterCorrectVariablesJSON": "Введите корректный JSON переменных"
+  "enterCorrectVariablesJSON": "Введите корректный JSON переменных",
+  "main": {
+    "showDoc": "Показать документацию",
+    "hideDoc": "Скрыть документацию",
+    "reFetchSchema": "Повторно получить схему GraphQL",
+    "showSetting": "Показать настройки",
+    "showHistory": "Показать историю",
+    "executeQuery": "Выполнить запрос",
+    "copyQuery": "Копировать запрос",
+    "copiedQuery": "Запрос был скопирован",
+    "enterUrl": "Введите URL для запроса",
+    "enterQuery": "Введите запрос или мутацию",
+    "enterVariables": "Введите переменные"
+  }
 }

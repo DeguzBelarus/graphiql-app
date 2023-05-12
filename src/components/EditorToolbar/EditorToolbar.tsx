@@ -17,8 +17,9 @@ import { validatorJSON } from '../VariablesEditor/utils';
 import './EditorToolbar.scss';
 
 export const EditorToolbar: FC = () => {
-  const dispatch = useAppDispatch();
   const { t } = useTranslation();
+
+  const dispatch = useAppDispatch();
 
   const graphQlUrl = useAppSelector(getGraphQlUrl);
   let graphQlQuery = useAppSelector(getGraphQlQuery);
@@ -48,6 +49,12 @@ export const EditorToolbar: FC = () => {
     }
     dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery }));
   };
+
+  const copyQuery = () => {
+    navigator.clipboard.writeText(graphQlQuery.query);
+    dispatch(setSystemMessage({ message: `${t('main.copiedQuery')}`, severity: 'positive' }));
+  };
+
   return (
     <div className="editor-toolbar-wrapper">
       <button
@@ -56,10 +63,16 @@ export const EditorToolbar: FC = () => {
         title="Send request"
         onClick={sendGraphqlRequest}
       >
-        <Play title="Execute query" />
+        <Play title={t('main.executeQuery') || ''} />
       </button>
-      <button type="button" className="icon-button" title="Copy query">
-        <Copy title="Copy query" />
+      <button
+        type="button"
+        className="icon-button"
+        disabled={!graphQlQuery.query}
+        title={t('main.copyQuery') || ''}
+        onClick={copyQuery}
+      >
+        <Copy title={t('main.copyQuery') || ''} />
       </button>
     </div>
   );

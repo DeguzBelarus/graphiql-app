@@ -1,19 +1,23 @@
-import { FC, useRef } from 'react';
+import React, { FC, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 import { setGraphQlQuery, getGraphQlQuery } from '../../redux/slices/mainSlice';
 import './RequestEditor.scss';
+import { Textarea } from '../Textarea/Textarea';
+import { useTranslation } from 'react-i18next';
 
 export const RequestEditor: FC = () => {
-  const requestEditorElement = useRef<HTMLTextAreaElement>(null);
+  const { t } = useTranslation();
+
+  const [value, setValue] = useState('');
 
   const dispatch = useAppDispatch();
 
   const graphQlQuery = useAppSelector(getGraphQlQuery);
 
-  const graphqlQueryUpdate = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const graphqlQueryUpdate = (value: string) => {
     let operationName = '';
-    const query = event.target.value;
+    const query = value;
 
     if (query.split(' ').includes('query')) {
       operationName = query.split(' ')[1];
@@ -21,24 +25,27 @@ export const RequestEditor: FC = () => {
     if (query.split(' ').includes('mutation')) {
       operationName = query.split(' ')[1];
     }
+
     dispatch(
       setGraphQlQuery(
         operationName ? { ...graphQlQuery, operationName, query } : { ...graphQlQuery, query }
       )
     );
   };
+
+  const updateRequest = (value: string) => {
+    setValue(value);
+    graphqlQueryUpdate(value);
+  };
+
   return (
     <div className="request-editor-wrapper">
-      <textarea
-        className="request-editor-textarea"
-        autoCapitalize="off"
-        autoCorrect="off"
-        autoComplete="off"
-        spellCheck={false}
-        placeholder="Enter a query"
-        onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => graphqlQueryUpdate(event)}
-        ref={requestEditorElement}
-      ></textarea>
+      <Textarea
+        value={value}
+        onValueChange={(value) => updateRequest(value)}
+        numOfLines={1}
+        placeholder={t('main.enterQuery')}
+      />
     </div>
   );
 };

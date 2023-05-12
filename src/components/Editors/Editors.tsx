@@ -14,7 +14,9 @@ export const Editors: FC = () => {
         <RequestEditor />
         <EditorToolbar />
       </div>
-      <VariablesEditor />
+      <div className="variables-request-wrapper">
+        <VariablesEditor />
+      </div>
     </div>
   );
 };
