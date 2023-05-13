@@ -27,7 +27,7 @@ const initialState: MainState = {
   graphQlQuery: EMPTY_GRAPHQL_QUERY,
   variablesJSON: '',
   graphqlResponse: null,
-  graphqlSchemaJSON: null,
+  graphqlSchemaPrint: null,
 };
 
 export const mainSlice = createSlice({
@@ -94,11 +94,11 @@ export const mainSlice = createSlice({
     ) {
       state.graphqlResponse = payload;
     },
-    setGraphqlSchemaJSON(
+    setGraphqlSchemaPrint(
       state: WritableDraft<MainState>,
       { payload }: PayloadAction<Nullable<string>>
     ) {
-      state.graphqlSchemaJSON = payload;
+      state.graphqlSchemaPrint = payload;
     },
   },
   extraReducers: (builder) => {
@@ -220,7 +220,7 @@ export const mainSlice = createSlice({
         state.schemaRequestStatus = 'idle';
 
         if (payload) {
-          state.graphqlSchemaJSON = payload;
+          state.graphqlSchemaPrint = payload;
         }
       })
       .addCase(getGraphqlSchemaAsync.rejected, (state, { error }) => {
@@ -253,7 +253,7 @@ export const {
     setGraphqlResponse,
     setVariablesJSON,
     setSchemaRequestStatus,
-    setGraphqlSchemaJSON,
+    setGraphqlSchemaPrint,
   },
 } = mainSlice;
 
@@ -273,8 +273,8 @@ export const getGraphqlRequestStatus = ({ main: { graphqlRequestStatus } }: Root
 export const getSchemaRequestStatus = ({ main: { schemaRequestStatus } }: RootState) =>
   schemaRequestStatus;
 export const getGraphqlResponse = ({ main: { graphqlResponse } }: RootState) => graphqlResponse;
-export const getGraphqlSchemaJSON = ({ main: { graphqlSchemaJSON } }: RootState) =>
-  graphqlSchemaJSON;
+export const getGraphqlSchemaPrint = ({ main: { graphqlSchemaPrint } }: RootState) =>
+  graphqlSchemaPrint;
 export const getVariablesJSON = ({ main: { variablesJSON } }: RootState) => variablesJSON;
 
 export const { reducer } = mainSlice;

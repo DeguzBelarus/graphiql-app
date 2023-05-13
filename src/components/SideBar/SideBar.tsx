@@ -8,9 +8,9 @@ import { ReactComponent as Settings } from '../../assets/icons/setting.svg';
 import { getGraphqlSchemaAsync } from '../../redux/thunks';
 import {
   getGraphQlUrl,
-  setGraphqlSchemaJSON,
+  setGraphqlSchemaPrint,
   setSystemMessage,
-  getGraphqlSchemaJSON,
+  getGraphqlSchemaPrint,
 } from '../../redux/slices/mainSlice';
 import { useTranslation } from 'react-i18next';
 import './SideBar.scss';
@@ -24,7 +24,7 @@ export const SideBar: FC<Props> = ({ isSidebarShown }) => {
   const { t } = useTranslation();
 
   const graphQlUrl = useAppSelector(getGraphQlUrl);
-  const graphqlSchemaJSON = useAppSelector(getGraphqlSchemaJSON);
+  const graphqlSchemaPrint = useAppSelector(getGraphqlSchemaPrint);
 
   const getGraphqlSchema = () => {
     if (!graphQlUrl) {
@@ -37,15 +37,15 @@ export const SideBar: FC<Props> = ({ isSidebarShown }) => {
   };
 
   const openGraphqlSchema = () => {
-    if (graphqlSchemaJSON) {
-      dispatch(setGraphqlSchemaJSON(null));
+    if (graphqlSchemaPrint) {
+      dispatch(setGraphqlSchemaPrint(null));
     } else {
       getGraphqlSchema();
     }
   };
 
   const refreshGraphqlSchema = () => {
-    if (graphqlSchemaJSON) {
+    if (graphqlSchemaPrint) {
       getGraphqlSchema();
     }
   };
@@ -63,7 +63,7 @@ export const SideBar: FC<Props> = ({ isSidebarShown }) => {
       </div>
 
       <div className="sidebar-buttons-wrapper">
-        {graphqlSchemaJSON ? (
+        {graphqlSchemaPrint ? (
           <button type="button" className="icon-button" onClick={refreshGraphqlSchema}>
             <Refetch title={t('main.reFetchSchema') || ''} />
           </button>

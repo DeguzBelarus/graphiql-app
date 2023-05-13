@@ -4,6 +4,8 @@ import { logInWithEmailAndPassword, registerWithEmailAndPassword } from '../fire
 import { IAuthFormData, Nullable, Undefinable } from '../types/types';
 import { IGraphqlRequest, IGraphqlResponse, IUserAuthResponse } from './types';
 import { requestData, requestSchema } from './dataAPI';
+import { printSchema } from 'graphql';
+// import { GraphQLFileLoader } from '@graphql-tools/graphql-file-loader';
 
 // firebase auth thunks
 // register a new user
@@ -59,7 +61,7 @@ export const getGraphqlSchemaAsync = createAsyncThunk(
   async (endpoint: string): Promise<Nullable<string>> => {
     const endpointSchema = await requestSchema(endpoint);
     if (endpointSchema) {
-      return JSON.stringify(endpointSchema);
+      return printSchema(endpointSchema);
     }
     return null;
   }

@@ -19,7 +19,7 @@ export interface MainState {
   graphQlQuery: IGraphqlQuery;
   variablesJSON: string;
   graphqlResponse: Nullable<object>;
-  graphqlSchemaJSON: Nullable<string>;
+  graphqlSchemaPrint: Nullable<string>;
 }
 
 export interface IAuthFirebaseError {
