@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+
+.tabs-container {
+  height: $tabs-height - 10px;
+  border-top: 1px solid $light-color;
+  color: $main-theme-color;
+  padding: 0.5rem;
+
+  .tabs-header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0.5rem 0;
+  }
+
+  ul.nav {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    height: $tabs-header-height;
+
+    @media (max-width: $tablet-width) {
+      width: 90%;
+    }
+  }
+
+  ul.nav li {
+    width: 115px;
+    padding: 0.5rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+    border-radius: 5px;
+  }
+
+  ul.nav li:hover {
+    background: $light-color;
+  }
+
+  ul.nav li.active {
+    background: $light-gary-color;
+  }
+}

@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
 import { RequestEditor } from '../RequestEditor/RequestEditor';
-import { VariablesEditor } from '../VariablesEditor/VariablesEditor';
 import { EditorToolbar } from '../EditorToolbar/EditorToolbar';
 import { GraphQlEndpoint } from '../GraphQlEndpoint/GraphQlEndpoint';
 import './Editors.scss';
+import { Tabs } from '../Tabs/Tabs';
 
 export const Editors: FC = () => {
   return (
@@ -14,9 +14,7 @@ export const Editors: FC = () => {
         <RequestEditor />
         <EditorToolbar />
       </div>
-      <div className="variables-request-wrapper">
-        <VariablesEditor />
-      </div>
+      <Tabs />
     </div>
   );
 };

@@ -57,6 +57,8 @@
     "copiedQuery": "Query copied",
     "enterUrl": "Enter URL to make request",
     "enterQuery": "Enter Query or Mutation",
-    "enterVariables": "Enter Variables"
+    "enterVariables": "Enter Variables",
+    "variables": "Variables",
+    "headers": "Headers"
   }
 }
