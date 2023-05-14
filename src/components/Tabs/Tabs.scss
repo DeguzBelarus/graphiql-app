@@ -22,13 +22,13 @@
     gap: 5px;
     height: $tabs-header-height;
 
-    @media (max-width: 768px) {
+    @media (max-width: $tablet-width) {
       width: 90%;
     }
   }
 
   ul.nav li {
-    width: max-content;
+    width: 115px;
     padding: 0.5rem;
     list-style: none;
     text-align: center;
