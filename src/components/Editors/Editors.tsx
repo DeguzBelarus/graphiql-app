@@ -14,9 +14,7 @@ export const Editors: FC = () => {
         <RequestEditor />
         <EditorToolbar />
       </div>
-      <div className="tabs-wraper">
-        <Tabs />
-      </div>
+      <Tabs />
     </div>
   );
 };

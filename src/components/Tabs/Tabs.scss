@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .tabs-container {
-  //height: $tabs-height;
+  height: $tabs-height - 10px;
   border-top: 1px solid $light-color;
   color: $main-theme-color;
   padding: 0.5rem;
@@ -16,7 +16,6 @@
   }
 
   ul.nav {
-    margin: 0 auto 0.2rem;
     display: flex;
     align-items: center;
     justify-content: start;
