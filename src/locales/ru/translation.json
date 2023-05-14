@@ -57,6 +57,8 @@
     "copiedQuery": "Запрос был скопирован",
     "enterUrl": "Введите URL для запроса",
     "enterQuery": "Введите запрос или мутацию",
-    "enterVariables": "Введите переменные"
+    "enterVariables": "Введите переменные",
+    "variables": "Переменные",
+    "headers": "Хедеры"
   }
 }
