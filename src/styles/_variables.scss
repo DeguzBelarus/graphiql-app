@@ -15,7 +15,6 @@ $l-padding: 12px;
 $xl-padding: 16px;
 $xxl-padding: 24px;
 
-
 $width-container: 1280px;
 $large-laptop-width: 1000px;
 $tablet-width: 768px;
@@ -23,7 +22,6 @@ $mobile-big-width: 420px;
 $mobile-small-width: 320px;
 
 $system-message-vertical-position: 80px;
-
 
 // colors
 $main-theme-color: #662abe;
@@ -33,7 +31,7 @@ $accents-theme-color: #240f5b;
 $danger-color: #f36f25;
 $success-color: #00aa00;
 $white-color: #ffffff;
-$light-gary-color: #d9d9d9;
+$light-gary-color: #efefef;
 
 // mixins
 @mixin font($size, $height: $size, $weight: normal, $style: normal) {
@@ -223,4 +221,7 @@ $light-gary-color: #d9d9d9;
 
 :export {
   headerHeight: $header-height;
+  tabsHeight: $tabs-height;
+  tabsHeaderHeight: $tabs-header-height;
+
 }

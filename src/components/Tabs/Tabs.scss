@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .tabs-container {
-  height: $tabs-height;
+  //height: $tabs-height;
   border-top: 1px solid $light-color;
   color: $main-theme-color;
   padding: 0.5rem;
@@ -22,7 +22,6 @@
     justify-content: start;
     gap: 5px;
     height: $tabs-header-height;
-  ;
 
     @media (max-width: 768px) {
       width: 90%;
@@ -41,15 +40,10 @@
   }
 
   ul.nav li:hover {
-    background: $light-gary-color;
-  }
-  ul.nav li.active {
     background: $light-color;
   }
 
-  .first-tab p,
-  .second-tab p {
-    font-size: 1rem;
-    text-align: center;
+  ul.nav li.active {
+    background: $light-gary-color;
   }
 }

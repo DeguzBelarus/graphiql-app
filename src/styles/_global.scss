@@ -28,7 +28,6 @@ button {
     display: none;
   }
 
-
   &:hover {
     background: $white-color;
     color: $danger-color;
@@ -47,7 +46,8 @@ button {
     }
   }
 
-  &:hover, &:disabled {
+  &:hover,
+  &:disabled {
     background: $light-color;
   }
 }
@@ -80,9 +80,20 @@ button {
       height: 24px;
       color: $white-color;
 
-      &:hover, &:disabled {
+      &:hover,
+      &:disabled {
         color: $danger-color;
       }
     }
+  }
+}
+
+.small-icon-button {
+  background: transparent;
+
+  svg {
+    display: inline;
+    width: 12px;
+    color: $main-theme-color;
   }
 }
