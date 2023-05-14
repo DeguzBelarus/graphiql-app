@@ -13,12 +13,12 @@
   justify-content: flex-start;
 
   .request-wrapper {
-    height: calc(100% - $variables-editor-height - $graphQl-endpoint-height - 10px);
+    height: calc(100% - $tabs-height - $graphQl-endpoint-height - 10px);
     display: flex;
     justify-content: space-between;
   }
 
-  .variables-request-wrapper {
-    height: $variables-editor-height;
+  .tabs-wrapper {
+    height: $tabs-height;
   }
 }
