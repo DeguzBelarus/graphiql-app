@@ -8,26 +8,6 @@
   border: none;
 }
 
-@mixin scroll {
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    width: 5px;
-    height: 5px;
-    background-color: $accents-theme-color;
-    border-radius: 5px;
-  }
-}
-
 .textarea-wrapper {
   width: 100%;
   height: 100%;

@@ -4,12 +4,7 @@ import { RootState } from '../store';
 
 import { CurrentLanguageType, ISystemMessageObject, Nullable } from '../../types/types';
 import { IGraphqlQuery, MainState, RequestStatusType } from '../types';
-import {
-  getGraphqlSchemaAsync,
-  loginUserAsync,
-  registerUserAsync,
-  sendGraphqlRequestAsync,
-} from '../thunks';
+import { loginUserAsync, registerUserAsync, sendGraphqlRequestAsync } from '../thunks';
 import { EMPTY_GRAPHQL_QUERY, EMPTY_STRING } from '../../constants/constants';
 
 const initialState: MainState = {
@@ -24,10 +19,12 @@ const initialState: MainState = {
   graphqlRequestStatus: 'idle',
   schemaRequestStatus: 'idle',
   graphQlUrl: EMPTY_STRING,
+  graphQlUrlSubmitted: EMPTY_STRING,
   graphQlQuery: EMPTY_GRAPHQL_QUERY,
   variablesJSON: '',
   graphqlResponse: null,
   graphqlSchemaPrint: null,
+  isGraphqlSchemaReceived: false,
 };
 
 export const mainSlice = createSlice({
@@ -82,6 +79,9 @@ export const mainSlice = createSlice({
     setGraphQlUrl(state: WritableDraft<MainState>, { payload }: PayloadAction<string>) {
       state.graphQlUrl = payload;
     },
+    setGraphQlUrlSubmitted(state: WritableDraft<MainState>, { payload }: PayloadAction<string>) {
+      state.graphQlUrlSubmitted = payload;
+    },
     setGraphQlQuery(state: WritableDraft<MainState>, { payload }: PayloadAction<IGraphqlQuery>) {
       state.graphQlQuery = payload;
     },
@@ -99,6 +99,12 @@ export const mainSlice = createSlice({
       { payload }: PayloadAction<Nullable<string>>
     ) {
       state.graphqlSchemaPrint = payload;
+    },
+    setIsGraphqlSchemaReceived(
+      state: WritableDraft<MainState>,
+      { payload }: PayloadAction<boolean>
+    ) {
+      state.isGraphqlSchemaReceived = payload;
     },
   },
   extraReducers: (builder) => {
@@ -210,29 +216,6 @@ export const mainSlice = createSlice({
       .addCase(sendGraphqlRequestAsync.rejected, (state, { error }) => {
         state.graphqlRequestStatus = 'failed';
         console.error('\x1b[40m\x1b[31m\x1b[1m', error.message);
-      })
-
-      // get endpoint schema
-      .addCase(getGraphqlSchemaAsync.pending, (state) => {
-        state.schemaRequestStatus = 'loading';
-      })
-      .addCase(getGraphqlSchemaAsync.fulfilled, (state, { payload }) => {
-        state.schemaRequestStatus = 'idle';
-
-        if (payload) {
-          state.graphqlSchemaPrint = payload;
-        }
-      })
-      .addCase(getGraphqlSchemaAsync.rejected, (state, { error }) => {
-        state.schemaRequestStatus = 'failed';
-        console.error('\x1b[40m\x1b[31m\x1b[1m', error.message);
-
-        if (error.message) {
-          state.systemMessage = {
-            message: error.message,
-            severity: 'negative',
-          };
-        }
       });
   },
 });
@@ -254,6 +237,8 @@ export const {
     setVariablesJSON,
     setSchemaRequestStatus,
     setGraphqlSchemaPrint,
+    setIsGraphqlSchemaReceived,
+    setGraphQlUrlSubmitted,
   },
 } = mainSlice;
 
@@ -276,5 +261,9 @@ export const getGraphqlResponse = ({ main: { graphqlResponse } }: RootState) => 
 export const getGraphqlSchemaPrint = ({ main: { graphqlSchemaPrint } }: RootState) =>
   graphqlSchemaPrint;
 export const getVariablesJSON = ({ main: { variablesJSON } }: RootState) => variablesJSON;
+export const getIsGraphqlSchemaReceived = ({ main: { isGraphqlSchemaReceived } }: RootState) =>
+  isGraphqlSchemaReceived;
+export const getGraphQlUrlSubmitted = ({ main: { graphQlUrlSubmitted } }: RootState) =>
+  graphQlUrlSubmitted;
 
 export const { reducer } = mainSlice;
