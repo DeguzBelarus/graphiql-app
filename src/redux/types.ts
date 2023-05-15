@@ -16,10 +16,12 @@ export interface MainState {
   graphqlRequestStatus: RequestStatusType;
   schemaRequestStatus: RequestStatusType;
   graphQlUrl: string;
+  graphQlUrlSubmitted: string;
   graphQlQuery: IGraphqlQuery;
   variablesJSON: string;
   graphqlResponse: Nullable<object>;
-  graphqlSchemaJSON: Nullable<string>;
+  graphqlSchemaPrint: Nullable<string>;
+  isGraphqlSchemaReceived: boolean;
 }
 
 export interface IAuthFirebaseError {

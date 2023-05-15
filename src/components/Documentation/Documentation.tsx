@@ -1,28 +1,25 @@
-import React from 'react';
+import { Dispatch, FC, SetStateAction, Suspense } from 'react';
 import { useAppSelector } from '../../redux/hooks';
-import { useTranslation } from 'react-i18next';
 
-import { getSchemaRequestStatus } from '../../redux/slices/mainSlice';
+import { getGraphQlUrlSubmitted } from '../../redux/slices/mainSlice';
 import { RoundLoader } from '../RoundLoader/RoundLoader';
+import { GraphqlSchemaContent } from './components/GraphqlSchemaContent/GraphqlSchemaContent';
+import { useRequestSchema } from '../../hooks/useRequestSchema';
 import './Documentation.scss';
 
-export const Documentation = () => {
-  const { t } = useTranslation();
-  const schemaRequestStatus = useAppSelector(getSchemaRequestStatus);
+interface Props {
+  setIsSidebarShown: Dispatch<SetStateAction<boolean>>;
+}
+
+export const Documentation: FC<Props> = ({ setIsSidebarShown }) => {
+  const graphQlUrlSubmitted = useAppSelector(getGraphQlUrlSubmitted);
+  const schemaReader = useRequestSchema(graphQlUrlSubmitted);
 
   return (
     <div className="docs-wrapper">
-      {schemaRequestStatus === 'loading' ? (
-        <>
-          <h1>{t('docs')}</h1>
-          <RoundLoader />
-        </>
-      ) : (
-        <>
-          <h1>{t('docs')}</h1>
-          <div>{t('docsContent')}</div>
-        </>
-      )}
+      <Suspense fallback={<RoundLoader />}>
+        <GraphqlSchemaContent schemaReader={schemaReader()} setIsSidebarShown={setIsSidebarShown} />
+      </Suspense>
     </div>
   );
 };

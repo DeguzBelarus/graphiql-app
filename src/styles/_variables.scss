@@ -3,8 +3,8 @@ $header-height: 70px;
 $footer-height: 50px;
 $system-message-height: 25px;
 $sidebar-width: 70px;
-$docs-width: 300px;
-
+$docs-width: 320px;
+$variables-editor-height: 200px;
 $column-width: 50%;
 $graphQl-endpoint-height: 35px;
 $tabs-height: 250px;
@@ -218,6 +218,26 @@ $light-gary-color: #efefef;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+}
+
+@mixin scroll {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+    background-color: $accents-theme-color;
+    border-radius: 5px;
+  }
 }
 
 :export {

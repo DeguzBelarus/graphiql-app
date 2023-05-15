@@ -7,8 +7,7 @@
   padding: 0.5rem;
 
   .tabs-header-container {
-    display: flex;
-    justify-content: space-between;
+    @include flex-line-spacebetween-vertical-center;
   }
 
   @media (max-width: $tablet-width) {
@@ -16,11 +15,9 @@
   }
 
   ul.nav {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 5px;
     height: $tabs-header-height;
+    @include flex-line-start-vertical-center;
+    gap: 5px;
 
     @media (max-width: $tablet-width) {
       width: 90%;

@@ -1,52 +1,56 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 import { ReactComponent as Documentation } from '../../assets/icons/document.svg';
 import { ReactComponent as History } from '../../assets/icons/history.svg';
 import { ReactComponent as Refetch } from '../../assets/icons/refetch.svg';
 import { ReactComponent as Settings } from '../../assets/icons/setting.svg';
-import { getGraphqlSchemaAsync } from '../../redux/thunks';
 import {
   getGraphQlUrl,
-  setGraphqlSchemaJSON,
+  setGraphQlUrlSubmitted,
+  getIsGraphqlSchemaReceived,
+  setIsGraphqlSchemaReceived,
+  getGraphQlUrlSubmitted,
   setSystemMessage,
-  getGraphqlSchemaJSON,
 } from '../../redux/slices/mainSlice';
 import { useTranslation } from 'react-i18next';
 import './SideBar.scss';
 
 interface Props {
   isSidebarShown: boolean;
+  setIsSidebarShown: Dispatch<SetStateAction<boolean>>;
 }
 
-export const SideBar: FC<Props> = ({ isSidebarShown }) => {
+export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
   const graphQlUrl = useAppSelector(getGraphQlUrl);
-  const graphqlSchemaJSON = useAppSelector(getGraphqlSchemaJSON);
+  const graphQlUrlSubmitted = useAppSelector(getGraphQlUrlSubmitted);
+  const isGraphqlSchemaReceived = useAppSelector(getIsGraphqlSchemaReceived);
 
-  const getGraphqlSchema = () => {
+  const openGraphqlSchema = () => {
     if (!graphQlUrl) {
       dispatch(
         setSystemMessage({ message: `${t('enterRequestSchemaUrl')}`, severity: 'negative' })
       );
-      return;
     }
-    dispatch(getGraphqlSchemaAsync(graphQlUrl));
-  };
-
-  const openGraphqlSchema = () => {
-    if (graphqlSchemaJSON) {
-      dispatch(setGraphqlSchemaJSON(null));
+    if (!isSidebarShown && graphQlUrl) {
+      dispatch(setGraphQlUrlSubmitted(graphQlUrl));
+      setIsSidebarShown(true);
     } else {
-      getGraphqlSchema();
+      setIsSidebarShown(false);
+      dispatch(setIsGraphqlSchemaReceived(false));
     }
   };
 
   const refreshGraphqlSchema = () => {
-    if (graphqlSchemaJSON) {
-      getGraphqlSchema();
+    if (!graphQlUrl) {
+      dispatch(
+        setSystemMessage({ message: `${t('enterRequestSchemaUrl')}`, severity: 'negative' })
+      );
+    } else {
+      dispatch(setGraphQlUrlSubmitted(graphQlUrl));
     }
   };
   return (
@@ -63,7 +67,7 @@ export const SideBar: FC<Props> = ({ isSidebarShown }) => {
       </div>
 
       <div className="sidebar-buttons-wrapper">
-        {graphqlSchemaJSON ? (
+        {isGraphqlSchemaReceived && graphQlUrlSubmitted !== graphQlUrl ? (
           <button type="button" className="icon-button" onClick={refreshGraphqlSchema}>
             <Refetch title={t('main.reFetchSchema') || ''} />
           </button>

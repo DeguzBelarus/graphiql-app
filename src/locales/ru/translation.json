@@ -46,6 +46,8 @@
   "enterRequestSchemaUrl": "Введите URL для получения схемы",
   "enterRequestQuery": "Введите данные для выполнения запроса",
   "enterCorrectVariablesJSON": "Введите корректный JSON переменных",
+  "schemaFetchedSuccessfully": "Схема успешно получена",
+  "errorGettingSchema": "Ошибка получения схемы",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",

@@ -2,8 +2,8 @@ import { FC, useRef } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
 import { getGraphQlUrl, setGraphQlUrl } from '../../redux/slices/mainSlice';
-import './GraphQlEndpoint.scss';
 import { useTranslation } from 'react-i18next';
+import './GraphQlEndpoint.scss';
 
 export const GraphQlEndpoint: FC = () => {
   const { t } = useTranslation();
