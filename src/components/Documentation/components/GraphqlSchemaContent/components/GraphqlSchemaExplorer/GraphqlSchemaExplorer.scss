@@ -1,0 +1,49 @@
+@import '../../../../../../styles/global';
+
+.graphql-schema-explorer-wrapper {
+  width: 100%;
+  height: 100%;
+  @include flex-column-line-start-vertical-top;
+  gap: 8px;
+  position: relative;
+
+  .upper-container {
+    width: 100%;
+    @include flex-line-spacebetween-vertical-center;
+
+    .close-schema-explorer-button {
+      position: static !important;
+      @include flex-all-center;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  .content-container {
+    width: 100%;
+    height: 100%;
+    @include flex-column-line-start-vertical-top;
+    gap: 8px;
+    position: relative;
+
+    .current-type-name-span {
+      font-weight: bold;
+      color: $main-theme-color;
+      text-transform: uppercase;
+    }
+
+    .description {
+      width: 100%;
+      word-wrap: break-word;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .fields-container {
+      width: 100%;
+      @include flex-column-line-start-vertical-top;
+      @include scroll;
+    }
+  }
+}

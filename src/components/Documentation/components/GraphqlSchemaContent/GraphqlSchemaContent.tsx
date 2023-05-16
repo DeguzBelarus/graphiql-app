@@ -1,11 +1,15 @@
 import { Dispatch, FC, SetStateAction, useEffect } from 'react';
-import { useAppDispatch } from '../../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../../redux/hooks';
 import { GraphQLSchema } from 'graphql';
 import { useTranslation } from 'react-i18next';
 
 import { Undefinable } from '../../../../types/types';
-import { setIsGraphqlSchemaReceived } from '../../../../redux/slices/mainSlice';
+import {
+  setIsGraphqlSchemaReceived,
+  getCurrentSchemaType,
+} from '../../../../redux/slices/mainSlice';
 import { GraphqlSchemaSection } from './components/GraphqlSchemaSection/GraphqlSchemaSection';
+import { GraphqlSchemaExplorer } from './components/GraphqlSchemaExplorer/GraphqlSchemaExplorer';
 import './GraphqlSchemaContent.scss';
 
 interface Props {
@@ -18,6 +22,8 @@ export const GraphqlSchemaContent: FC<Props> = ({ schemaReader, setIsSidebarShow
   const { t } = useTranslation();
   const schema = schemaReader.read();
 
+  const currentSchemaTypeName = useAppSelector(getCurrentSchemaType);
+
   useEffect(() => {
     if (!schema) {
       setIsSidebarShown(false);
@@ -29,13 +35,17 @@ export const GraphqlSchemaContent: FC<Props> = ({ schemaReader, setIsSidebarShow
     <div className="graphql-schema-content-wrapper">
       <h3>{t('docs')}</h3>
       {schema ? (
-        <>
-          <GraphqlSchemaSection
-            type="mutation"
-            graphQLObjectType={schema.getMutationType() || null}
-          />
-          <GraphqlSchemaSection type="query" graphQLObjectType={schema.getQueryType() || null} />
-        </>
+        !currentSchemaTypeName.length ? (
+          <>
+            <GraphqlSchemaSection
+              type="mutation"
+              graphQLObjectType={schema.getMutationType() || null}
+            />
+            <GraphqlSchemaSection type="query" graphQLObjectType={schema.getQueryType() || null} />
+          </>
+        ) : (
+          <GraphqlSchemaExplorer schema={schema} />
+        )
       ) : null}
     </div>
   );
