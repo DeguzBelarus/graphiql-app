@@ -3,12 +3,24 @@
 .graphql-field-wrapper {
   width: 100%;
   @include flex-column-line-start-vertical-top;
+  @include user-select-none;
   gap: 2px;
   padding: $s-padding;
   cursor: pointer;
 
   &:not(:hover) {
     border: 1px solid $accents-theme-color;
+  }
+
+  .expand-logo {
+    width: 10px;
+    height: auto;
+    margin-right: 4px;
+    transform: rotate(180deg);
+
+    &.open {
+      transform: none;
+    }
   }
 
   .field-name-span {
@@ -21,6 +33,11 @@
     word-wrap: break-word;
     color: #777;
     font-size: 14px;
+  }
+
+  .arguments-container {
+    width: 100%;
+    @include flex-column-line-start-vertical-top;
   }
 }
 

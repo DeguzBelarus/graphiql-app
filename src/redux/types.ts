@@ -22,6 +22,7 @@ export interface MainState {
   graphqlResponse: Nullable<object>;
   graphqlSchemaPrint: Nullable<string>;
   isGraphqlSchemaReceived: boolean;
+  currentSchemaType: Array<string>;
 }
 
 export interface IAuthFirebaseError {

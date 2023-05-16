@@ -25,6 +25,7 @@ const initialState: MainState = {
   graphqlResponse: null,
   graphqlSchemaPrint: null,
   isGraphqlSchemaReceived: false,
+  currentSchemaType: [],
 };
 
 export const mainSlice = createSlice({
@@ -105,6 +106,12 @@ export const mainSlice = createSlice({
       { payload }: PayloadAction<boolean>
     ) {
       state.isGraphqlSchemaReceived = payload;
+    },
+    setCurrentSchemaType(
+      state: WritableDraft<MainState>,
+      { payload }: PayloadAction<Array<string>>
+    ) {
+      state.currentSchemaType = payload;
     },
   },
   extraReducers: (builder) => {
@@ -239,6 +246,7 @@ export const {
     setGraphqlSchemaPrint,
     setIsGraphqlSchemaReceived,
     setGraphQlUrlSubmitted,
+    setCurrentSchemaType,
   },
 } = mainSlice;
 
@@ -265,5 +273,7 @@ export const getIsGraphqlSchemaReceived = ({ main: { isGraphqlSchemaReceived } }
   isGraphqlSchemaReceived;
 export const getGraphQlUrlSubmitted = ({ main: { graphQlUrlSubmitted } }: RootState) =>
   graphQlUrlSubmitted;
+export const getCurrentSchemaType = ({ main: { currentSchemaType } }: RootState) =>
+  currentSchemaType;
 
 export const { reducer } = mainSlice;
