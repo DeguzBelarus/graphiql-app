@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { RequestEditor } from '../RequestEditor/RequestEditor';
 import { EditorToolbar } from '../EditorToolbar/EditorToolbar';
@@ -7,6 +7,8 @@ import './Editors.scss';
 import { Tabs } from '../Tabs/Tabs';
 
 export const Editors: FC = () => {
+  const [isTabsOpen, setIsTabsOpen] = useState(true);
+
   return (
     <div className="editors-wrapper">
       <GraphQlEndpoint />
@@ -14,7 +16,9 @@ export const Editors: FC = () => {
         <RequestEditor />
         <EditorToolbar />
       </div>
-      <Tabs />
+      <div className={isTabsOpen ? '' : 'active-tabs'}>
+        <Tabs isTabsOpen={isTabsOpen} setIsTabsOpen={setIsTabsOpen} />
+      </div>
     </div>
   );
 };

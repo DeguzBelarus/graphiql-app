@@ -18,3 +18,18 @@
     justify-content: space-between;
   }
 }
+
+.active-tabs {
+  width: $column-width;
+  max-width: calc(50% - $sidebar-width - 10px);
+  position: absolute;
+  bottom: 15px;
+
+  .tabs-container {
+    height: 50px;
+
+    .tabs-content {
+      display: none;
+    }
+  }
+}
