@@ -32,7 +32,6 @@
 }
 
 .hidden-tabs {
-  //width: 100%;
   width: calc(50% - $sidebar-width - 10px);
   position: absolute;
   bottom: 15px;
