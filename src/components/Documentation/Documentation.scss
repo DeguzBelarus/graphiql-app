@@ -49,6 +49,7 @@
   }
 
   @include media-tablet {
+    width: 95vw;
     min-height: 30vh;
   }
 }
