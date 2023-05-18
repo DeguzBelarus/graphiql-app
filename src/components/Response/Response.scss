@@ -1,20 +1,20 @@
 @import '../../styles/variables';
 
 .response-wrapper {
+  width: $column-width;
   height: 100%;
   @include flex-column-line-start-vertical-top;
+  @include scroll;
   padding: $m-padding;
-  width: 30%;
   border-radius: $m-padding;
+  overflow: auto;
   background-color: #fff;
   color: $accents-theme-color;
   font-weight: bold;
-  
+
   pre {
     width: 100%;
     height: 100%;
-    overflow: auto;
-    @include scroll;
   }
 
   @include media-tablet {
