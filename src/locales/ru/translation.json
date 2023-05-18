@@ -51,6 +51,8 @@
   "arguments": "аргументы",
   "fields": "поля",
   "noDescriptionProvided": "Описание не представлено",
+  "noMutations": "Мутаций нет",
+  "noQueries": "Запросов нет",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",

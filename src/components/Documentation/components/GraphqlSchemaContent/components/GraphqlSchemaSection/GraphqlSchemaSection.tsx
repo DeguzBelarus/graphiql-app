@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Nullable } from '../../../../../../types/types';
 import { GraphQLObjectType } from 'graphql';
@@ -13,6 +14,8 @@ interface Props {
 }
 
 export const GraphqlSchemaSection: FC<Props> = ({ graphQLObjectType, type }) => {
+  const { t } = useTranslation();
+
   const [currentQueryId, setCurrentQueryId] = useState<Nullable<number>>(null);
   const [currentMutationId, setCurrentMutationId] = useState<Nullable<number>>(null);
   return (
@@ -41,7 +44,7 @@ export const GraphqlSchemaSection: FC<Props> = ({ graphQLObjectType, type }) => 
 
       {!graphQLObjectType ? (
         <span className="no-data-span">
-          {type === 'mutation' ? 'There are no mutations' : 'There are no queries'}
+          {type === 'mutation' ? `${t('noMutations')}` : `${t('noQueries')}`}
         </span>
       ) : null}
     </div>
