@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .response-wrapper {
   height: 100%;
@@ -27,5 +27,10 @@
     height: 5px;
     background-color: $accents-theme-color;
     border-radius: 5px;
+  }
+
+  @include media-tablet {
+    width: 100%;
+    height: 27vh;
   }
 }

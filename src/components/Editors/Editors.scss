@@ -4,6 +4,8 @@
   height: 100%;
   padding: $m-padding;
   width: $column-width;
+  max-width: 95vw;
+  min-width: $column-width;
   border-radius: $m-padding;
   background: $white-color;
   overflow: auto;
@@ -11,10 +13,42 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  @include scroll;
+
 
   .request-wrapper {
     height: calc(100% - $tabs-height - $graphQl-endpoint-height - 10px);
     display: flex;
     justify-content: space-between;
+  }
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .request-wrapper {
+      height: 30vh;
+    }
+  }
+}
+
+.hidden-tabs {
+  width: calc(50% - $sidebar-width - 10px);
+  position: absolute;
+  bottom: 15px;
+
+  .tabs-container {
+    height: 50px;
+
+    .tabs-content {
+      display: none;
+    }
+  }
+
+  @include media-tablet {
+    height: 30vh;
+    width: 90vw;
+    min-width: 90vw;
   }
 }

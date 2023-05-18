@@ -4,7 +4,7 @@
   width: 100%;
   @include flex-all-center;
   margin-bottom: 10px;
-  
+
   input {
     width: 90%;
     height: $graphQl-endpoint-height;
@@ -14,5 +14,14 @@
     border-radius: 10px;
     color: $main-theme-color;
     font-weight: bold;
+  }
+
+  @include media-tablet {
+    display: flex;
+    justify-content: start;
+
+    input {
+      width: 100%;
+    }
   }
 }

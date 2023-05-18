@@ -6,17 +6,23 @@ import { ReactComponent as Show } from '../../assets/icons/show.svg';
 import { ReactComponent as Hide } from '../../assets/icons/hide.svg';
 import { useTranslation } from 'react-i18next';
 
-export const Tabs = () => {
+interface TabsProps {
+  isTabsOpen: boolean;
+  setIsTabsOpen: (isTabsOpen: boolean) => void;
+}
+
+export const Tabs = ({ isTabsOpen, setIsTabsOpen }: TabsProps) => {
   const { t } = useTranslation();
 
-  const [isTabsOpen, setIsTabsOpen] = useState(true);
   const [activeTab, setActiveTab] = useState('tab1');
 
   const handleTab1 = () => {
     setActiveTab('tab1');
+    setIsTabsOpen(true);
   };
   const handleTab2 = () => {
     setActiveTab('tab2');
+    setIsTabsOpen(true);
   };
 
   return (
@@ -34,7 +40,9 @@ export const Tabs = () => {
           {isTabsOpen ? <Hide /> : <Show />}
         </button>
       </div>
-      <div>{activeTab === 'tab1' ? <VariablesEditor /> : <HeaderEditor />}</div>
+      <div className="tabs-content">
+        {activeTab === 'tab1' ? <VariablesEditor /> : <HeaderEditor />}
+      </div>
     </div>
   );
 };

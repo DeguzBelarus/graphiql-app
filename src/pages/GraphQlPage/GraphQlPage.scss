@@ -6,4 +6,10 @@
   @include flex-line-start-vertical-center;
   gap: 10px;
   margin: $m-padding;
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 }

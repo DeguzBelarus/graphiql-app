@@ -15,4 +15,17 @@ aside {
     flex-direction: column;
     gap: 10px;
   }
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+
+    .sidebar-buttons-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
 }
