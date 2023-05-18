@@ -53,6 +53,8 @@
   "noDescriptionProvided": "No description was provided",
   "noMutations": "There are no mutations",
   "noQueries": "There are no queries",
+  "mutation": "Mutation",
+  "query": "Query",
   "main": {
     "showDoc": "Show Documentation Explorer",
     "hideDoc": "Hide Documentation Explorer",

@@ -22,9 +22,9 @@ export const GraphqlSchemaSection: FC<Props> = ({ graphQLObjectType, type }) => 
     <div className="graphql-section-wrapper">
       {graphQLObjectType ? (
         <>
-          <h5 className="graphql-section-heading">{`${type === 'query' ? 'Query: ' : 'Mutation: '}${
-            graphQLObjectType?.name
-          }`}</h5>
+          <h5 className="graphql-section-heading">{`${
+            type === 'query' ? `${t('query')}: ` : `${t('mutation')}: `
+          }${graphQLObjectType?.name}`}</h5>
           {Object.values(graphQLObjectType.getFields()).map((graphQLField, index) => {
             return (
               <GraphqlSchemaField

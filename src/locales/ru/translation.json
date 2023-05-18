@@ -53,6 +53,8 @@
   "noDescriptionProvided": "Описание не представлено",
   "noMutations": "Мутаций нет",
   "noQueries": "Запросов нет",
+  "mutation": "Мутация",
+  "query": "Запрос",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",
