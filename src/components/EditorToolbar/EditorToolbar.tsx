@@ -60,7 +60,7 @@ export const EditorToolbar: FC = () => {
       <button
         type="button"
         className="icon-button-danger"
-        title="Send request"
+        title={t('main.executeQuery') || ''}
         onClick={sendGraphqlRequest}
       >
         <Play title={t('main.executeQuery') || ''} />
