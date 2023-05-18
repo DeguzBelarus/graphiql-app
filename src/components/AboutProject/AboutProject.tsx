@@ -29,11 +29,11 @@ const AboutProject = () => {
           <h1 className="project__title">GraphiQL</h1>
           <h4 className="project__description">{t('projectDescription')}</h4>
           {isAuth && (
-            <li>
+            <div>
               <Link className="button__link link--colored" to="/graphql">
                 {t('graphiQLNow')}
               </Link>
-            </li>
+            </div>
           )}
         </div>
         <div className="project__image">
