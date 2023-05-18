@@ -17,6 +17,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .active-tabs {

@@ -8,4 +8,9 @@
   gap: 10px;
   background: $light-color;
   border-radius: $m-padding;
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+  }
 }
