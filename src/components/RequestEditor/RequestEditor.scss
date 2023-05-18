@@ -2,7 +2,7 @@
 
 .request-editor-wrapper {
   width: 100%;
-  height: 100%;
+  height: auto;
   @include flex-column-line-start-vertical-top;
   position: relative;
   padding-top: 5px;
@@ -16,7 +16,8 @@
   @include media-tablet {
     display: flex;
     flex-direction: row;
-    background: red;
-    height: 32vh;
+    height: 28vh;
+    overflow: auto;
+    position: relative;
   }
 }

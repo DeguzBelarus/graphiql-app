@@ -4,6 +4,8 @@
   height: 100%;
   padding: $m-padding;
   width: $column-width;
+  max-width: 95vw;
+  min-width: $column-width;
   border-radius: $m-padding;
   background: $white-color;
   overflow: auto;
@@ -22,13 +24,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 300px;
+
+    .request-wrapper {
+      height: 30vh;
+    }
   }
 }
 
-.active-tabs {
-  width: $column-width;
-  max-width: calc(50% - $sidebar-width - 10px);
+.hidden-tabs {
+  //width: 100%;
+  width: calc(50% - $sidebar-width - 10px);
   position: absolute;
   bottom: 15px;
 
@@ -38,5 +43,11 @@
     .tabs-content {
       display: none;
     }
+  }
+
+  @include media-tablet {
+    height: 30vh;
+    width: 100%;
+    min-width: 90vw;
   }
 }
