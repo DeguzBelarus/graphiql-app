@@ -13,7 +13,7 @@ interface Props {
   data: GraphQLArgument;
 }
 
-export const GraphqlSchemaArgument: FC<Props> = ({ data: { name, type } }) => {
+export const GraphqlSchemaArgument: FC<Props> = ({ data: { name, type, description } }) => {
   const dispatch = useAppDispatch();
   const currentSchemaType = useAppSelector(getCurrentSchemaType);
   return (
@@ -27,6 +27,7 @@ export const GraphqlSchemaArgument: FC<Props> = ({ data: { name, type } }) => {
           {getTypeName(type)}
         </span>
       </p>
+      {description ? <p className="argument-description-paragraph">{description}</p> : null}
     </div>
   );
 };
