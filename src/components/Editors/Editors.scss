@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  @include scroll;
+
 
   .request-wrapper {
     height: calc(100% - $tabs-height - $graphQl-endpoint-height - 10px);
