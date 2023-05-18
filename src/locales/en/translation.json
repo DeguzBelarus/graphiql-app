@@ -48,6 +48,9 @@
   "enterCorrectVariablesJSON": "Enter a correct JSON of variables",
   "schemaFetchedSuccessfully": "The scheme was successfully fetched",
   "errorGettingSchema": "Error getting the schema",
+  "arguments": "arguments",
+  "fields": "fields",
+  "noDescriptionProvided": "No description was provided",
   "main": {
     "showDoc": "Show Documentation Explorer",
     "hideDoc": "Hide Documentation Explorer",

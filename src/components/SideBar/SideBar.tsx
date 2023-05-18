@@ -12,6 +12,7 @@ import {
   setIsGraphqlSchemaReceived,
   getGraphQlUrlSubmitted,
   setSystemMessage,
+  setCurrentSchemaType,
 } from '../../redux/slices/mainSlice';
 import { useTranslation } from 'react-i18next';
 import './SideBar.scss';
@@ -41,6 +42,7 @@ export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
     } else {
       setIsSidebarShown(false);
       dispatch(setIsGraphqlSchemaReceived(false));
+      dispatch(setCurrentSchemaType([]));
     }
   };
 

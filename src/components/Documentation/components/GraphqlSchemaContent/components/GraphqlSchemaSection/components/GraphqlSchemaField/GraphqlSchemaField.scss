@@ -6,7 +6,10 @@
   @include user-select-none;
   gap: 2px;
   padding: $s-padding;
-  cursor: pointer;
+
+  &.with-arguments {
+    cursor: pointer;
+  }
 
   &:not(:hover) {
     border: 1px solid $accents-theme-color;
@@ -38,6 +41,11 @@
   .arguments-container {
     width: 100%;
     @include flex-column-line-start-vertical-top;
+
+    .arguments-span {
+      margin-top: 5px;
+      font-weight: bold;
+    }
   }
 }
 

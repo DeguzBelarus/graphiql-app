@@ -1,6 +1,7 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../../../../../redux/hooks';
 import { GraphQLField } from 'graphql';
+import { useTranslation } from 'react-i18next';
 
 import expandIcon from '../../../../../../../../assets/icons/show.svg';
 import {
@@ -34,11 +35,12 @@ export const GraphqlSchemaField: FC<Props> = ({
   setCurrentQueryId,
 }) => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const currentSchemaType = useAppSelector(getCurrentSchemaType);
   return (
     <div
-      className="graphql-field-wrapper"
+      className={args?.length ? 'graphql-field-wrapper with-arguments' : 'graphql-field-wrapper'}
       onClick={
         fieldType === 'query' && setCurrentQueryId
           ? () => setCurrentQueryId(currentQueryId === id ? null : id)
@@ -73,7 +75,7 @@ export const GraphqlSchemaField: FC<Props> = ({
       {(args?.length && fieldType === 'query' && currentQueryId === id) ||
       (fieldType === 'mutation' && currentMutationId === id) ? (
         <div className="arguments-container">
-          <span>arguments:</span>
+          <span className="arguments-span">{`${t('arguments')}:`}</span>
           {args.map((argument, index) => {
             return <GraphqlSchemaArgument data={argument} key={index} />;
           })}

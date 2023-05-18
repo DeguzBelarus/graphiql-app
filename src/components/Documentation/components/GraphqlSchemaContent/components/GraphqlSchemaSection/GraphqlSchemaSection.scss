@@ -6,7 +6,7 @@
   @include flex-column-line-center-vertical-top;
   gap: 3px;
   padding: $m-padding;
-  border: 1px solid $accents-theme-color;
+  border: 1px solid $main-theme-color;
 
   .graphql-section-heading {
     width: 100%;

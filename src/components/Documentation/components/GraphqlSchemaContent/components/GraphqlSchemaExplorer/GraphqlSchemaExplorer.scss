@@ -5,7 +5,11 @@
   height: 100%;
   @include flex-column-line-start-vertical-top;
   gap: 8px;
+  padding: $m-padding;
   position: relative;
+  border: 1px solid $main-theme-color;
+  overflow: auto;
+  @include scroll;
 
   .upper-container {
     width: 100%;
@@ -28,6 +32,7 @@
     position: relative;
 
     .current-type-name-span {
+      font-size: 15px;
       font-weight: bold;
       color: $main-theme-color;
       text-transform: uppercase;
@@ -43,7 +48,12 @@
     .fields-container {
       width: 100%;
       @include flex-column-line-start-vertical-top;
-      @include scroll;
+      gap: 3px;
+
+      .fields-span {
+        margin-top: 5px;
+        font-weight: bold;
+      }
     }
   }
 }

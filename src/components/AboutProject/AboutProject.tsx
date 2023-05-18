@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../redux/hooks';
-import { getIsAuth } from '../../redux/slices/mainSlice';
 
+import { getIsAuth } from '../../redux/slices/mainSlice';
 import './AboutProject.scss';
 
 const AboutProject = () => {
