@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .docs-wrapper {
   width: $docs-width;
@@ -46,6 +46,10 @@
       width: 100%;
       color: $main-theme-color;
     }
+  }
+
+  @include media-tablet {
+    min-height: 30vh;
   }
 }
 
