@@ -61,6 +61,7 @@
   "enterHeaderValueCap": "Enter new header value",
   "enterCorrectHeaderNameCap": "Enter correct name for the header",
   "headerWasAdded": "The header was successfully added",
+  "headerWasDeleted": "The header was successfully deleted",
   "main": {
     "showDoc": "Show Documentation Explorer",
     "hideDoc": "Hide Documentation Explorer",

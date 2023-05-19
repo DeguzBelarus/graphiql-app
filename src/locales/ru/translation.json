@@ -61,6 +61,7 @@
   "enterHeaderValueCap": "Введите значение нового хедера",
   "enterCorrectHeaderNameCap": "Введите корректное название нового хедера",
   "headerWasAdded": "Заголовок был успешно добавлен",
+  "headerWasDeleted": "Заголовок был успешно удалён",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",
