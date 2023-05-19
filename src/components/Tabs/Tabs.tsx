@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import './Tabs.scss';
+import { useState } from 'react';
+
 import { VariablesEditor } from '../VariablesEditor/VariablesEditor';
 import { HeaderEditor } from '../HeaderEditor/HeaderEditor';
 import { ReactComponent as Show } from '../../assets/icons/show.svg';
 import { ReactComponent as Hide } from '../../assets/icons/hide.svg';
 import { useTranslation } from 'react-i18next';
+import './Tabs.scss';
 
 interface TabsProps {
   isTabsOpen: boolean;

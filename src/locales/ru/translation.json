@@ -55,6 +55,13 @@
   "noQueries": "Запросов нет",
   "mutation": "Мутация",
   "query": "Запрос",
+  "headerNameCap": "Название хедера",
+  "headerValueCap": "Значение хедера",
+  "enterHeaderNameCap": "Введите название нового хедера",
+  "enterHeaderValueCap": "Введите значение нового хедера",
+  "enterCorrectHeaderNameCap": "Введите корректное название нового хедера",
+  "headerWasAdded": "Заголовок был успешно добавлен",
+  "headerWasDeleted": "Заголовок был успешно удалён",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",
@@ -66,7 +73,7 @@
     "copiedQuery": "Запрос был скопирован",
     "enterUrl": "Введите URL для запроса",
     "enterQuery": "Введите запрос или мутацию",
-    "enterVariables": "Введите переменные",
+    "enterVariables": "Введите переменные (JSON)",
     "variables": "Переменные",
     "headers": "Хедеры"
   }

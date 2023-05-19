@@ -1,11 +1,13 @@
 import { IGraphqlQuery } from './types';
 
-export const requestData = (endpoint: string, graphqlQuery: IGraphqlQuery) => {
+export const requestData = (
+  endpoint: string,
+  graphqlQuery: IGraphqlQuery,
+  headers: HeadersInit
+) => {
   return fetch(endpoint, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: JSON.stringify(graphqlQuery),
   });
 };
