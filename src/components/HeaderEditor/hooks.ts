@@ -30,6 +30,7 @@ export const useHeaderValidate = () => {
         );
       return false;
     }
+    dispatch(setSystemMessage({ message: `${t('headerWasAdded')}`, severity: 'positive' }));
     return true;
   };
 };

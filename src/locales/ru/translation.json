@@ -60,6 +60,7 @@
   "enterHeaderNameCap": "Введите название нового хедера",
   "enterHeaderValueCap": "Введите значение нового хедера",
   "enterCorrectHeaderNameCap": "Введите корректное название нового хедера",
+  "headerWasAdded": "Заголовок был успешно добавлен",
   "main": {
     "showDoc": "Показать документацию",
     "hideDoc": "Скрыть документацию",
