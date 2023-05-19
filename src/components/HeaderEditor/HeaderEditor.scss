@@ -13,8 +13,11 @@
 
   .applied-headers-container {
     width: 100%;
+    height: $headers-container-height;
     @include flex-column-line-start-vertical-top;
     gap: 3px;
     padding: $m-padding;
+    overflow: auto;
+    @include scroll;
   }
 }

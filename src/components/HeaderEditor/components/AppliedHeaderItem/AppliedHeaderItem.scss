@@ -1,0 +1,14 @@
+@import '../../../../styles/global';
+
+.applied-header-item-wrapper {
+  width: 100%;
+  @include flex-line-spacebetween-vertical-center;
+  padding: $m-padding;
+  background-color: $light-gary-color;
+  border-radius: 8px;
+
+  .remove-header-button {
+    background-color: $danger-color;
+    color: #fff;
+  }
+}

@@ -6,11 +6,14 @@ import { EMPTY_NEW_HEADER_FORM_DATA } from './constants';
 import { Input } from '../Input/Input';
 import { useHeaderValidate } from './hooks';
 import './HeaderEditor.scss';
+import { AppliedHeaderItem } from './components/AppliedHeaderItem/AppliedHeaderItem';
 
 export interface INewHeaderFormData {
   headerName: string;
   headerValue: string;
 }
+
+export type HeaderEntryArray = [string, string];
 
 export const HeaderEditor: FC = () => {
   const dispatch = useAppDispatch();
@@ -20,6 +23,8 @@ export const HeaderEditor: FC = () => {
   const [headerFormData, setHeaderFormData] = useState<INewHeaderFormData>(
     EMPTY_NEW_HEADER_FORM_DATA
   );
+
+  const currentHeadersEntries = Object.entries(currentRequestHeaders) as Array<HeaderEntryArray>;
 
   const headerFormDataReset = () => {
     setHeaderFormData(EMPTY_NEW_HEADER_FORM_DATA);
@@ -62,7 +67,11 @@ export const HeaderEditor: FC = () => {
           +
         </button>
       </div>
-      <div className="applied-headers-container"></div>
+      <div className="applied-headers-container">
+        {currentHeadersEntries.map((headerEntry, index) => {
+          return <AppliedHeaderItem headerData={headerEntry} id={index} key={index} />;
+        })}
+      </div>
     </div>
   );
 };
