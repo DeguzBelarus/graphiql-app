@@ -44,7 +44,11 @@ export const loginUserAsync = createAsyncThunk(
 export const sendGraphqlRequestAsync = createAsyncThunk(
   'editor/request-send',
   async (data: IGraphqlRequest): Promise<Nullable<IGraphqlResponse>> => {
-    const graphqlResponse: Undefinable<Response> = await requestData(data.endpoint, data.queryData);
+    const graphqlResponse: Undefinable<Response> = await requestData(
+      data.endpoint,
+      data.queryData,
+      data.headers
+    );
     if (graphqlResponse) {
       const graphqlResponseData: IGraphqlResponse = await graphqlResponse.json();
       return graphqlResponseData;

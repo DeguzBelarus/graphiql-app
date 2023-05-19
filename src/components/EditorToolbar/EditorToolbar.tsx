@@ -9,6 +9,7 @@ import {
   setSystemMessage,
   getVariablesJSON,
   setGraphQlQuery,
+  getCurrentRequestHeaders,
 } from '../../redux/slices/mainSlice';
 import { ReactComponent as Play } from '../../assets/icons/play.svg';
 import { ReactComponent as Copy } from '../../assets/icons/copy.svg';
@@ -25,6 +26,7 @@ export const EditorToolbar: FC = () => {
   let graphQlQuery = useAppSelector(getGraphQlQuery);
   const graphQlResponse = useAppSelector(getGraphQlQuery);
   const variablesJSON = useAppSelector(getVariablesJSON);
+  const headers = useAppSelector(getCurrentRequestHeaders);
 
   const sendGraphqlRequest = () => {
     graphQlResponse && dispatch(setGraphqlResponse(null));
@@ -47,7 +49,7 @@ export const EditorToolbar: FC = () => {
         dispatch(setGraphQlQuery(graphQlQuery));
       }
     }
-    dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery }));
+    dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery, headers }));
   };
 
   const copyQuery = () => {

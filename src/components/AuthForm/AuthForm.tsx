@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { getAuthRequestStatus } from '../../redux/slices/mainSlice';
 import { hasDigitChecking, hasLetterChecking, hasSpecCharChecking } from './utils';
 import logo from '../../assets/images/logo.png';
-import { Input } from './Input/Input';
+import { Input } from '../Input/Input';
 import { IAuthFormData } from '../../types/types';
 import { FORM_DATA_DEFAULTS } from './constants';
 import { useValidate } from './hooks/useValidate';

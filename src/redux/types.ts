@@ -23,6 +23,7 @@ export interface MainState {
   graphqlSchemaPrint: Nullable<string>;
   isGraphqlSchemaReceived: boolean;
   currentSchemaType: Array<string>;
+  currentRequestHeaders: HeadersInit;
 }
 
 export interface IAuthFirebaseError {
@@ -44,6 +45,7 @@ export interface IGraphqlQuery {
 
 export interface IGraphqlRequest {
   endpoint: string;
+  headers: HeadersInit;
   queryData: IGraphqlQuery;
 }
 

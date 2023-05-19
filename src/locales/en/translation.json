@@ -55,6 +55,11 @@
   "noQueries": "There are no queries",
   "mutation": "Mutation",
   "query": "Query",
+  "headerNameCap": "Header name",
+  "headerValueCap": "Header value",
+  "enterHeaderNameCap": "Enter new header name",
+  "enterHeaderValueCap": "Enter new header value",
+  "enterCorrectHeaderNameCap": "Enter correct name for the header",
   "main": {
     "showDoc": "Show Documentation Explorer",
     "hideDoc": "Hide Documentation Explorer",
@@ -66,7 +71,7 @@
     "copiedQuery": "Query copied",
     "enterUrl": "Enter URL to make request",
     "enterQuery": "Enter Query or Mutation",
-    "enterVariables": "Enter Variables",
+    "enterVariables": "Enter Variables (JSON)",
     "variables": "Variables",
     "headers": "Headers"
   }
