@@ -1,7 +1,12 @@
 import { FC, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { useTranslation } from 'react-i18next';
 
-import { setCurrentRequestHeaders, getCurrentRequestHeaders } from '../../redux/slices/mainSlice';
+import {
+  setCurrentRequestHeaders,
+  getCurrentRequestHeaders,
+  setSystemMessage,
+} from '../../redux/slices/mainSlice';
 import { EMPTY_NEW_HEADER_FORM_DATA } from './constants';
 import { Input } from '../Input/Input';
 import { useHeaderValidate } from './hooks';
@@ -17,6 +22,7 @@ export type HeaderEntryArray = [string, string];
 
 export const HeaderEditor: FC = () => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   const newHeaderValidate = useHeaderValidate();
   const currentRequestHeaders = useAppSelector(getCurrentRequestHeaders);
 
@@ -39,6 +45,7 @@ export const HeaderEditor: FC = () => {
         })
       );
       headerFormDataReset();
+      dispatch(setSystemMessage({ message: `${t('headerWasAdded')}`, severity: 'positive' }));
     }
   };
   return (
