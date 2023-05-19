@@ -2,6 +2,7 @@
 
 .docs-wrapper {
   width: $docs-width;
+  min-width: $docs-width;
   height: 100%;
   @include flex-column-line-center-vertical-top;
   @include scroll;
@@ -14,8 +15,9 @@
   }
 
   .type {
+    font-size: 14px;
     text-transform: uppercase;
-    color: red !important;
+    color: $danger-color;
     font-weight: bold;
     cursor: pointer;
   }

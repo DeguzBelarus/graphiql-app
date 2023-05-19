@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useAppSelector, useAppDispatch } from '../../../../../../redux/hooks';
 import { GraphQLSchema } from 'graphql';
+import { useTranslation } from 'react-i18next';
 
 import {
   getCurrentSchemaType,
@@ -16,6 +17,7 @@ interface Props {
 
 export const GraphqlSchemaExplorer: FC<Props> = ({ schema }) => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const currentSchemaTypeName = useAppSelector(getCurrentSchemaType);
   const currentSchemaTypeData = schema.getType(
@@ -28,7 +30,7 @@ export const GraphqlSchemaExplorer: FC<Props> = ({ schema }) => {
         {currentSchemaTypeName.length > 1 ? (
           <button
             type="button"
-            className="close-schema-explorer-button"
+            className="icon-button"
             onClick={() =>
               dispatch(
                 setCurrentSchemaType(
@@ -42,7 +44,7 @@ export const GraphqlSchemaExplorer: FC<Props> = ({ schema }) => {
         ) : null}
         <button
           type="button"
-          className="close-schema-explorer-button"
+          className="icon-button"
           onClick={() => dispatch(setCurrentSchemaType([]))}
         >
           &times;
@@ -53,11 +55,11 @@ export const GraphqlSchemaExplorer: FC<Props> = ({ schema }) => {
           {currentSchemaTypeName[currentSchemaTypeName.length - 1]}
         </span>
         <span className="description">
-          {currentSchemaTypeData?.description || 'No description was provided'}
+          {currentSchemaTypeData?.description || `${t('noDescriptionProvided')}`}
         </span>
         {fields.length ? (
           <div className="fields-container">
-            <span>{'fields:'}</span>
+            <span className="fields-span">{`${t('fields')}:`}</span>
             {fields.map((typeField, index) => {
               return <GraphqlSchemaField data={typeField} id={index} key={index} />;
             })}

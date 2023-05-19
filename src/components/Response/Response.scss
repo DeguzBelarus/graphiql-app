@@ -1,32 +1,20 @@
 @import '../../styles/variables';
 
 .response-wrapper {
+  width: $column-width;
   height: 100%;
   @include flex-column-line-start-vertical-top;
+  @include scroll;
   padding: $m-padding;
-  width: $column-width;
   border-radius: $m-padding;
-  overflow-y: auto;
+  overflow: auto;
   background-color: #fff;
   color: $accents-theme-color;
   font-weight: bold;
 
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    width: 5px;
-    height: 5px;
-    background-color: $accents-theme-color;
-    border-radius: 5px;
+  pre {
+    width: 100%;
+    height: 100%;
   }
 
   @include media-tablet {

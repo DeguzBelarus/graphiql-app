@@ -17,8 +17,8 @@ export const SystemMessage: FC = () => {
     const newMessage = authMessage?.message;
     if (newMessage) {
       setMessage(newMessage);
-      clearTimeout(timer);
       setIsShown(true);
+      clearTimeout(timer);
       setTimer(
         setTimeout(() => {
           setIsShown(false);

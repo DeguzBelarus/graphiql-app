@@ -4,6 +4,14 @@
   width: 100%;
 
   span {
-    color: green;
+    color: $success-color;
+    font-weight: bold;
+  }
+
+  .argument-description-paragraph {
+    width: 100%;
+    word-wrap: break-word;
+    color: #777;
+    font-size: 14px;
   }
 }
