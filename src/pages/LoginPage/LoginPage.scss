@@ -2,6 +2,7 @@
 
 .login-page-wrapper {
   width: 100%;
-  height: calc(100vh - $header-height);
+  min-height: calc(100vh - $header-height - $footer-height - 20px);
   @include flex-all-center;
+  margin: 10px 0 60px;
 }
