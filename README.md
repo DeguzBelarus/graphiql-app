@@ -1,8 +1,14 @@
-# Available Scripts
+# GraphiQL - the GraphQL IDE
+
+## Deploy
+
+[Netlify link](https://rs-graphiql.netlify.app/)
+
+## Available Scripts
 
 `start` - runs this project
 
-## dotenv config
+## .env file variables
 
 `REACT_APP_API_KEY`=AIzaSyCl-OllVThA-VGeNDN2VcsaduRzzKNK06Y
 
