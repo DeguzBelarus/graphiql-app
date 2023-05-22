@@ -13,7 +13,7 @@ const AboutProject = () => {
   return (
     <section className="project">
       <div className="project__button">
-        {!isAuth && (
+        {!isAuth ? (
           <>
             <Link className="button__link" to="/login">
               {t('signIn')}
@@ -22,19 +22,16 @@ const AboutProject = () => {
               {t('signUp')}
             </Link>
           </>
+        ) : (
+          <Link className="button__link link--colored" to="/graphql">
+            {t('graphiQLNow')}
+          </Link>
         )}
       </div>
       <div className="project__wrapper">
         <div className="project__content">
           <h1 className="project__title">GraphiQL</h1>
           <h4 className="project__description">{t('projectDescription')}</h4>
-          {isAuth && (
-            <div>
-              <Link className="button__link link--colored" to="/graphql">
-                {t('graphiQLNow')}
-              </Link>
-            </div>
-          )}
         </div>
         <div className="project__image">
           <img
