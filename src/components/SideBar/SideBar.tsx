@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { ReactComponent as Documentation } from '../../assets/icons/document.svg';
 import { ReactComponent as History } from '../../assets/icons/history.svg';
 import { ReactComponent as Refetch } from '../../assets/icons/refetch.svg';
-import { ReactComponent as Settings } from '../../assets/icons/setting.svg';
 import {
   getGraphQlUrl,
   setGraphQlUrlSubmitted,
