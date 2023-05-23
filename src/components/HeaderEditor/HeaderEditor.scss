@@ -20,4 +20,10 @@
     overflow: auto;
     @include scroll;
   }
+
+  @include media-tablet {
+    height: auto;
+    min-height: 20vh;
+    overflow: auto;
+  }
 }

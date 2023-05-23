@@ -47,12 +47,12 @@
   }
 
   @include media-tablet {
-    height: auto;
     min-height: 27vh;
     overflow: auto;
 
     .textarea {
       height: auto;
+      padding-left: 5px;
     }
   }
 }

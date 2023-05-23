@@ -9,8 +9,15 @@
   background: $light-color;
   border-radius: $m-padding;
 
+  @include media-laptop {
+    min-width: calc(100vw - $docs-width - $sidebar-width - 30px);
+    max-width: calc(100vw - $sidebar-width);
+  }
+
   @include media-tablet {
     display: flex;
     flex-direction: column;
+    height: calc(100% - $footer-height);
+    margin-bottom: $footer-height;
   }
 }

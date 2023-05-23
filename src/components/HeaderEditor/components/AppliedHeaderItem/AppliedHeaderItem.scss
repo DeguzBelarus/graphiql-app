@@ -11,4 +11,8 @@
     background-color: $danger-color;
     color: #fff;
   }
+
+  @include media-tablet {
+    padding: 2px;
+  }
 }

@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { ReactComponent as Documentation } from '../../assets/icons/document.svg';
 import { ReactComponent as History } from '../../assets/icons/history.svg';
 import { ReactComponent as Refetch } from '../../assets/icons/refetch.svg';
-import { ReactComponent as Settings } from '../../assets/icons/setting.svg';
 import {
   getGraphQlUrl,
   setGraphQlUrlSubmitted,
@@ -84,9 +83,6 @@ export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
             <Refetch title={t('main.reFetchSchema') || ''} />
           </button>
         ) : null}
-        <button type="button" className="icon-button" title={t('main.showSetting') || ''}>
-          <Settings title={t('main.showSetting') || ''} />
-        </button>
       </div>
     </aside>
   );
