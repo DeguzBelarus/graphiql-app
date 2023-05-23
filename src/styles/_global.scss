@@ -40,6 +40,7 @@ button {
   svg {
     color: #662abe;
     height: 24px;
+    width: 24px;
 
     &:hover {
       color: $accents-theme-color;
@@ -59,6 +60,7 @@ button {
   svg {
     color: $white-color;
     height: 24px;
+    width: 24px;
   }
 }
 
@@ -68,6 +70,7 @@ button {
   svg {
     color: $white-color;
     height: 24px;
+    width: 24px;
   }
 
   @include media-tablet {
@@ -78,6 +81,7 @@ button {
     svg {
       display: inline;
       height: 24px;
+      width: 24px;
       color: $white-color;
 
       &:hover,

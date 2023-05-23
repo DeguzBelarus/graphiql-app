@@ -12,5 +12,6 @@
   @include media-tablet {
     display: flex;
     flex-direction: column;
+    height: calc(100% - $footer-height);
   }
 }
