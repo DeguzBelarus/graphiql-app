@@ -13,5 +13,6 @@
     display: flex;
     flex-direction: column;
     height: calc(100% - $footer-height);
+    margin-bottom: $footer-height;
   }
 }
