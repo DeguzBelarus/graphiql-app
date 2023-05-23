@@ -13,8 +13,8 @@
   font-weight: bold;
 
   pre {
-    width: 100%;
     height: 100%;
+    max-width: calc((100vw - $sidebar-width - $docs-width) /2);
   }
 
   @include media-tablet {
