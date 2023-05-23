@@ -22,7 +22,8 @@
   }
 
   @include media-tablet {
-    height: 20vh;
+    height: auto;
+    min-height: 20vh;
     overflow: auto;
   }
 }

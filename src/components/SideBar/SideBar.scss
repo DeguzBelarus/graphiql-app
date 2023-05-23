@@ -19,8 +19,8 @@ aside {
   @include media-tablet {
     display: flex;
     flex-direction: row;
-    height: 70px;
     width: auto;
+    padding: 5px 0 0;
 
     .sidebar-buttons-wrapper {
       display: flex;

@@ -84,9 +84,6 @@ export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
             <Refetch title={t('main.reFetchSchema') || ''} />
           </button>
         ) : null}
-        <button type="button" className="icon-button" title={t('main.showSetting') || ''}>
-          <Settings title={t('main.showSetting') || ''} />
-        </button>
       </div>
     </aside>
   );
