@@ -1,23 +1,22 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 import { setGraphQlQuery, getGraphQlQuery } from '../../redux/slices/mainSlice';
-import './RequestEditor.scss';
 import { Textarea } from '../Textarea/Textarea';
 import { useTranslation } from 'react-i18next';
+import './RequestEditor.scss';
 
 export const RequestEditor: FC = () => {
-  const { t } = useTranslation();
-
-  const [value, setValue] = useState('');
-
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const graphQlQuery = useAppSelector(getGraphQlQuery);
 
-  const graphqlQueryUpdate = (value: string) => {
+  const [value, setValue] = useState(graphQlQuery.query);
+
+  const graphqlQueryUpdate = (queryFieldValue: string) => {
     let operationName = '';
-    const query = value;
+    const query = queryFieldValue;
 
     if (query.split(' ').includes('query')) {
       operationName = query.split(' ')[1];
@@ -37,7 +36,6 @@ export const RequestEditor: FC = () => {
     setValue(value);
     graphqlQueryUpdate(value);
   };
-
   return (
     <div className="request-editor-wrapper">
       <Textarea
