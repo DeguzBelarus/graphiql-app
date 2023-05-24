@@ -1,0 +1,22 @@
+@import '../../../../styles/global';
+
+.history-item-wrapper {
+  width: 100%;
+  height: $history-item-height;
+  @include flex-line-start-vertical-center;
+  gap: 3px;
+  padding: $m-padding;
+  background-color: $light-gary-color;
+
+  .query-span {
+    color: $secondary-theme-color !important;
+    font-weight: bold;
+  }
+
+  .history-restore-icon {
+    width: auto;
+    height: 110%;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

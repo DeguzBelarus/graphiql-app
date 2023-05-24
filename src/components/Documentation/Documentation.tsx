@@ -8,17 +8,17 @@ import { useRequestSchema } from '../../hooks/useRequestSchema';
 import './Documentation.scss';
 
 interface Props {
-  setIsSidebarShown: Dispatch<SetStateAction<boolean>>;
+  setIsDocsShown: Dispatch<SetStateAction<boolean>>;
 }
 
-export const Documentation: FC<Props> = ({ setIsSidebarShown }) => {
+export const Documentation: FC<Props> = ({ setIsDocsShown }) => {
   const graphQlUrlSubmitted = useAppSelector(getGraphQlUrlSubmitted);
   const schemaReader = useRequestSchema(graphQlUrlSubmitted);
 
   return (
     <div className="docs-wrapper">
       <Suspense fallback={<RoundLoader />}>
-        <GraphqlSchemaContent schemaReader={schemaReader()} setIsSidebarShown={setIsSidebarShown} />
+        <GraphqlSchemaContent schemaReader={schemaReader()} setIsDocsShown={setIsDocsShown} />
       </Suspense>
     </div>
   );

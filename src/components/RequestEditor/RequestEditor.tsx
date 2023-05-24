@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 import { setGraphQlQuery, getGraphQlQuery } from '../../redux/slices/mainSlice';
@@ -11,8 +11,6 @@ export const RequestEditor: FC = () => {
   const { t } = useTranslation();
 
   const graphQlQuery = useAppSelector(getGraphQlQuery);
-
-  const [value, setValue] = useState(graphQlQuery.query);
 
   const graphqlQueryUpdate = (queryFieldValue: string) => {
     let operationName = '';
@@ -31,16 +29,11 @@ export const RequestEditor: FC = () => {
       )
     );
   };
-
-  const updateRequest = (value: string) => {
-    setValue(value);
-    graphqlQueryUpdate(value);
-  };
   return (
     <div className="request-editor-wrapper">
       <Textarea
-        value={value}
-        onValueChange={(value) => updateRequest(value)}
+        value={graphQlQuery.query}
+        onValueChange={(value) => graphqlQueryUpdate(value)}
         numOfLines={1}
         placeholder={t('main.enterQuery')}
       />

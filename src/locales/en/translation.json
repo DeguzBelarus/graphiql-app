@@ -25,6 +25,8 @@
   "aboutSchoolText3": "The mentors and trainers of this school are front-end and javascript developers from different companies and countries.",
   "aboutSchoolText4": "This application was created as the final task of the React course of the RS School.",
   "docs": "Docs",
+  "historyCap": "History",
+  "emptyHistory": "History is empty",
   "docsContent": "Documentation content",
   "authorizationChecking": "Authorization checking...",
   "notFoundPageText": "Something went wrong!",

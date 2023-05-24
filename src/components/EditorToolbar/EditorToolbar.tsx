@@ -10,6 +10,8 @@ import {
   getVariablesJSON,
   setGraphQlQuery,
   getCurrentRequestHeaders,
+  getRequestsHistory,
+  setRequestsHistory,
 } from '../../redux/slices/mainSlice';
 import { ReactComponent as Play } from '../../assets/icons/play.svg';
 import { ReactComponent as Copy } from '../../assets/icons/copy.svg';
@@ -27,8 +29,9 @@ export const EditorToolbar: FC = () => {
   const graphQlResponse = useAppSelector(getGraphQlQuery);
   const variablesJSON = useAppSelector(getVariablesJSON);
   const headers = useAppSelector(getCurrentRequestHeaders);
+  const requestsHistory = useAppSelector(getRequestsHistory);
 
-  const sendGraphqlRequest = () => {
+  const sendGraphqlRequest = async () => {
     graphQlResponse && dispatch(setGraphqlResponse(null));
     if (!graphQlUrl) {
       dispatch(setSystemMessage({ message: `${t('enterRequestUrl')}`, severity: 'negative' }));
@@ -49,7 +52,32 @@ export const EditorToolbar: FC = () => {
         dispatch(setGraphQlQuery(graphQlQuery));
       }
     }
-    dispatch(sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery, headers }));
+    const { type } = await dispatch(
+      sendGraphqlRequestAsync({ endpoint: graphQlUrl, queryData: graphQlQuery, headers })
+    );
+    if (type.split('/')[2] === 'fulfilled') {
+      if (
+        !requestsHistory.length ||
+        requestsHistory[requestsHistory.length - 1].query !== graphQlQuery.query ||
+        requestsHistory[requestsHistory.length - 1].graphQlUrl !== graphQlUrl ||
+        requestsHistory[requestsHistory.length - 1].variablesJSON !== variablesJSON ||
+        JSON.stringify(requestsHistory[requestsHistory.length - 1].currentRequestHeaders) !==
+          JSON.stringify(headers)
+      ) {
+        dispatch(
+          setRequestsHistory([
+            ...requestsHistory,
+            {
+              graphQlUrl,
+              query: graphQlQuery.query,
+              variablesJSON,
+              currentRequestHeaders: headers,
+              creationDateStamp: Date.now(),
+            },
+          ])
+        );
+      }
+    }
   };
 
   const copyQuery = () => {

@@ -24,6 +24,15 @@ export interface MainState {
   isGraphqlSchemaReceived: boolean;
   currentSchemaType: Array<string>;
   currentRequestHeaders: HeadersInit;
+  requestsHistory: Array<IHistoryRequestObject>;
+}
+
+export interface IHistoryRequestObject {
+  graphQlUrl: string;
+  query: string;
+  variablesJSON: string;
+  currentRequestHeaders: HeadersInit;
+  creationDateStamp: number;
 }
 
 export interface IAuthFirebaseError {

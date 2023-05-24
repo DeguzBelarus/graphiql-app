@@ -25,6 +25,8 @@
   "aboutSchoolText3": "Наставники и тренеры этой школы — front-end и javascript разработчики из разных компаний и стран.",
   "aboutSchoolText4": "Это приложение было создано как последнее задание курса React RS School.",
   "docs": "Документы",
+  "historyCap": "История",
+  "emptyHistory": "История пуста",
   "docsContent": "Содержимое документации",
   "authorizationChecking": "Проверка авторизации...",
   "notFoundPageText": "Что-то пошло не так!",

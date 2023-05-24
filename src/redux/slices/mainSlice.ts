@@ -3,7 +3,7 @@ import { WritableDraft } from 'immer/dist/internal';
 import { RootState } from '../store';
 
 import { CurrentLanguageType, ISystemMessageObject, Nullable } from '../../types/types';
-import { IGraphqlQuery, MainState, RequestStatusType } from '../types';
+import { IGraphqlQuery, IHistoryRequestObject, MainState, RequestStatusType } from '../types';
 import { loginUserAsync, registerUserAsync, sendGraphqlRequestAsync } from '../thunks';
 import { EMPTY_GRAPHQL_QUERY, EMPTY_STRING } from '../../constants/constants';
 
@@ -27,6 +27,7 @@ const initialState: MainState = {
   isGraphqlSchemaReceived: false,
   currentSchemaType: [],
   currentRequestHeaders: { ['Content-Type']: 'application/json' },
+  requestsHistory: [],
 };
 
 export const mainSlice = createSlice({
@@ -119,6 +120,12 @@ export const mainSlice = createSlice({
       { payload }: PayloadAction<HeadersInit>
     ) {
       state.currentRequestHeaders = payload;
+    },
+    setRequestsHistory(
+      state: WritableDraft<MainState>,
+      { payload }: PayloadAction<Array<IHistoryRequestObject>>
+    ) {
+      state.requestsHistory = payload;
     },
   },
   extraReducers: (builder) => {
@@ -255,6 +262,7 @@ export const {
     setGraphQlUrlSubmitted,
     setCurrentSchemaType,
     setCurrentRequestHeaders,
+    setRequestsHistory,
   },
 } = mainSlice;
 
@@ -285,5 +293,6 @@ export const getCurrentSchemaType = ({ main: { currentSchemaType } }: RootState)
   currentSchemaType;
 export const getCurrentRequestHeaders = ({ main: { currentRequestHeaders } }: RootState) =>
   currentRequestHeaders;
+export const getRequestsHistory = ({ main: { requestsHistory } }: RootState) => requestsHistory;
 
 export const { reducer } = mainSlice;

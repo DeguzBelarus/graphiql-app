@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.history-wrapper {
+  width: $docs-width;
+  min-width: $docs-width;
+  height: 100%;
+  @include flex-column-line-start-vertical-top;
+  gap: 5px;
+  @include scroll;
+  padding: $m-padding;
+  overflow: auto;
+
+  .upper-container {
+    width: 100%;
+    height: 30px;
+    @include flex-line-spacebetween-vertical-center;
+
+    .clear-history-icon {
+      width: auto;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .history-items-wrapper {
+    width: 100%;
+    @include flex-column-line-start-vertical-top;
+    gap: 5px;
+
+    span {
+      color: $accents-theme-color;
+    }
+  }
+}
