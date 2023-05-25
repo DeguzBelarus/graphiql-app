@@ -4,13 +4,16 @@
   width: 100%;
   height: $history-item-height;
   @include flex-line-start-vertical-center;
-  gap: 3px;
+  gap: 5px;
   padding: $m-padding;
   background-color: $light-gary-color;
 
-  .query-span {
-    color: $secondary-theme-color !important;
-    font-weight: bold;
+  .query-paragraph {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $secondary-theme-color;
+    font-weight: 600;
   }
 
   .history-restore-icon {

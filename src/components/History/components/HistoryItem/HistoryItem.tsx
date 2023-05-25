@@ -51,7 +51,7 @@ export const HistoryItem: FC<Props> = ({
   return (
     <div className="history-item-wrapper">
       <span>{`${id}.`}</span>
-      <span className="query-span">{`${query.slice(0, 25)}...`}</span>
+      <p className="query-paragraph">{query}</p>
       <img
         className="history-restore-icon"
         src={historyRestoreIcon}

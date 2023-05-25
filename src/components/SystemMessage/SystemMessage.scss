@@ -11,7 +11,8 @@
   transition-duration: 0.8s, 0.4s;
   transition-timing-function: linear;
   border: 1px solid $secondary-theme-color;
-  background-color: rgba($color: #fff, $alpha: 0.9);
+  border-radius: 5px;
+  background-color: rgba($color: #eee, $alpha: 0.85);
   z-index: 1;
 
   &:not(.shown) {
@@ -19,7 +20,7 @@
     opacity: 0;
     transition-delay: 0.8s, 0s;
   }
-  
+
   &.shown {
     height: $system-message-height;
     opacity: 1;
@@ -37,7 +38,7 @@
   .message-paragraph {
     width: 100%;
     text-align: center;
-    padding: 5px 12px;
+    padding: $l-padding;
     transition: opacity 0.2s linear;
     color: $accents-theme-color;
     font-weight: bold;
