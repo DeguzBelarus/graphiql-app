@@ -14,10 +14,10 @@ import './GraphqlSchemaContent.scss';
 
 interface Props {
   schemaReader: { read(): Undefinable<GraphQLSchema> };
-  setIsSidebarShown: Dispatch<SetStateAction<boolean>>;
+  setIsDocsShown: Dispatch<SetStateAction<boolean>>;
 }
 
-export const GraphqlSchemaContent: FC<Props> = ({ schemaReader, setIsSidebarShown }) => {
+export const GraphqlSchemaContent: FC<Props> = ({ schemaReader, setIsDocsShown }) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const schema = schemaReader.read();
@@ -26,11 +26,11 @@ export const GraphqlSchemaContent: FC<Props> = ({ schemaReader, setIsSidebarShow
 
   useEffect(() => {
     if (!schema) {
-      setIsSidebarShown(false);
+      setIsDocsShown(false);
     } else {
       dispatch(setIsGraphqlSchemaReceived(true));
     }
-  }, [dispatch, schema, setIsSidebarShown]);
+  }, [dispatch, schema, setIsDocsShown]);
   return (
     <div className="graphql-schema-content-wrapper">
       <h3>{t('docs')}</h3>

@@ -17,11 +17,18 @@ import { useTranslation } from 'react-i18next';
 import './SideBar.scss';
 
 interface Props {
-  isSidebarShown: boolean;
-  setIsSidebarShown: Dispatch<SetStateAction<boolean>>;
+  isDocsShown: boolean;
+  isHistoryShown: boolean;
+  setIsDocsShown: Dispatch<SetStateAction<boolean>>;
+  setIsHistoryShown: Dispatch<SetStateAction<boolean>>;
 }
 
-export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
+export const SideBar: FC<Props> = ({
+  isDocsShown,
+  setIsDocsShown,
+  setIsHistoryShown,
+  isHistoryShown,
+}) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -35,13 +42,27 @@ export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
         setSystemMessage({ message: `${t('enterRequestSchemaUrl')}`, severity: 'negative' })
       );
     }
-    if (!isSidebarShown && graphQlUrl) {
+    if (!isDocsShown && graphQlUrl) {
       dispatch(setGraphQlUrlSubmitted(graphQlUrl));
-      setIsSidebarShown(true);
+      setIsDocsShown(true);
+      if (isHistoryShown) {
+        setIsHistoryShown(false);
+      }
     } else {
-      setIsSidebarShown(false);
+      setIsDocsShown(false);
       dispatch(setIsGraphqlSchemaReceived(false));
       dispatch(setCurrentSchemaType([]));
+    }
+  };
+
+  const openRequestsHistory = () => {
+    if (isHistoryShown) {
+      setIsHistoryShown(false);
+    } else {
+      setIsHistoryShown(true);
+      if (isDocsShown) {
+        setIsDocsShown(false);
+      }
     }
   };
 
@@ -60,14 +81,17 @@ export const SideBar: FC<Props> = ({ isSidebarShown, setIsSidebarShown }) => {
         <button
           type="button"
           className="icon-button"
-          title={isSidebarShown ? t('main.hideDoc') || '' : t('main.showDoc') || ''}
+          title={isDocsShown ? t('main.hideDoc') || '' : t('main.showDoc') || ''}
           onClick={openGraphqlSchema}
         >
-          <Documentation
-            title={isSidebarShown ? t('main.hideDoc') || '' : t('main.showDoc') || ''}
-          />
+          <Documentation title={isDocsShown ? t('main.hideDoc') || '' : t('main.showDoc') || ''} />
         </button>
-        <button type="button" className="icon-button" title={t('main.showHistory') || ''}>
+        <button
+          type="button"
+          className="icon-button"
+          title={t('main.showHistory') || ''}
+          onClick={openRequestsHistory}
+        >
           <History title={t('main.showHistory') || ''} />
         </button>
       </div>

@@ -1,0 +1,25 @@
+@import '../../../../styles/global';
+
+.history-item-wrapper {
+  width: 100%;
+  height: $history-item-height;
+  @include flex-line-start-vertical-center;
+  gap: 5px;
+  padding: $m-padding;
+  background-color: $light-gary-color;
+
+  .query-paragraph {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $secondary-theme-color;
+    font-weight: 600;
+  }
+
+  .history-restore-icon {
+    width: auto;
+    height: 110%;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
