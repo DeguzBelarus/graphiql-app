@@ -8,7 +8,7 @@ import {
   setGraphQlUrl,
 } from '../../../../redux/slices/mainSlice';
 import { IHistoryRequestObject } from '../../../../redux/types';
-import historyRestoreIcon from '../../../../assets/images/history-restore.png';
+import { ReactComponent as HistoryRestoreIcon } from '../../../../assets/icons/restore.svg';
 import { validatorJSON } from '../../../VariablesEditor/utils';
 import './HistoryItem.scss';
 
@@ -52,12 +52,9 @@ export const HistoryItem: FC<Props> = ({
     <div className="history-item-wrapper">
       <span>{`${id}.`}</span>
       <p className="query-paragraph">{query}</p>
-      <img
-        className="history-restore-icon"
-        src={historyRestoreIcon}
-        alt="restore icon"
-        onClick={historyRestore}
-      />
+      <div>
+        <HistoryRestoreIcon title="restore icon" onClick={historyRestore} />
+      </div>
     </div>
   );
 };

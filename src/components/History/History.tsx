@@ -2,7 +2,7 @@ import { Dispatch, FC, SetStateAction } from 'react';
 import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 import { useTranslation } from 'react-i18next';
 
-import historyClearIcon from '../../assets/images/clean.png';
+import { ReactComponent as HistoryClearIcon } from '../../assets/icons/clean.svg';
 import { getRequestsHistory, setRequestsHistory } from '../../redux/slices/mainSlice';
 import { HistoryItem } from './components/HistoryItem/HistoryItem';
 import './History.scss';
@@ -25,14 +25,7 @@ export const History: FC<Props> = () => {
     <div className="history-wrapper">
       <div className="upper-container">
         <h3>{`${t('historyCap')}`}</h3>
-        {requestsHistory.length ? (
-          <img
-            className="clear-history-icon"
-            src={historyClearIcon}
-            alt="clear icon"
-            onClick={clearHistory}
-          />
-        ) : null}
+        {requestsHistory.length ? <HistoryClearIcon onClick={clearHistory} /> : null}
       </div>
       <div className="history-items-wrapper">
         {requestsHistory.length ? (

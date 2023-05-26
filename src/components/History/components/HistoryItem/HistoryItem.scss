@@ -16,10 +16,11 @@
     font-weight: 600;
   }
 
-  .history-restore-icon {
-    width: auto;
-    height: 110%;
-    margin-left: auto;
+  svg {
+    height: 20px;
+    width: 20px;
+    color: $main-theme-color;
     cursor: pointer;
+    margin-left: auto;
   }
 }
