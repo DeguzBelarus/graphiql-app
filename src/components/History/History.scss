@@ -5,7 +5,7 @@
   min-width: $docs-width;
   height: 100%;
   @include flex-column-line-start-vertical-top;
-  gap: 8px;
+  gap: 16px;
   @include scroll;
   padding: $m-padding;
   overflow: auto;

@@ -14,7 +14,13 @@
 
   pre {
     height: 100%;
-    max-width: calc((100vw - $sidebar-width - $docs-width) /2);
+    max-width: calc((100vw - $sidebar-width - $docs-width) / 2);
+  }
+
+  .placeholder-text {
+    color: $light-color;
+    font-weight: 400;
+    padding: 8px 0 0 8px;
   }
 
   @include media-tablet {
