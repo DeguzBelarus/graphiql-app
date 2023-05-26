@@ -52,9 +52,11 @@ export const HistoryItem: FC<Props> = ({
   };
   return (
     <div className="history-item-wrapper">
-      <span>{`${id}.`}</span>
-      <p className="query-paragraph">{query}</p>
-      <div>
+      <div className="history-item-content">
+        <span>{`${id}.`}</span>
+        <p className="query-paragraph">{query}</p>
+      </div>
+      <div className="history-item-button">
         <HistoryRestoreIcon title={t('main.restoreHistory') || ''} onClick={historyRestore} />
       </div>
     </div>

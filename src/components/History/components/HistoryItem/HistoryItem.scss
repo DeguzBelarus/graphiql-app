@@ -3,17 +3,24 @@
 .history-item-wrapper {
   width: 100%;
   height: $history-item-height;
-  @include flex-line-start-vertical-center;
+  @include flex-line-spacebetween-vertical-center;
   gap: 5px;
   padding: $m-padding;
   background-color: $light-gary-color;
+  border-radius: 4px;
 
-  .query-paragraph {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .history-item-content {
+    width: 90%;
+    @include flex-line-spacebetween-vertical-center;
     color: $secondary-theme-color;
     font-weight: 600;
+    gap: 3px;
+
+    .query-paragraph {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   svg {
