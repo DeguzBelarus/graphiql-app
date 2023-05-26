@@ -19,5 +19,7 @@
     flex-direction: column;
     height: calc(100% - $footer-height);
     margin-bottom: $footer-height;
+    max-width: calc(100vw);
+    margin-left: 7px;
   }
 }
