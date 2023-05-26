@@ -78,7 +78,8 @@
     "enterVariables": "Введите переменные (JSON)",
     "variables": "Переменные",
     "headers": "Хедеры",
-    "graphiqlResponse": "Graphiql ответ будет показан здесь"
-
+    "graphiqlResponse": "Graphiql ответ будет показан здесь",
+    "cleanHistory": "Очистить историю",
+    "restoreHistory": "Восстановить"
   }
 }

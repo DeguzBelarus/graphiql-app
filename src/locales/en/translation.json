@@ -78,6 +78,8 @@
     "enterVariables": "Enter Variables (JSON)",
     "variables": "Variables",
     "headers": "Headers",
-    "graphiqlResponse": "Graphiql response will be shown here"
+    "graphiqlResponse": "Graphiql response will be shown here",
+    "cleanHistory": "Clean history",
+    "restoreHistory": "Restore"
   }
 }

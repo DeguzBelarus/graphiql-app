@@ -11,6 +11,7 @@ import { IHistoryRequestObject } from '../../../../redux/types';
 import { ReactComponent as HistoryRestoreIcon } from '../../../../assets/icons/restore.svg';
 import { validatorJSON } from '../../../VariablesEditor/utils';
 import './HistoryItem.scss';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   data: IHistoryRequestObject;
@@ -21,6 +22,7 @@ export const HistoryItem: FC<Props> = ({
   id,
   data: { currentRequestHeaders, graphQlUrl, query, variablesJSON },
 }) => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const historyRestore = () => {
@@ -53,7 +55,7 @@ export const HistoryItem: FC<Props> = ({
       <span>{`${id}.`}</span>
       <p className="query-paragraph">{query}</p>
       <div>
-        <HistoryRestoreIcon title="restore icon" onClick={historyRestore} />
+        <HistoryRestoreIcon title={t('main.restoreHistory') || ''} onClick={historyRestore} />
       </div>
     </div>
   );

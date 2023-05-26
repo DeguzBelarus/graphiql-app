@@ -25,7 +25,9 @@ export const History: FC<Props> = () => {
     <div className="history-wrapper">
       <div className="upper-container">
         <h3>{`${t('historyCap')}`}</h3>
-        {requestsHistory.length ? <HistoryClearIcon onClick={clearHistory} /> : null}
+        {requestsHistory.length ? (
+          <HistoryClearIcon title={t('main.cleanHistory') || ''} onClick={clearHistory} />
+        ) : null}
       </div>
       <div className="history-items-wrapper">
         {requestsHistory.length ? (
