@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppSelector } from '../../redux/hooks';
+import AppScreen from '../../assets/images/app.jpg';
 
 import { getIsAuth } from '../../redux/slices/mainSlice';
 import './AboutProject.scss';
@@ -34,10 +35,7 @@ const AboutProject = () => {
           <h4 className="project__description">{t('projectDescription')}</h4>
         </div>
         <div className="project__image">
-          <img
-            src="https://raw.githubusercontent.com/antoinecellier/graphiql/HEAD/resources/graphiql.png"
-            alt="GraphQL"
-          />
+          <img src={AppScreen} alt="GraphQL" />
         </div>
       </div>
     </section>

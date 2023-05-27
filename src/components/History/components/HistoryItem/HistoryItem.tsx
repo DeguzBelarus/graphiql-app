@@ -8,9 +8,10 @@ import {
   setGraphQlUrl,
 } from '../../../../redux/slices/mainSlice';
 import { IHistoryRequestObject } from '../../../../redux/types';
-import historyRestoreIcon from '../../../../assets/images/history-restore.png';
+import { ReactComponent as HistoryRestoreIcon } from '../../../../assets/icons/restore.svg';
 import { validatorJSON } from '../../../VariablesEditor/utils';
 import './HistoryItem.scss';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   data: IHistoryRequestObject;
@@ -21,6 +22,7 @@ export const HistoryItem: FC<Props> = ({
   id,
   data: { currentRequestHeaders, graphQlUrl, query, variablesJSON },
 }) => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
   const historyRestore = () => {
@@ -50,14 +52,13 @@ export const HistoryItem: FC<Props> = ({
   };
   return (
     <div className="history-item-wrapper">
-      <span>{`${id}.`}</span>
-      <p className="query-paragraph">{query}</p>
-      <img
-        className="history-restore-icon"
-        src={historyRestoreIcon}
-        alt="restore icon"
-        onClick={historyRestore}
-      />
+      <div className="history-item-content">
+        <span>{`${id}.`}</span>
+        <p className="query-paragraph">{query}</p>
+      </div>
+      <div className="history-item-button">
+        <HistoryRestoreIcon title={t('main.restoreHistory') || ''} onClick={historyRestore} />
+      </div>
     </div>
   );
 };

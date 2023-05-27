@@ -77,6 +77,9 @@
     "enterQuery": "Введите запрос или мутацию",
     "enterVariables": "Введите переменные (JSON)",
     "variables": "Переменные",
-    "headers": "Хедеры"
+    "headers": "Хедеры",
+    "graphiqlResponse": "Graphiql ответ будет показан здесь",
+    "cleanHistory": "Очистить историю",
+    "restoreHistory": "Восстановить"
   }
 }

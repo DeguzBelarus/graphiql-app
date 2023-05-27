@@ -16,8 +16,10 @@ export const Editors: FC = () => {
         <RequestEditor />
         <EditorToolbar />
       </div>
-      <div className={isTabsOpen ? '' : 'hidden-tabs'}>
-        <Tabs isTabsOpen={isTabsOpen} setIsTabsOpen={setIsTabsOpen} />
+      <div>
+        <div className={isTabsOpen ? '' : 'hidden-tabs'}>
+          <Tabs isTabsOpen={isTabsOpen} setIsTabsOpen={setIsTabsOpen} />
+        </div>
       </div>
     </div>
   );

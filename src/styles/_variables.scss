@@ -33,7 +33,8 @@ $accents-theme-color: #240f5b;
 $danger-color: #f36f25;
 $success-color: #00aa00;
 $white-color: #ffffff;
-$light-gary-color: #efefef;
+$light-gray-color: #efefef;
+$dark-gray-color: #8b8793;
 
 // mixins
 @mixin font($size, $height: $size, $weight: normal, $style: normal) {
@@ -243,7 +244,4 @@ $light-gary-color: #efefef;
 
 :export {
   headerHeight: $header-height;
-  tabsHeight: $tabs-height;
-  tabsHeaderHeight: $tabs-header-height;
-
 }

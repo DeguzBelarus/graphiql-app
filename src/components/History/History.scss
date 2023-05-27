@@ -5,7 +5,7 @@
   min-width: $docs-width;
   height: 100%;
   @include flex-column-line-start-vertical-top;
-  gap: 8px;
+  gap: 16px;
   @include scroll;
   padding: $m-padding;
   overflow: auto;
@@ -15,9 +15,10 @@
     height: 30px;
     @include flex-line-spacebetween-vertical-center;
 
-    .clear-history-icon {
-      width: auto;
-      height: 100%;
+    svg {
+      height: 24px;
+      width: 24px;
+      color: $main-theme-color;
       cursor: pointer;
     }
   }
