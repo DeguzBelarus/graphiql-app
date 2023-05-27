@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GraphiQL - the GraphQL IDE
 
 ## Deploy
@@ -24,6 +23,3 @@
 `REACT_APP_APP_ID`=1:1087407804303:web:2c4c30efd2a375957005fa
 
 `REACT_APP_MEASUREMENT_ID`=G-YGZE4575HX
-=======
-# GraphiQL React App
->>>>>>> 1e61342 (init: start graphiql project)
