@@ -1,0 +1,27 @@
+@import '../../styles/global';
+
+.graphql-endpoint-wrapper {
+  width: 100%;
+  @include flex-all-center;
+  margin-bottom: 10px;
+
+  input {
+    width: 90%;
+    height: $graphQl-endpoint-height;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 2px solid $accents-theme-color;
+    border-radius: 10px;
+    color: $main-theme-color;
+    font-weight: bold;
+  }
+
+  @include media-tablet {
+    display: flex;
+    justify-content: flex-start;
+
+    input {
+      width: 100%;
+    }
+  }
+}

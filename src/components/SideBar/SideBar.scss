@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+aside {
+  height: 100%;
+  padding: $m-padding;
+  width: $sidebar-width;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+
+  .sidebar-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding: 5px 0 0;
+
+    .sidebar-buttons-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+header {
+  width: 100%;
+  height: $header-height;
+  @include flex-line-spacebetween-vertical-center;
+  background: $accents-theme-color;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .logo-wrapper {
+    @include flex-all-center;
+
+    img {
+      height: $header-height;
+    }
+  }
+
+  .auth-button-wrapper {
+    @include flex-line-spacebetween-vertical-center;
+    gap: 10px;
+  }
+}
+
+.active {
+  background: $main-theme-color;
+}

@@ -1,0 +1,59 @@
+@import '../../../../../../../../styles/global';
+
+.graphql-field-wrapper {
+  width: 100%;
+  @include flex-column-line-start-vertical-top;
+  @include user-select-none;
+  gap: 2px;
+  padding: $s-padding;
+
+  &.with-arguments {
+    cursor: pointer;
+  }
+
+  &:not(:hover) {
+    border: 1px solid $accents-theme-color;
+  }
+
+  .expand-logo {
+    width: 10px;
+    height: auto;
+    margin-right: 4px;
+    transform: rotate(180deg);
+
+    &.open {
+      transform: none;
+    }
+  }
+
+  .field-name-span {
+    font-weight: bold;
+    color: $accents-theme-color;
+  }
+
+  .field-description-paragraph {
+    width: 100%;
+    word-wrap: break-word;
+    color: #777;
+    font-size: 14px;
+  }
+
+  .arguments-container {
+    width: 100%;
+    @include flex-column-line-start-vertical-top;
+
+    .arguments-span {
+      margin-top: 5px;
+      font-weight: bold;
+      color: $accents-theme-color;
+    }
+  }
+}
+
+@media (hover :hover) {
+  .graphql-field-wrapper {
+    &:hover {
+      border: 1px solid $secondary-theme-color;
+    }
+  }
+}

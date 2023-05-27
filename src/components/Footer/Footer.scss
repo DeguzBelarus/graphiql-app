@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+footer {
+  width: 100%;
+  height: $footer-height;
+  background: $main-theme-color;
+  color: $white-color;
+  @include flex-line-spacebetween-vertical-center;
+  position: fixed;
+  bottom: 0;
+
+  img {
+    height: calc($footer-height - 10px);
+
+    @include media-tablet {
+      height: calc($footer-height - 20px);
+    }
+  }
+
+  .member-list {
+    @include flex-line-spacebetween-vertical-center;
+    gap: 15px;
+
+    p:before {
+      content: '';
+      background-image: url(../../assets/images/github-logo.svg);
+      background-size: 100% 100%;
+      display: inline-block;
+
+      height: 25px;
+      width: 25px;
+
+      position: relative;
+      top: 8px;
+
+      @include media-tablet {
+        display: none;
+      }
+    }
+
+    @include media-tablet {
+      font-size: 0.85rem;
+      gap: 7px;
+    }
+
+    @include media-mobile-big {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      font-size: 0.85rem;
+    }
+  }
+}

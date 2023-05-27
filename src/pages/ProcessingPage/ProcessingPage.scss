@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.processing-page-wrapper {
+  width: 100%;
+  height: calc(100vh - $header-height - $footer-height);
+  @include flex-column-all-center;
+  gap: 50px;
+
+  .authorizing-refresh-paragraph {
+    font-size: 30px;
+    font-weight: bold;
+    color: $main-theme-color;
+  }
+}

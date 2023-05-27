@@ -1,0 +1,18 @@
+@import '../../../../styles/global';
+
+.applied-header-item-wrapper {
+  width: 100%;
+  @include flex-line-spacebetween-vertical-center;
+  padding: $m-padding;
+  background-color: $light-gray-color;
+  border-radius: 8px;
+
+  .remove-header-button {
+    background-color: $danger-color;
+    color: #fff;
+  }
+
+  @include media-tablet {
+    padding: 2px;
+  }
+}

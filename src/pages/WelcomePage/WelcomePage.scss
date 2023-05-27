@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+
+.welcome-page-wrapper {
+  max-width: $width-container;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include media-laptop {
+    padding: 0 45px;
+  }
+
+  @include media-tablet {
+    padding: 0 20px;
+  }
+
+  @include media-mobile-big {
+    padding: 0 10px;
+  }
+
+  @include media-mobile-small {
+    padding: 0 5px;
+  }
+}

@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+.auth-form {
+  width: 300px;
+  height: auto;
+  @include flex-column-line-start-vertical-top;
+  @include user-select-none;
+  gap: 4px;
+  position: relative;
+  padding: 20px 10px;
+  border: 1px solid $secondary-theme-color;
+  background-color: $accents-theme-color;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  .password-requirements-container {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    @include flex-column-line-start-vertical-top;
+    gap: 4px;
+    margin-top: 20px;
+    border: 1px solid $secondary-theme-color;
+    background-color: $accents-theme-color;
+
+    span {
+      font-size: 14px;
+      font-weight: bold;
+
+      &:not(.confirmed) {
+        color: $danger-color;
+      }
+
+      &.confirmed {
+        color: $success-color;
+      }
+    }
+  }
+
+  .upper-container {
+    width: 100%;
+    max-height: 70px;
+    @include flex-line-spacebetween-vertical-center;
+
+    .main-logo-in-form {
+      width: auto;
+      max-width: 25%;
+      height: 100%;
+    }
+
+    h1 {
+      font-size: 31px;
+      color: #fff;
+    }
+  }
+
+  .lower-container {
+    width: 100%;
+    height: auto;
+    @include flex-all-center;
+    gap: 5px;
+    padding: 5px 0;
+
+    .login-button {
+      @include confirm-button;
+      border-radius: 0;
+      padding: 5px $l-padding;
+    }
+
+    .to-registration-button {
+      @include transition-button;
+      border-radius: 0;
+      padding: 5px $l-padding;
+    }
+
+    .to-login-button {
+      @include transition-button;
+      border-radius: 0;
+      padding: 5px $l-padding;
+    }
+
+    .registration-button {
+      @include confirm-button;
+      border-radius: 0;
+      padding: 5px $l-padding;
+    }
+  }
+}

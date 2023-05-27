@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.variables-editor {
+  height: $tabs-height - ($tabs-header-height + 8px);
+  @include scroll;
+
+  @include media-tablet {
+    height: auto;
+    min-height: 20vh;
+    overflow: auto;
+  }
+}

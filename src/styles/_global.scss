@@ -1,0 +1,103 @@
+@import 'variables';
+
+button {
+  padding: $l-padding $xxl-padding;
+  border-radius: $m-padding;
+  border: none;
+}
+
+.primary-button {
+  background: $main-theme-color;
+  color: $white-color;
+
+  svg {
+    display: none;
+  }
+
+  &:hover {
+    background: $white-color;
+    color: $main-theme-color;
+  }
+}
+
+.danger-button {
+  background: $danger-color;
+  color: $white-color;
+
+  svg {
+    display: none;
+  }
+
+  &:hover {
+    background: $white-color;
+    color: $danger-color;
+  }
+}
+
+.icon-button {
+  padding: $l-padding;
+
+  svg {
+    color: #662abe;
+    height: 24px;
+    width: 24px;
+
+    &:hover {
+      color: $accents-theme-color;
+    }
+  }
+
+  &:hover,
+  &:disabled {
+    background: $light-color;
+  }
+}
+
+.icon-button-danger {
+  padding: $l-padding;
+  background: $danger-color;
+
+  svg {
+    color: $white-color;
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.button-with-icon {
+  padding: $m-padding;
+
+  svg {
+    color: $white-color;
+    height: 24px;
+    width: 24px;
+  }
+
+  @include media-tablet {
+    span {
+      display: none;
+    }
+
+    svg {
+      display: inline;
+      height: 24px;
+      width: 24px;
+      color: $white-color;
+
+      &:hover,
+      &:disabled {
+        color: $danger-color;
+      }
+    }
+  }
+}
+
+.small-icon-button {
+  background: transparent;
+
+  svg {
+    display: inline;
+    width: 12px;
+    color: $main-theme-color;
+  }
+}

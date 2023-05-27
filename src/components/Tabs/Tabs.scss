@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+.tabs-container {
+  height: $tabs-height - 10px;
+  border-top: 1px solid $light-color;
+  color: $main-theme-color;
+  padding: 0.5rem;
+  width: 100%;
+
+  .tabs-header-container {
+    @include flex-line-spacebetween-vertical-center;
+
+    .small-icon-button {
+      padding: 12px 6px 12px 4px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0.5rem 0;
+  }
+
+  ul.nav {
+    height: $tabs-header-height;
+    @include flex-line-start-vertical-center;
+    gap: 5px;
+
+    @media (max-width: $tablet-width) {
+      width: 90%;
+    }
+  }
+
+  ul.nav li {
+    padding: 0.5rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+    border-radius: 5px;
+  }
+
+  ul.nav li:hover {
+    background: $light-color;
+  }
+
+  ul.nav li.active {
+    background: $light-gray-color;
+  }
+}

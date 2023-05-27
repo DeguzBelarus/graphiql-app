@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+
+.editors-wrapper {
+  height: 100%;
+  padding: $m-padding;
+  width: $column-width;
+  max-width: 95vw;
+  min-width: $column-width;
+  border-radius: $m-padding;
+  background: $white-color;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  @include scroll;
+  position: relative;
+
+  .request-wrapper {
+    height: calc(100% - $tabs-height - $graphQl-endpoint-height - 10px);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    overflow-x: hidden;
+
+    .request-wrapper {
+      height: auto;
+      min-height: 40vh;
+    }
+  }
+
+  .hidden-tabs {
+    width: calc(100% - 20px);
+    position: absolute;
+    bottom: 15px;
+    height: auto;
+
+    .tabs-container {
+      height: 50px;
+
+      .tabs-content {
+        display: none;
+      }
+    }
+
+    @include media-tablet {
+      position: relative;
+      width: 92vw;
+      min-width: 88vw;
+
+      .tabs-container {
+        height: 35px;
+      }
+    }
+  }
+}

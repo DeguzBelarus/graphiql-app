@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+
+.header-editor {
+  width: 100%;
+  height: $tabs-height - ($tabs-header-height + 8px);
+
+  .header-inputs-container {
+    width: 100%;
+    @include flex-line-spacebetween-vertical-center;
+    gap: 3px;
+    padding: $m-padding;
+  }
+
+  .applied-headers-container {
+    width: 100%;
+    height: $headers-container-height;
+    @include flex-column-line-start-vertical-top;
+    gap: 3px;
+    padding: $m-padding;
+    overflow: auto;
+    @include scroll;
+  }
+
+  @include media-tablet {
+    height: auto;
+    min-height: 20vh;
+    overflow: auto;
+  }
+}

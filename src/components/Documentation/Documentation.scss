@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.docs-wrapper {
+  width: $docs-width;
+  min-width: $docs-width;
+  height: 100%;
+  @include flex-column-line-center-vertical-top;
+  @include scroll;
+  gap: 5px;
+  padding: $m-padding;
+  overflow: auto;
+
+  .no-data-span {
+    color: $main-theme-color;
+  }
+
+  .type {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $danger-color;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .queries-wrapper {
+    width: 100%;
+    height: max-content;
+    @include flex-column-line-center-vertical-top;
+    gap: 3px;
+    padding: $m-padding;
+    border: 1px solid $accents-theme-color;
+
+    h5 {
+      width: 100%;
+      color: $main-theme-color;
+    }
+  }
+
+  .mutations-wrapper {
+    width: 100%;
+    height: max-content;
+    @include flex-column-line-center-vertical-top;
+    gap: 3px;
+    padding: $m-padding;
+    border: 1px solid $accents-theme-color;
+
+    h5 {
+      width: 100%;
+      color: $main-theme-color;
+    }
+  }
+
+  @include media-tablet {
+    width: 90vw;
+    min-height: 30vh;
+  }
+}
+
+@media (hover: hover) {
+  .type {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

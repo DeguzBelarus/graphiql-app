@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.editor-toolbar-wrapper {
+  @include flex-column-line-center-vertical-top;
+  gap: 10px;
+
+  @include media-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}

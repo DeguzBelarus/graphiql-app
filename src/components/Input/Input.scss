@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+label {
+  width: 100%;
+  transition: border 0.25s linear;
+
+  &:not(:hover) {
+    border: 1px solid $main-theme-color;
+  }
+
+  &.header-input-label {
+    border: 1px solid $main-theme-color;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 5px;
+    background-color: transparent;
+    color: #ddd;
+    border: none;
+
+    &.header-input {
+      color: #000;
+    }
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}
+
+@media (hover: hover) {
+  label {
+    &:hover:not(.header-input-label) {
+      border: 1px solid #fff;
+    }
+  }
+}
