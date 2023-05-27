@@ -8,7 +8,7 @@
 
 `start` - runs this project
 
-## .env file variables
+## .env file variables [download .env file](https://drive.google.com/file/d/12Y24aI8lIfixJ8XHnJUbdTgGSLehmLYd/view?usp=share_link)
 
 `REACT_APP_API_KEY`=AIzaSyCl-OllVThA-VGeNDN2VcsaduRzzKNK06Y
 
